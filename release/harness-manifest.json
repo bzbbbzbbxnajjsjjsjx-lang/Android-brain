@@ -1,0 +1,37 @@
+{
+  "manifest_schema_version": 1,
+  "harness_version": "0.6.0-dev",
+  "release_channel": "development",
+  "license_review_status": "owner_approved",
+  "minimum_python": "3.11",
+  "android_runtime_required": false,
+  "codex_integration": {
+    "instruction_file": "AGENTS.md",
+    "skill_directory": ".agents/skills",
+    "router_entrypoint": "scripts/route_context.py",
+    "skill_activation_is_native_and_not_manifest_proven": true
+  },
+  "schemas": {
+    "context_manifest": 2,
+    "evaluation_dataset": 1,
+    "evidence": 1,
+    "material3_topics": 1,
+    "material_retrieval_evidence": 1,
+    "p5_evaluation_result": 1,
+    "p6_evaluation_report": 1,
+    "policy_enforcement": 1,
+    "project_context": 1,
+    "quality_gate_result": 1,
+    "registry_policies": 1,
+    "registry_skills": 1,
+    "registry_sources": 1,
+    "task_taxonomy": 2
+  },
+  "evaluation_dataset": "android-context-routing-independent-v1",
+  "limitations": [
+    "Development channel only; no stable release or version tag is authorized or present.",
+    "Hosted GitHub Actions execution is not verified.",
+    "Material.io page bodies remain unverified where only a JavaScript shell was retrieved.",
+    "Native Codex skill invocation and SKILL.md body consumption are not established by router output."
+  ]
+}

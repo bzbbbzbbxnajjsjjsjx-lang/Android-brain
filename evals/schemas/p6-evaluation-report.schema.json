@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p6-evaluation-report.schema.json",
+  "title": "P6 Harness Stabilization Evaluation",
+  "type": "object",
+  "required": ["schema_version", "harness_version", "git_head", "working_tree_sha256", "status", "evaluations", "precision_comparison", "synthetic_integration", "material_coverage", "retrieval_records", "native_codex_skill_discovery", "native_codex_skill_invocation", "hosted_ci", "release_readiness"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "harness_version": {"type": "string"},
+    "git_head": {"type": ["string", "null"]},
+    "working_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "status": {"enum": ["PASS", "FAIL"]},
+    "evaluations": {"type": "array", "minItems": 10, "items": {"type": "object", "required": ["id", "status", "detail"], "properties": {"id": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "detail": {"type": "string"}}}},
+    "precision_comparison": {"type": "object", "required": ["aggregate", "androidx_api", "harness", "material3_content_design", "material3_xr"]},
+    "synthetic_integration": {"type": "object", "required": ["status", "target_root", "harness_version", "installed_native_skill_files", "shared_knowledge_copied"]},
+    "material_coverage": {"type": "object", "required": ["topic_groups_discovered", "discovered_urls", "page_evidence_record_counts", "verified_page_content_topics"]},
+    "retrieval_records": {"type": "array"},
+    "native_codex_skill_discovery": {"enum": ["PASS", "NOT VERIFIED", "FAIL"]},
+    "native_codex_skill_invocation": {"const": "NOT VERIFIED"},
+    "hosted_ci": {"const": "NOT VERIFIED"},
+    "release_readiness": {"type": "object", "required": ["release_ready", "version_control_ready", "hosted_ci", "blockers"]}
+  },
+  "additionalProperties": true
+}

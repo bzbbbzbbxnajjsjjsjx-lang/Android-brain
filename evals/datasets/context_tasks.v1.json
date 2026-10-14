@@ -1,0 +1,1784 @@
+{
+  "schema_version": 1,
+  "dataset_id": "android-context-routing-independent-v1",
+  "authored_date": "2026-10-14",
+  "evaluation_date": "2026-10-14",
+  "methodology": "Human-authored task intents and expected context, independent of the router's rule configuration. Required/allowed/forbidden context is curated per task. It is not generated from routing/task-taxonomy.json.",
+  "global_required_policies": [
+    "security",
+    "provenance",
+    "scope_isolation",
+    "source_access",
+    "reporting",
+    "testing_evidence",
+    "freshness",
+    "no_hallucinated_api"
+  ],
+  "tasks": [
+    {
+      "id": "mat-foundations",
+      "domain_group": "material3_foundations",
+      "task": "Review foundational Material 3 design principles for a new product.",
+      "expected_domains": [
+        "material3_foundations"
+      ],
+      "required_sources": [
+        "material3_site"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/foundations.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "source_access"
+      ],
+      "required_freshness_sources": [
+        "material3_site"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "current linked Material.io page"
+      ]
+    },
+    {
+      "id": "mat-expressive",
+      "domain_group": "material3_expressive",
+      "task": "Plan a Material 3 Expressive design system.",
+      "expected_domains": [
+        "material3_expressive"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material_theme",
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/foundations.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility",
+        "experimental_api"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "current linked Material.io page"
+      ]
+    },
+    {
+      "id": "mat-color",
+      "domain_group": "material3_color",
+      "task": "Define Material color roles, tonal palette and dynamic color in Compose.",
+      "expected_domains": [
+        "material3_color",
+        "compose_ui"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_color_scheme",
+        "androidx_material_theme"
+      ],
+      "allowed_optional_sources": [
+        "google_android_skills",
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/color-typography.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/tokens-navigation.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "androidx_color_scheme",
+        "androidx_material_theme"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-typography",
+      "domain_group": "material3_typography",
+      "task": "Review Material typography scale and accessible text styles.",
+      "expected_domains": [
+        "material3_typography",
+        "material3_accessibility"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_typography",
+        "androidx_material_theme",
+        "androidx_compose_accessibility"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/color-typography.md",
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/androidx/compose-accessibility.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation",
+        "android-testing"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [
+        "androidx_typography",
+        "androidx_material_theme"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-components",
+      "domain_group": "material3_components",
+      "task": "Specify Material button and card component anatomy and component guidelines.",
+      "expected_domains": [
+        "material3_components"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "google_android_skills",
+        "androidx_material_theme"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/components-states.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-component-states",
+      "domain_group": "material3_component_states",
+      "task": "Review selected, disabled and pressed Material component states.",
+      "expected_domains": [
+        "material3_component_states",
+        "material3_components"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package",
+        "androidx_compose_accessibility"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/components-states.md",
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive",
+        "android-testing"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "selected, pressed, disabled"
+      ]
+    },
+    {
+      "id": "mat-shape",
+      "domain_group": "material_shapes",
+      "task": "Use MaterialShapes to morph component shapes in Compose.",
+      "expected_domains": [
+        "compose_ui",
+        "material3_components",
+        "material_shapes"
+      ],
+      "required_sources": [
+        "material_shape_principles",
+        "material_shapes_api"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package",
+        "material3_site",
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/shapes.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility",
+        "experimental_api"
+      ],
+      "required_freshness_sources": [
+        "material_shapes_api"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "opt-in annotation"
+      ]
+    },
+    {
+      "id": "mat-motion",
+      "domain_group": "material_motion",
+      "task": "Implement Material motion transitions with MotionScheme in Compose.",
+      "expected_domains": [
+        "compose_ui",
+        "material_motion"
+      ],
+      "required_sources": [
+        "material_motion",
+        "androidx_motion_scheme",
+        "androidx_material_theme",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "material3_site",
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "baseline_profiles",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/motion.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility",
+        "experimental_api",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "androidx_motion_scheme",
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-layout",
+      "domain_group": "material3_layout",
+      "task": "Review Material layout grid and scaffold structure.",
+      "expected_domains": [
+        "material3_layout",
+        "material3_spacing_density"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "androidx_compose_adaptive"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-adaptive",
+      "domain_group": "material3_adaptive",
+      "task": "Implement adaptive design and list detail layout for window size classes in Compose.",
+      "expected_domains": [
+        "compose_ui",
+        "material3_adaptive",
+        "material3_layout"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_compose_adaptive",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/layout-adaptive.md",
+        "knowledge/androidx/compose-adaptive.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "allowed_optional_skills": [
+        "edge-to-edge"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "androidx_compose_adaptive"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-navigation",
+      "domain_group": "material3_navigation",
+      "task": "Compare Material navigation rail and navigation drawer patterns.",
+      "expected_domains": [
+        "material3_navigation"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material_theme"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/tokens-navigation.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/layout-adaptive.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "edge-to-edge"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-accessibility",
+      "domain_group": "material3_accessibility",
+      "task": "Review Material accessibility, contrast requirements and text resizing.",
+      "expected_domains": [
+        "material3_accessibility"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_compose_accessibility",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "material3-expressive"
+      ],
+      "required_policies": [
+        "accessibility_review",
+        "design_compliance",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "androidx_compose_accessibility"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "text scaling"
+      ]
+    },
+    {
+      "id": "mat-tokens",
+      "domain_group": "material3_tokens",
+      "task": "Map semantic Material design tokens to a Compose theme.",
+      "expected_domains": [
+        "compose_ui",
+        "material3_tokens"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material_theme",
+        "androidx_color_scheme",
+        "androidx_typography"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/tokens-navigation.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "visual-design-validation",
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "provenance",
+        "source_access",
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [
+        "androidx_material_theme",
+        "androidx_color_scheme"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-spacing-density",
+      "domain_group": "material3_spacing_density",
+      "task": "Define Material spacing tokens and density settings.",
+      "expected_domains": [
+        "material3_spacing_density",
+        "material3_layout"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material_theme"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-elevation",
+      "domain_group": "material3_elevation",
+      "task": "Review Material surface elevation and elevation tokens.",
+      "expected_domains": [
+        "material3_elevation"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package",
+        "androidx_material_theme"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/foundations.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-icons",
+      "domain_group": "material3_icons",
+      "task": "Choose Material iconography and app icons for navigation.",
+      "expected_domains": [
+        "material3_icons",
+        "material3_navigation"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material_theme"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/components-states.md",
+        "knowledge/material3/tokens-navigation.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "allowed_optional_skills": [
+        "visual-design-validation"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "mat-content",
+      "domain_group": "material3_content_design",
+      "task": "Review Material content design and UX writing guidance.",
+      "expected_domains": [
+        "material3_content_design"
+      ],
+      "required_sources": [
+        "material3_site"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "visual-design-validation"
+      ],
+      "allowed_optional_skills": [
+        "material3-expressive"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "source_access"
+      ],
+      "required_freshness_sources": [
+        "material3_site"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "page-specific source review"
+      ]
+    },
+    {
+      "id": "mat-watch",
+      "domain_group": "material3_watches",
+      "task": "Review Material watch design and Wear OS layout guidance.",
+      "expected_domains": [
+        "material3_layout",
+        "material3_watches"
+      ],
+      "required_sources": [
+        "material3_site"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "kotlin-compose"
+      ],
+      "allowed_optional_skills": [
+        "material3-expressive"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "material3_site"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "form-factor guidance"
+      ]
+    },
+    {
+      "id": "mat-xr",
+      "domain_group": "material3_xr",
+      "task": "Review Material XR design guidance for spatial Android UI.",
+      "expected_domains": [
+        "material3_xr"
+      ],
+      "required_sources": [
+        "material3_site"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "kotlin-compose"
+      ],
+      "allowed_optional_skills": [
+        "material3-expressive"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review"
+      ],
+      "required_freshness_sources": [
+        "material3_site"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "spatial guidance"
+      ]
+    },
+    {
+      "id": "mat-codesign",
+      "domain_group": "material3_co_design",
+      "task": "Use Material co-design to understand user needs and inclusive design.",
+      "expected_domains": [
+        "material3_co_design"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_compose_accessibility"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "visual-design-validation"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose",
+        "material3-expressive"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "source_access"
+      ],
+      "required_freshness_sources": [
+        "material3_site"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "user-needs evidence"
+      ]
+    },
+    {
+      "id": "api-material-shapes",
+      "domain_group": "androidx_api",
+      "task": "Use MaterialShapes with shape morphing in a Compose component.",
+      "expected_domains": [
+        "compose_ui",
+        "material3_components",
+        "material_shapes"
+      ],
+      "required_sources": [
+        "material_shapes_api",
+        "material_shape_principles"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package",
+        "material3_site"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/shapes.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "no_hallucinated_api"
+      ],
+      "required_freshness_sources": [
+        "material_shapes_api"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "opt-in annotation"
+      ]
+    },
+    {
+      "id": "api-motion-scheme",
+      "domain_group": "androidx_api",
+      "task": "Use MotionScheme in Jetpack Compose.",
+      "expected_domains": [
+        "compose_ui",
+        "material_motion"
+      ],
+      "required_sources": [
+        "androidx_motion_scheme",
+        "material_motion",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material_theme",
+        "material3_site",
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/motion.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "no_hallucinated_api"
+      ],
+      "required_freshness_sources": [
+        "androidx_motion_scheme"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "api-theme-color",
+      "domain_group": "androidx_api",
+      "task": "Implement a MaterialTheme ColorScheme with dynamic color in Compose.",
+      "expected_domains": [
+        "compose_ui",
+        "material3_color"
+      ],
+      "required_sources": [
+        "androidx_color_scheme",
+        "androidx_material_theme",
+        "material3_site"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/color-typography.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "api_compatibility",
+        "design_compliance",
+        "no_hallucinated_api"
+      ],
+      "required_freshness_sources": [
+        "androidx_color_scheme",
+        "androidx_material_theme"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "api-typography",
+      "domain_group": "androidx_api",
+      "task": "Verify Typography API compatibility for MaterialTheme in Compose.",
+      "expected_domains": [
+        "compose_ui",
+        "material3_typography"
+      ],
+      "required_sources": [
+        "androidx_typography",
+        "androidx_material_theme",
+        "material3_site"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/color-typography.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "api_compatibility",
+        "no_hallucinated_api"
+      ],
+      "required_freshness_sources": [
+        "androidx_typography"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target project artifact"
+      ]
+    },
+    {
+      "id": "api-unverified-latest",
+      "domain_group": "api_compatibility",
+      "task": "Implement the newest experimental Expressive API for the target dependency.",
+      "expected_domains": [
+        "api_compatibility"
+      ],
+      "required_sources": [
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [
+        "material_shapes_api",
+        "androidx_motion_scheme"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "no_hallucinated_api"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "target artifact"
+      ]
+    },
+    {
+      "id": "arch-hilt",
+      "domain_group": "architecture",
+      "task": "Review dependency injection using Hilt.",
+      "expected_domains": [
+        "dependency_injection"
+      ],
+      "required_sources": [
+        "hilt_android",
+        "nia_modularization"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "material3_site",
+        "figma_m3_kit",
+        "macrobenchmark"
+      ],
+      "required_knowledge": [
+        "knowledge/architecture/hilt-and-flavors.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/architecture/modularization.md"
+      ],
+      "required_skills": [
+        "compose-architecture"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "architecture_boundaries",
+        "dependency_selection",
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [
+        "hilt_android"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "graph boundaries"
+      ]
+    },
+    {
+      "id": "arch-modules",
+      "domain_group": "architecture",
+      "task": "Review modularization boundaries for ownership and testability.",
+      "expected_domains": [
+        "architecture"
+      ],
+      "required_sources": [
+        "nia_modularization"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/architecture/modularization.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "compose-architecture"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "architecture_boundaries",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [],
+      "expected_routing_status": "routed",
+      "required_evidence_actions": [
+        "dependency direction"
+      ]
+    },
+    {
+      "id": "arch-build-variants",
+      "domain_group": "architecture",
+      "task": "Evaluate whether product flavors are justified for these build variants.",
+      "expected_domains": [
+        "build_variants"
+      ],
+      "required_sources": [
+        "product_flavors"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/architecture/hilt-and-flavors.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "compose-architecture"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "dependency_selection",
+        "architecture_boundaries"
+      ],
+      "required_freshness_sources": [
+        "product_flavors"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "current AGP DSL"
+      ]
+    },
+    {
+      "id": "arch-dependency",
+      "domain_group": "architecture",
+      "task": "Review Android dependency selection, license, compatibility and maintenance cost.",
+      "expected_domains": [
+        "android_general"
+      ],
+      "required_sources": [
+        "google_android_skills"
+      ],
+      "allowed_optional_sources": [
+        "roborazzi",
+        "hilt_android"
+      ],
+      "forbidden_sources": [
+        "material3_site",
+        "figma_m3_kit",
+        "macrobenchmark"
+      ],
+      "required_knowledge": [
+        "knowledge/android-skills/codex-integration.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/architecture/hilt-and-flavors.md"
+      ],
+      "required_skills": [
+        "android-engineering"
+      ],
+      "allowed_optional_skills": [
+        "compose-architecture"
+      ],
+      "required_policies": [
+        "dependency_selection",
+        "security"
+      ],
+      "required_freshness_sources": [
+        "google_android_skills"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "license and maintenance need"
+      ]
+    },
+    {
+      "id": "test-roborazzi",
+      "domain_group": "testing",
+      "task": "Establish Roborazzi screenshot regression tests and baseline approval.",
+      "expected_domains": [
+        "screenshot_testing"
+      ],
+      "required_sources": [
+        "roborazzi",
+        "nia_screenshots"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "figma_theme_builder",
+        "figma_m3_kit",
+        "figma_nia_case_study",
+        "hilt_android",
+        "macrobenchmark"
+      ],
+      "required_knowledge": [
+        "knowledge/testing/screenshot-strategy.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "visual-design-validation",
+        "android-testing"
+      ],
+      "allowed_optional_skills": [
+        "testing-setup"
+      ],
+      "required_policies": [
+        "visual_baseline_approval",
+        "testing_evidence",
+        "source_access"
+      ],
+      "required_freshness_sources": [
+        "roborazzi"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "approved baseline provenance and comparison"
+      ]
+    },
+    {
+      "id": "test-visual-accessibility",
+      "domain_group": "testing",
+      "task": "Validate visual accessibility with larger text and dark theme screenshot validation.",
+      "expected_domains": [
+        "material3_accessibility",
+        "screenshot_testing"
+      ],
+      "required_sources": [
+        "androidx_compose_accessibility",
+        "material3_site",
+        "roborazzi",
+        "nia_screenshots"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/testing/screenshot-strategy.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "required_skills": [
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "allowed_optional_skills": [
+        "material3-expressive",
+        "testing-setup"
+      ],
+      "required_policies": [
+        "accessibility_review",
+        "visual_baseline_approval",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "roborazzi",
+        "androidx_compose_accessibility"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "text scaling",
+        "approved baseline provenance"
+      ]
+    },
+    {
+      "id": "perf-startup",
+      "domain_group": "performance",
+      "task": "Investigate Android startup performance with a repeatable benchmark.",
+      "expected_domains": [
+        "performance"
+      ],
+      "required_sources": [
+        "macrobenchmark",
+        "baseline_profiles"
+      ],
+      "allowed_optional_sources": [
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/performance/measurement.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "android-performance"
+      ],
+      "allowed_optional_skills": [
+        "jetpack-compose-performance"
+      ],
+      "required_policies": [
+        "measurement_first",
+        "performance_claims",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "macrobenchmark",
+        "baseline_profiles"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "repeatable comparable measurements"
+      ]
+    },
+    {
+      "id": "harness-routing",
+      "domain_group": "harness",
+      "task": "Improve Android context routing for skill and knowledge selection.",
+      "expected_domains": [
+        "harness_only"
+      ],
+      "required_sources": [
+        "codex_workflows",
+        "google_android_skills"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "macrobenchmark",
+        "roborazzi"
+      ],
+      "required_knowledge": [
+        "docs/CONTEXT_ROUTER.md",
+        "docs/ARCHITECTURE.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/codex/iterative-workflows.md"
+      ],
+      "required_skills": [
+        "android-engineering"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "scope_isolation",
+        "provenance",
+        "reporting",
+        "security"
+      ],
+      "required_freshness_sources": [
+        "google_android_skills"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "registry schema"
+      ]
+    },
+    {
+      "id": "harness-policy",
+      "domain_group": "harness",
+      "task": "Improve Android context routing for source provenance policy evaluation and evidence schema validation.",
+      "expected_domains": [
+        "harness_only"
+      ],
+      "required_sources": [
+        "codex_workflows"
+      ],
+      "allowed_optional_sources": [
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "macrobenchmark",
+        "roborazzi"
+      ],
+      "required_knowledge": [
+        "docs/QUALITY_GATES.md",
+        "docs/CONTEXT_ROUTER.md",
+        "knowledge/README.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/codex/iterative-workflows.md"
+      ],
+      "required_skills": [
+        "android-engineering"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "provenance",
+        "reporting",
+        "testing_evidence",
+        "security"
+      ],
+      "required_freshness_sources": [],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "registry schema"
+      ]
+    },
+    {
+      "id": "negative-hilt",
+      "domain_group": "adversarial",
+      "task": "Do not use Hilt; review the Compose state architecture.",
+      "expected_domains": [
+        "architecture",
+        "compose_ui"
+      ],
+      "required_sources": [
+        "google_android_skills",
+        "androidx_material3_package",
+        "nia_modularization"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/architecture/modularization.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "required_skills": [
+        "compose-architecture",
+        "kotlin-compose"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "api_compatibility",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "androidx_material3_package"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [],
+      "negative_terms": [
+        "Hilt"
+      ]
+    },
+    {
+      "id": "mixed-material-visual",
+      "domain_group": "multi_domain",
+      "task": "Review Material 3 Expressive accessibility and screenshot validation.",
+      "expected_domains": [
+        "material3_accessibility",
+        "material3_expressive",
+        "screenshot_testing"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_compose_accessibility",
+        "roborazzi",
+        "nia_screenshots"
+      ],
+      "allowed_optional_sources": [
+        "androidx_material3_package",
+        "google_android_skills"
+      ],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/testing/screenshot-strategy.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/material3/principles.md",
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "required_skills": [
+        "material3-expressive",
+        "visual-design-validation",
+        "android-testing"
+      ],
+      "allowed_optional_skills": [
+        "kotlin-compose"
+      ],
+      "required_policies": [
+        "design_compliance",
+        "accessibility_review",
+        "visual_baseline_approval",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "androidx_compose_accessibility",
+        "roborazzi"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "text scaling",
+        "approved baseline provenance"
+      ]
+    },
+    {
+      "id": "unknown-task",
+      "domain_group": "unknown",
+      "task": "Improve the thing.",
+      "expected_domains": [],
+      "required_sources": [],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [],
+      "allowed_optional_knowledge": [],
+      "required_skills": [],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "security",
+        "provenance",
+        "scope_isolation",
+        "source_access",
+        "reporting",
+        "testing_evidence",
+        "freshness",
+        "no_hallucinated_api"
+      ],
+      "required_freshness_sources": [],
+      "expected_routing_status": "uncertain_no_domain_match",
+      "required_evidence_actions": []
+    },
+    {
+      "id": "ambiguous-compose",
+      "domain_group": "unknown",
+      "task": "Compose work, please.",
+      "expected_domains": [
+        "compose_ui"
+      ],
+      "required_sources": [
+        "google_android_skills",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "material3_site",
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "allowed_optional_knowledge": [],
+      "required_skills": [
+        "kotlin-compose"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "api_compatibility"
+      ],
+      "required_freshness_sources": [],
+      "expected_routing_status": "ambiguous_clarification_recommended",
+      "required_evidence_actions": [],
+      "expected_classification_status": "ambiguous"
+    },
+    {
+      "id": "figma-tokens",
+      "domain_group": "figma_access",
+      "task": "Extract color tokens from the Material 3 Figma Design Kit.",
+      "expected_domains": [
+        "figma_material3_kit",
+        "material3_color"
+      ],
+      "required_sources": [
+        "figma_m3_kit",
+        "material3_site",
+        "androidx_color_scheme",
+        "androidx_material_theme"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark"
+      ],
+      "required_knowledge": [
+        "knowledge/integrations/figma-workflow.md",
+        "knowledge/material3/color-typography.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "required_skills": [
+        "visual-design-validation",
+        "material3-expressive"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "source_access",
+        "provenance",
+        "design_compliance"
+      ],
+      "required_freshness_sources": [
+        "material3_site"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "Verify the linked design guidance when accessible"
+      ],
+      "expected_source_access": {
+        "figma_m3_kit": "blocked_403"
+      }
+    },
+    {
+      "id": "material-interaction",
+      "domain_group": "material3_interaction",
+      "task": "Review Material interaction behavior for touch gestures and input feedback.",
+      "expected_domains": [
+        "material3_interaction"
+      ],
+      "required_sources": [
+        "material3_site",
+        "androidx_compose_accessibility",
+        "androidx_material3_package"
+      ],
+      "allowed_optional_sources": [],
+      "forbidden_sources": [
+        "hilt_android",
+        "macrobenchmark",
+        "figma_m3_kit"
+      ],
+      "required_knowledge": [
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "allowed_optional_knowledge": [
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "required_skills": [
+        "kotlin-compose",
+        "android-testing"
+      ],
+      "allowed_optional_skills": [],
+      "required_policies": [
+        "accessibility_review",
+        "design_compliance",
+        "testing_evidence"
+      ],
+      "required_freshness_sources": [
+        "androidx_compose_accessibility"
+      ],
+      "expected_routing_status": "routed_with_limitations",
+      "required_evidence_actions": [
+        "input behavior"
+      ]
+    }
+  ]
+}

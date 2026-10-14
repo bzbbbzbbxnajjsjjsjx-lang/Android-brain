@@ -1,0 +1,1312 @@
+{
+  "schema_version": 1,
+  "topic_manifest_status": "sitemap_coverage_content_partially_unavailable",
+  "sitemap_evidence_path": "routing/material3-sitemap-evidence.json",
+  "sitemap_source_id": "material3_site",
+  "notes": "Sitemap discovery is not equivalent to page-content retrieval. AndroidX API records are implementation sources, not Material.io design specifications.",
+  "topics": [
+    {
+      "id": "material3_accessibility",
+      "title": "Accessibility, assistive technology, and text adaptation",
+      "taxonomy_id": "material3_accessibility",
+      "canonical_source_urls": [
+        "https://m3.material.io/components/app-bars/accessibility",
+        "https://m3.material.io/components/badges/accessibility",
+        "https://m3.material.io/components/bottom-sheets/accessibility",
+        "https://m3.material.io/components/button-groups/accessibility",
+        "https://m3.material.io/components/buttons/accessibility",
+        "https://m3.material.io/components/cards/accessibility",
+        "https://m3.material.io/components/carousel/accessibility",
+        "https://m3.material.io/components/checkbox/accessibility",
+        "https://m3.material.io/components/chips/accessibility",
+        "https://m3.material.io/components/date-pickers/accessibility",
+        "https://m3.material.io/components/dialogs/accessibility",
+        "https://m3.material.io/components/divider/accessibility",
+        "https://m3.material.io/components/extended-fab/accessibility",
+        "https://m3.material.io/components/fab-menu/accessibility",
+        "https://m3.material.io/components/floating-action-button/accessibility",
+        "https://m3.material.io/components/icon-buttons/accessibility",
+        "https://m3.material.io/components/lists/accessibility",
+        "https://m3.material.io/components/loading-indicator/accessibility",
+        "https://m3.material.io/components/menus/accessibility",
+        "https://m3.material.io/components/navigation-bar/accessibility",
+        "https://m3.material.io/components/navigation-drawer/accessibility",
+        "https://m3.material.io/components/navigation-rail/accessibility",
+        "https://m3.material.io/components/progress-indicators/accessibility",
+        "https://m3.material.io/components/radio-button/accessibility",
+        "https://m3.material.io/components/search/accessibility",
+        "https://m3.material.io/components/segmented-buttons/accessibility",
+        "https://m3.material.io/components/side-sheets/accessibility",
+        "https://m3.material.io/components/sliders/accessibility",
+        "https://m3.material.io/components/snackbar/accessibility",
+        "https://m3.material.io/components/split-button/accessibility",
+        "https://m3.material.io/components/switch/accessibility",
+        "https://m3.material.io/components/tabs/accessibility",
+        "https://m3.material.io/components/text-fields/accessibility",
+        "https://m3.material.io/components/time-pickers/accessibility",
+        "https://m3.material.io/components/toolbars/accessibility",
+        "https://m3.material.io/components/tooltips/accessibility",
+        "https://m3.material.io/foundations/designing/color-contrast",
+        "https://m3.material.io/foundations/overview/assistive-technology",
+        "https://m3.material.io/foundations/writing/text-resizing",
+        "https://m3.material.io/foundations/writing/text-truncation"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "accessibility",
+        "component_accessibility",
+        "font_scaling"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Compose accessibility guide; Material3 component APIs (verify target artifact)"
+        ],
+        "source_ids": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "retrieval_limitations": "Accessibility URLs are listed, including component-specific pages; their criteria were not individually reviewed. Android Compose accessibility guide is separate.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "accessibility_review",
+        "design_compliance",
+        "testing_evidence"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "listed_but_content_not_reviewed",
+      "canonical_source_url": "https://m3.material.io/components/app-bars/accessibility",
+      "canonical_source_url_count": 40
+    },
+    {
+      "id": "material3_adaptive",
+      "title": "Adaptive design and breakpoints",
+      "taxonomy_id": "material3_adaptive",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/layout/breakpoints/compact",
+        "https://m3.material.io/foundations/layout/breakpoints/expanded",
+        "https://m3.material.io/foundations/layout/breakpoints/large-extra-large",
+        "https://m3.material.io/foundations/layout/breakpoints/medium",
+        "https://m3.material.io/foundations/layout/breakpoints/overview",
+        "https://m3.material.io/foundations/layout/canonical-examples/feed",
+        "https://m3.material.io/foundations/layout/canonical-examples/list-detail",
+        "https://m3.material.io/foundations/layout/canonical-examples/overview",
+        "https://m3.material.io/foundations/layout/canonical-examples/supporting-pane",
+        "https://m3.material.io/foundations/layout/layout-overview/adaptive-design",
+        "https://m3.material.io/foundations/layout/layout-overview/overview",
+        "https://m3.material.io/foundations/layout/layout-overview/parts-of-layout"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "adaptive_layout",
+        "responsive_ui"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Compose adaptive layouts guide; Material3 scaffold/navigation APIs"
+        ],
+        "source_ids": [
+          "androidx_compose_adaptive",
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/compose-adaptive.md",
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "retrieval_limitations": "Material adaptive pages are URL-discovered only; Compose adaptive guide is a separate Android implementation source.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "edge-to-edge"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/layout/breakpoints/compact",
+      "canonical_source_url_count": 12
+    },
+    {
+      "id": "material3_co_design",
+      "title": "Co-design and user needs",
+      "taxonomy_id": "material3_co_design",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/building-for-all/co-design",
+        "https://m3.material.io/foundations/building-for-all/user-needs"
+      ],
+      "canonical_source_url": "https://m3.material.io/foundations/building-for-all/co-design",
+      "canonical_source_url_count": 2,
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "co_design",
+        "inclusive_design",
+        "user_needs"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Compose accessibility guide; accessibility behavior must be verified in the target app"
+        ],
+        "source_ids": [
+          "androidx_compose_accessibility"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/foundations.md",
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "listed_but_content_not_reviewed",
+      "retrieval_limitations": "The co-design and user-needs URLs were discovered in the official sitemap; page bodies were not retrieved. Do not claim stakeholder research or extracted requirements.",
+      "freshness_requirements": [
+        "Read the current co-design/user-needs pages and record what was actually reviewed.",
+        "Validate accessibility implementation against current AndroidX guidance and the target product context."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "source_access",
+        "provenance"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "visual-design-validation",
+        "kotlin-compose"
+      ]
+    },
+    {
+      "id": "material3_color",
+      "title": "Color systems and roles",
+      "taxonomy_id": "material3_color",
+      "canonical_source_urls": [
+        "https://m3.material.io/styles/color/advanced/adjust-existing-colors",
+        "https://m3.material.io/styles/color/advanced/apply-colors",
+        "https://m3.material.io/styles/color/advanced/define-new-colors",
+        "https://m3.material.io/styles/color/advanced/overview",
+        "https://m3.material.io/styles/color/choosing-a-scheme",
+        "https://m3.material.io/styles/color/dynamic/choosing-a-source",
+        "https://m3.material.io/styles/color/dynamic/content-based-source",
+        "https://m3.material.io/styles/color/dynamic/user-generated-source",
+        "https://m3.material.io/styles/color/resources",
+        "https://m3.material.io/styles/color/roles",
+        "https://m3.material.io/styles/color/static/baseline",
+        "https://m3.material.io/styles/color/static/custom-brand",
+        "https://m3.material.io/styles/color/system/how-the-system-works",
+        "https://m3.material.io/styles/color/system/overview"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "color_system",
+        "design_tokens",
+        "theming"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "ColorScheme",
+          "MaterialTheme.colorScheme"
+        ],
+        "source_ids": [
+          "androidx_color_scheme",
+          "androidx_material_theme"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/color-typography.md"
+      ],
+      "retrieval_limitations": "https://m3.material.io/styles/color/roles returned HTTP 200 but only the title/meta description and a JavaScript-required shell were visible; see routing/material3-retrieval-evidence.json. Color-role guidance was not reviewed.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_access_status": "partial_js_shell_confirmed",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/styles/color/advanced/adjust-existing-colors",
+      "canonical_source_url_count": 14
+    },
+    {
+      "id": "material3_component_states",
+      "title": "Component states and state layers",
+      "taxonomy_id": "material3_component_states",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/interaction/states/applying-states",
+        "https://m3.material.io/foundations/interaction/states/overview",
+        "https://m3.material.io/foundations/interaction/states/state-layers"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "component_states",
+        "interaction",
+        "compose_ui"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Material3 component package; Compose semantics (verify exact APIs)"
+        ],
+        "source_ids": [
+          "androidx_material3_package",
+          "androidx_compose_accessibility"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/components-states.md",
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "retrieval_limitations": "State overview/application/state-layer URLs are sitemap-listed; page contents not reviewed.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility",
+        "testing_evidence"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "android-testing"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/interaction/states/applying-states",
+      "canonical_source_url_count": 3
+    },
+    {
+      "id": "material3_components",
+      "title": "Material components and anatomy",
+      "taxonomy_id": "material3_components",
+      "canonical_source_urls": [
+        "https://m3.material.io/components/all-buttons",
+        "https://m3.material.io/components/app-bars/accessibility",
+        "https://m3.material.io/components/app-bars/guidelines",
+        "https://m3.material.io/components/app-bars/overview",
+        "https://m3.material.io/components/app-bars/specs",
+        "https://m3.material.io/components/badges/accessibility",
+        "https://m3.material.io/components/badges/guidelines",
+        "https://m3.material.io/components/badges/overview",
+        "https://m3.material.io/components/badges/specs",
+        "https://m3.material.io/components/bottom-sheets/accessibility",
+        "https://m3.material.io/components/bottom-sheets/guidelines",
+        "https://m3.material.io/components/bottom-sheets/overview",
+        "https://m3.material.io/components/bottom-sheets/specs",
+        "https://m3.material.io/components/button-groups/accessibility",
+        "https://m3.material.io/components/button-groups/guidelines",
+        "https://m3.material.io/components/button-groups/overview",
+        "https://m3.material.io/components/button-groups/specs",
+        "https://m3.material.io/components/buttons/accessibility",
+        "https://m3.material.io/components/buttons/guidelines",
+        "https://m3.material.io/components/buttons/overview",
+        "https://m3.material.io/components/buttons/specs",
+        "https://m3.material.io/components/cards/accessibility",
+        "https://m3.material.io/components/cards/guidelines",
+        "https://m3.material.io/components/cards/overview",
+        "https://m3.material.io/components/cards/specs",
+        "https://m3.material.io/components/carousel/accessibility",
+        "https://m3.material.io/components/carousel/guidelines",
+        "https://m3.material.io/components/carousel/overview",
+        "https://m3.material.io/components/carousel/specs",
+        "https://m3.material.io/components/checkbox/accessibility",
+        "https://m3.material.io/components/checkbox/guidelines",
+        "https://m3.material.io/components/checkbox/overview",
+        "https://m3.material.io/components/checkbox/specs",
+        "https://m3.material.io/components/chips/accessibility",
+        "https://m3.material.io/components/chips/guidelines",
+        "https://m3.material.io/components/chips/overview",
+        "https://m3.material.io/components/chips/specs",
+        "https://m3.material.io/components/date-pickers/accessibility",
+        "https://m3.material.io/components/date-pickers/guidelines",
+        "https://m3.material.io/components/date-pickers/overview",
+        "https://m3.material.io/components/date-pickers/specs",
+        "https://m3.material.io/components/dialogs/accessibility",
+        "https://m3.material.io/components/dialogs/guidelines",
+        "https://m3.material.io/components/dialogs/overview",
+        "https://m3.material.io/components/dialogs/specs",
+        "https://m3.material.io/components/divider/accessibility",
+        "https://m3.material.io/components/divider/guidelines",
+        "https://m3.material.io/components/divider/overview",
+        "https://m3.material.io/components/divider/specs",
+        "https://m3.material.io/components/extended-fab/accessibility",
+        "https://m3.material.io/components/extended-fab/guidelines",
+        "https://m3.material.io/components/extended-fab/overview",
+        "https://m3.material.io/components/extended-fab/specs",
+        "https://m3.material.io/components/fab-menu/accessibility",
+        "https://m3.material.io/components/fab-menu/guidelines",
+        "https://m3.material.io/components/fab-menu/overview",
+        "https://m3.material.io/components/fab-menu/specs",
+        "https://m3.material.io/components/floating-action-button/accessibility",
+        "https://m3.material.io/components/floating-action-button/guidelines",
+        "https://m3.material.io/components/floating-action-button/overview",
+        "https://m3.material.io/components/floating-action-button/specs",
+        "https://m3.material.io/components/icon-buttons/accessibility",
+        "https://m3.material.io/components/icon-buttons/guidelines",
+        "https://m3.material.io/components/icon-buttons/overview",
+        "https://m3.material.io/components/icon-buttons/specs",
+        "https://m3.material.io/components/lists/accessibility",
+        "https://m3.material.io/components/lists/guidelines",
+        "https://m3.material.io/components/lists/overview",
+        "https://m3.material.io/components/lists/specs",
+        "https://m3.material.io/components/loading-indicator/accessibility",
+        "https://m3.material.io/components/loading-indicator/guidelines",
+        "https://m3.material.io/components/loading-indicator/overview",
+        "https://m3.material.io/components/loading-indicator/specs",
+        "https://m3.material.io/components/menus/accessibility",
+        "https://m3.material.io/components/menus/guidelines",
+        "https://m3.material.io/components/menus/overview",
+        "https://m3.material.io/components/menus/specs",
+        "https://m3.material.io/components/navigation-bar/accessibility",
+        "https://m3.material.io/components/navigation-bar/guidelines",
+        "https://m3.material.io/components/navigation-bar/overview",
+        "https://m3.material.io/components/navigation-bar/specs",
+        "https://m3.material.io/components/navigation-drawer/accessibility",
+        "https://m3.material.io/components/navigation-drawer/guidelines",
+        "https://m3.material.io/components/navigation-drawer/overview",
+        "https://m3.material.io/components/navigation-drawer/specs",
+        "https://m3.material.io/components/navigation-rail/accessibility",
+        "https://m3.material.io/components/navigation-rail/guidelines",
+        "https://m3.material.io/components/navigation-rail/overview",
+        "https://m3.material.io/components/navigation-rail/specs",
+        "https://m3.material.io/components/progress-indicators/accessibility",
+        "https://m3.material.io/components/progress-indicators/guidelines",
+        "https://m3.material.io/components/progress-indicators/overview",
+        "https://m3.material.io/components/progress-indicators/specs",
+        "https://m3.material.io/components/radio-button/accessibility",
+        "https://m3.material.io/components/radio-button/guidelines",
+        "https://m3.material.io/components/radio-button/overview",
+        "https://m3.material.io/components/radio-button/specs",
+        "https://m3.material.io/components/search/accessibility",
+        "https://m3.material.io/components/search/guidelines",
+        "https://m3.material.io/components/search/overview",
+        "https://m3.material.io/components/search/specs",
+        "https://m3.material.io/components/segmented-buttons/accessibility",
+        "https://m3.material.io/components/segmented-buttons/guidelines",
+        "https://m3.material.io/components/segmented-buttons/overview",
+        "https://m3.material.io/components/segmented-buttons/specs",
+        "https://m3.material.io/components/side-sheets/accessibility",
+        "https://m3.material.io/components/side-sheets/guidelines",
+        "https://m3.material.io/components/side-sheets/overview",
+        "https://m3.material.io/components/side-sheets/specs",
+        "https://m3.material.io/components/sliders/accessibility",
+        "https://m3.material.io/components/sliders/guidelines",
+        "https://m3.material.io/components/sliders/overview",
+        "https://m3.material.io/components/sliders/specs",
+        "https://m3.material.io/components/snackbar/accessibility",
+        "https://m3.material.io/components/snackbar/guidelines",
+        "https://m3.material.io/components/snackbar/overview",
+        "https://m3.material.io/components/snackbar/specs",
+        "https://m3.material.io/components/split-button/accessibility",
+        "https://m3.material.io/components/split-button/guidelines",
+        "https://m3.material.io/components/split-button/overview",
+        "https://m3.material.io/components/split-button/specs",
+        "https://m3.material.io/components/switch/accessibility",
+        "https://m3.material.io/components/switch/guidelines",
+        "https://m3.material.io/components/switch/overview",
+        "https://m3.material.io/components/switch/specs",
+        "https://m3.material.io/components/tabs/accessibility",
+        "https://m3.material.io/components/tabs/guidelines",
+        "https://m3.material.io/components/tabs/overview",
+        "https://m3.material.io/components/tabs/specs",
+        "https://m3.material.io/components/text-fields/accessibility",
+        "https://m3.material.io/components/text-fields/guidelines",
+        "https://m3.material.io/components/text-fields/overview",
+        "https://m3.material.io/components/text-fields/specs",
+        "https://m3.material.io/components/time-pickers/accessibility",
+        "https://m3.material.io/components/time-pickers/guidelines",
+        "https://m3.material.io/components/time-pickers/overview",
+        "https://m3.material.io/components/time-pickers/specs",
+        "https://m3.material.io/components/toolbars/accessibility",
+        "https://m3.material.io/components/toolbars/guidelines",
+        "https://m3.material.io/components/toolbars/overview",
+        "https://m3.material.io/components/toolbars/specs",
+        "https://m3.material.io/components/tooltips/accessibility",
+        "https://m3.material.io/components/tooltips/guidelines",
+        "https://m3.material.io/components/tooltips/overview",
+        "https://m3.material.io/components/tooltips/specs"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "components",
+        "component_anatomy",
+        "compose_ui"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Material3 component package surface (verify target artifact)"
+        ],
+        "source_ids": [
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/components-states.md"
+      ],
+      "retrieval_limitations": "https://m3.material.io/components/all-buttons returned HTTP 200 but only the title/meta description and a JavaScript-required shell were visible; see routing/material3-retrieval-evidence.json. Button guidance was not reviewed.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "source_access_status": "partial_js_shell_confirmed",
+      "design_spec_accessibility_status": "listed_but_content_not_reviewed",
+      "canonical_source_url": "https://m3.material.io/components/all-buttons",
+      "canonical_source_url_count": 145
+    },
+    {
+      "id": "material3_content_design",
+      "title": "Content design and writing",
+      "taxonomy_id": "material3_content_design",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/content-design/alt-text",
+        "https://m3.material.io/foundations/content-design/global-writing/overview",
+        "https://m3.material.io/foundations/content-design/global-writing/word-choice",
+        "https://m3.material.io/foundations/content-design/notifications",
+        "https://m3.material.io/foundations/content-design/overview",
+        "https://m3.material.io/foundations/content-design/style-guide/grammar-and-punctuation",
+        "https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices",
+        "https://m3.material.io/foundations/content-design/style-guide/word-choice",
+        "https://m3.material.io/foundations/writing/best-practices",
+        "https://m3.material.io/foundations/writing/text-resizing",
+        "https://m3.material.io/foundations/writing/text-truncation"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "content_design",
+        "accessibility",
+        "notifications"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [],
+        "source_ids": []
+      },
+      "knowledge_references": [],
+      "retrieval_limitations": "Content design pages listed only; article guidance not extracted.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "source_access"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/content-design/alt-text",
+      "canonical_source_url_count": 11
+    },
+    {
+      "id": "material3_elevation",
+      "title": "Elevation and elevation tokens",
+      "taxonomy_id": "material3_elevation",
+      "canonical_source_urls": [
+        "https://m3.material.io/styles/elevation/applying-elevation",
+        "https://m3.material.io/styles/elevation/overview",
+        "https://m3.material.io/styles/elevation/tokens"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "surfaces",
+        "theming",
+        "components"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "MaterialTheme and component surface APIs (verify target artifact)"
+        ],
+        "source_ids": [
+          "androidx_material3_package",
+          "androidx_material_theme"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/principles.md"
+      ],
+      "retrieval_limitations": "Elevation URLs listed; no token values or design rules extracted.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility"
+      ],
+      "skill_ids": [
+        "material3-expressive"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/styles/elevation/applying-elevation",
+      "canonical_source_url_count": 3
+    },
+    {
+      "id": "material3_expressive",
+      "title": "Material 3 Expressive",
+      "taxonomy_id": "material3_expressive",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/usability/applying-m3-expressive"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "expressive_design",
+        "material3_expressive",
+        "design_system"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "MaterialTheme"
+        ],
+        "source_ids": [
+          "androidx_material3_package",
+          "androidx_material_theme"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/principles.md",
+        "knowledge/material3/foundations.md"
+      ],
+      "retrieval_limitations": "Applying-M3-Expressive URL is sitemap-listed; page body not inspected in this run. Verify each API separately.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "accessibility_review",
+        "api_compatibility",
+        "design_compliance",
+        "experimental_api",
+        "testing_evidence"
+      ],
+      "skill_ids": [
+        "material3-expressive"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/usability/applying-m3-expressive",
+      "canonical_source_url_count": 1
+    },
+    {
+      "id": "material3_foundations",
+      "title": "Foundations and design principles",
+      "taxonomy_id": "material3_foundations",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/customization",
+        "https://m3.material.io/foundations/designing/color-contrast",
+        "https://m3.material.io/foundations/designing/elements",
+        "https://m3.material.io/foundations/designing/flow",
+        "https://m3.material.io/foundations/designing/overview",
+        "https://m3.material.io/foundations/designing/structure",
+        "https://m3.material.io/foundations/glossary",
+        "https://m3.material.io/foundations/overview/assistive-technology",
+        "https://m3.material.io/foundations/overview/principles",
+        "https://m3.material.io/foundations/usability/applying-m3-expressive",
+        "https://m3.material.io/foundations/usability/overview"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "design_system",
+        "foundations",
+        "expressive_design"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [],
+        "source_ids": []
+      },
+      "knowledge_references": [
+        "knowledge/material3/foundations.md"
+      ],
+      "retrieval_limitations": "Only sitemap URLs were inspected. Article body and detailed design criteria were not retrieved.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "source_access"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "listed_but_content_not_reviewed",
+      "canonical_source_url": "https://m3.material.io/foundations/customization",
+      "canonical_source_url_count": 11
+    },
+    {
+      "id": "material3_icons",
+      "title": "Iconography",
+      "taxonomy_id": "material3_icons",
+      "canonical_source_urls": [
+        "https://m3.material.io/styles/icons/applying-icons",
+        "https://m3.material.io/styles/icons/designing-icons",
+        "https://m3.material.io/styles/icons/overview"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "icons",
+        "components",
+        "accessibility"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Material3 icon button/component APIs (verify target artifact)"
+        ],
+        "source_ids": [
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/components-states.md"
+      ],
+      "retrieval_limitations": "Icon design pages listed; no asset or license was fetched. Verify asset licensing and content descriptions separately.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/styles/icons/applying-icons",
+      "canonical_source_url_count": 3
+    },
+    {
+      "id": "material3_interaction",
+      "title": "Input, gestures, selection, and interaction",
+      "taxonomy_id": "material3_interaction",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/interaction/gestures",
+        "https://m3.material.io/foundations/interaction/inputs",
+        "https://m3.material.io/foundations/interaction/selection",
+        "https://m3.material.io/foundations/interaction/states/applying-states",
+        "https://m3.material.io/foundations/interaction/states/overview",
+        "https://m3.material.io/foundations/interaction/states/state-layers"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "interaction",
+        "input",
+        "selection"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Compose accessibility/semantics guidance; Material3 component package"
+        ],
+        "source_ids": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/material3/components-states.md"
+      ],
+      "retrieval_limitations": "Interaction docs were discovered via sitemap; detailed gesture/input requirements were not extracted.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility",
+        "testing_evidence"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "android-testing"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/interaction/gestures",
+      "canonical_source_url_count": 6
+    },
+    {
+      "id": "material3_layout",
+      "title": "Layout, grids, spacing, and scaffold",
+      "taxonomy_id": "material3_layout",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/layout/bidirectionality-rtl",
+        "https://m3.material.io/foundations/layout/breakpoints/compact",
+        "https://m3.material.io/foundations/layout/breakpoints/expanded",
+        "https://m3.material.io/foundations/layout/breakpoints/large-extra-large",
+        "https://m3.material.io/foundations/layout/breakpoints/medium",
+        "https://m3.material.io/foundations/layout/breakpoints/overview",
+        "https://m3.material.io/foundations/layout/canonical-examples/feed",
+        "https://m3.material.io/foundations/layout/canonical-examples/list-detail",
+        "https://m3.material.io/foundations/layout/canonical-examples/overview",
+        "https://m3.material.io/foundations/layout/canonical-examples/supporting-pane",
+        "https://m3.material.io/foundations/layout/grids-spacing/density",
+        "https://m3.material.io/foundations/layout/grids-spacing/grids",
+        "https://m3.material.io/foundations/layout/grids-spacing/overview",
+        "https://m3.material.io/foundations/layout/grids-spacing/spacing",
+        "https://m3.material.io/foundations/layout/layout-overview/adaptive-design",
+        "https://m3.material.io/foundations/layout/layout-overview/overview",
+        "https://m3.material.io/foundations/layout/layout-overview/parts-of-layout",
+        "https://m3.material.io/foundations/layout/scaffold/bars",
+        "https://m3.material.io/foundations/layout/scaffold/overview",
+        "https://m3.material.io/foundations/layout/scaffold/panes",
+        "https://m3.material.io/foundations/layout/scaffold/rails"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "layout",
+        "adaptive_layout",
+        "responsive_ui"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Material3 layout components (verify exact API in package reference)"
+        ],
+        "source_ids": [
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "retrieval_limitations": "Layout URLs are sitemap-listed; page bodies were not reviewed. API name list is not a signature or compatibility claim.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/layout/bidirectionality-rtl",
+      "canonical_source_url_count": 21
+    },
+    {
+      "id": "material3_navigation",
+      "title": "Navigation components and patterns",
+      "taxonomy_id": "material3_navigation",
+      "canonical_source_urls": [
+        "https://m3.material.io/components/app-bars/accessibility",
+        "https://m3.material.io/components/app-bars/guidelines",
+        "https://m3.material.io/components/app-bars/overview",
+        "https://m3.material.io/components/app-bars/specs",
+        "https://m3.material.io/components/navigation-bar/accessibility",
+        "https://m3.material.io/components/navigation-bar/guidelines",
+        "https://m3.material.io/components/navigation-bar/overview",
+        "https://m3.material.io/components/navigation-bar/specs",
+        "https://m3.material.io/components/navigation-drawer/accessibility",
+        "https://m3.material.io/components/navigation-drawer/guidelines",
+        "https://m3.material.io/components/navigation-drawer/overview",
+        "https://m3.material.io/components/navigation-drawer/specs",
+        "https://m3.material.io/components/navigation-rail/accessibility",
+        "https://m3.material.io/components/navigation-rail/guidelines",
+        "https://m3.material.io/components/navigation-rail/overview",
+        "https://m3.material.io/components/navigation-rail/specs",
+        "https://m3.material.io/foundations/layout/scaffold/bars",
+        "https://m3.material.io/foundations/layout/scaffold/overview",
+        "https://m3.material.io/foundations/layout/scaffold/panes",
+        "https://m3.material.io/foundations/layout/scaffold/rails"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "navigation",
+        "adaptive_layout",
+        "components"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Material3 NavigationBar, NavigationDrawer, NavigationRail, app bars (verify target artifact)"
+        ],
+        "source_ids": [
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/layout-adaptive.md",
+        "knowledge/material3/tokens-navigation.md"
+      ],
+      "retrieval_limitations": "Navigation pages are sitemap-listed; component behavior/API must be checked against current official page and project artifact.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review",
+        "testing_evidence"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "edge-to-edge"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "listed_but_content_not_reviewed",
+      "canonical_source_url": "https://m3.material.io/components/app-bars/accessibility",
+      "canonical_source_url_count": 20
+    },
+    {
+      "id": "material3_spacing_density",
+      "title": "Spacing, density, and layout grids",
+      "taxonomy_id": "material3_spacing_density",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/layout/grids-spacing/density",
+        "https://m3.material.io/foundations/layout/grids-spacing/grids",
+        "https://m3.material.io/foundations/layout/grids-spacing/overview",
+        "https://m3.material.io/foundations/layout/grids-spacing/spacing",
+        "https://m3.material.io/styles/spacing/applying-spacing",
+        "https://m3.material.io/styles/spacing/overview",
+        "https://m3.material.io/styles/spacing/tokens"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "spacing",
+        "layout",
+        "adaptive_layout"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Compose layout modifiers (verify exact API as needed)"
+        ],
+        "source_ids": [
+          "androidx_material3_package"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "retrieval_limitations": "Spacing/density page bodies were not reviewed; do not infer token values.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/layout/grids-spacing/density",
+      "canonical_source_url_count": 7
+    },
+    {
+      "id": "material3_tokens",
+      "title": "Design tokens and customization",
+      "taxonomy_id": "material3_tokens",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/customization",
+        "https://m3.material.io/foundations/design-tokens/how-to-use-tokens",
+        "https://m3.material.io/foundations/design-tokens/overview"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "design_tokens",
+        "theming",
+        "figma_handoff"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "MaterialTheme",
+          "ColorScheme",
+          "Typography"
+        ],
+        "source_ids": [
+          "androidx_material_theme",
+          "androidx_color_scheme",
+          "androidx_typography"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/integrations/figma-workflow.md",
+        "knowledge/material3/tokens-navigation.md"
+      ],
+      "retrieval_limitations": "Token/customization URLs are sitemap-listed; no numeric token tables extracted. Figma exports remain optional and currently blocked.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "provenance",
+        "source_access",
+        "api_compatibility"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/customization",
+      "canonical_source_url_count": 3
+    },
+    {
+      "id": "material3_typography",
+      "title": "Typography",
+      "taxonomy_id": "material3_typography",
+      "canonical_source_urls": [
+        "https://m3.material.io/styles/typography/applying-type",
+        "https://m3.material.io/styles/typography/editorial-treatments",
+        "https://m3.material.io/styles/typography/fonts",
+        "https://m3.material.io/styles/typography/overview",
+        "https://m3.material.io/styles/typography/type-scale-tokens"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "typography",
+        "design_tokens",
+        "font_scaling"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "Typography",
+          "MaterialTheme.typography"
+        ],
+        "source_ids": [
+          "androidx_typography",
+          "androidx_material_theme"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/material3/color-typography.md"
+      ],
+      "retrieval_limitations": "Typography pages discovered in sitemap, content not inspected; target-project API/style availability must be checked.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/styles/typography/applying-type",
+      "canonical_source_url_count": 5
+    },
+    {
+      "id": "material3_watches",
+      "title": "Watch design foundations",
+      "taxonomy_id": "material3_watches",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/watches/foundations",
+        "https://m3.material.io/foundations/watches/layout",
+        "https://m3.material.io/foundations/watches/overview",
+        "https://m3.material.io/foundations/watches/styles"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "watch_ui",
+        "adaptive_layout"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [],
+        "source_ids": []
+      },
+      "knowledge_references": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "retrieval_limitations": "Watch-specific pages listed; Wear Compose implementation APIs are outside this selected source set.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/foundations/watches/foundations",
+      "canonical_source_url_count": 4
+    },
+    {
+      "id": "material3_xr",
+      "title": "XR design and components",
+      "taxonomy_id": "material3_xr",
+      "canonical_source_urls": [
+        "https://m3.material.io/foundations/xr/components/app-bars",
+        "https://m3.material.io/foundations/xr/components/dialogs",
+        "https://m3.material.io/foundations/xr/components/nav-bar",
+        "https://m3.material.io/foundations/xr/components/nav-rail",
+        "https://m3.material.io/foundations/xr/components/overview",
+        "https://m3.material.io/foundations/xr/components/toolbars",
+        "https://m3.material.io/foundations/xr/design/accessibility",
+        "https://m3.material.io/foundations/xr/design/interaction",
+        "https://m3.material.io/foundations/xr/design/layout",
+        "https://m3.material.io/foundations/xr/design/overview"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site"
+      ],
+      "related_tasks": [
+        "xr_ui",
+        "adaptive_layout",
+        "components"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [],
+        "source_ids": []
+      },
+      "knowledge_references": [],
+      "retrieval_limitations": "XR design/component pages listed; no Android XR implementation guidance or compatibility is asserted.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_access_status": "sitemap_listed_content_not_individually_retrieved",
+      "design_spec_accessibility_status": "listed_but_content_not_reviewed",
+      "canonical_source_url": "https://m3.material.io/foundations/xr/components/app-bars",
+      "canonical_source_url_count": 10
+    },
+    {
+      "id": "material_motion",
+      "title": "Motion, easing, duration, and transitions",
+      "taxonomy_id": "material_motion",
+      "canonical_source_urls": [
+        "https://m3.material.io/styles/motion/easing-and-duration/applying-easing-and-duration",
+        "https://m3.material.io/styles/motion/easing-and-duration/tokens-specs",
+        "https://m3.material.io/styles/motion/overview/how-it-works",
+        "https://m3.material.io/styles/motion/overview/specs",
+        "https://m3.material.io/styles/motion/transitions/applying-transitions",
+        "https://m3.material.io/styles/motion/transitions/transition-patterns"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site",
+        "material_motion"
+      ],
+      "related_tasks": [
+        "material_motion",
+        "motion_accessibility"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "MotionScheme",
+          "MaterialTheme.motionScheme"
+        ],
+        "source_ids": [
+          "androidx_motion_scheme",
+          "androidx_material_theme"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/motion.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "retrieval_limitations": "Motion overview previously returned a JavaScript shell; other sitemap pages were not individually fetched. Do not infer full motion rules.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "design_compliance",
+        "api_compatibility",
+        "experimental_api",
+        "accessibility_review"
+      ],
+      "skill_ids": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_access_status": "partial_js_shell_confirmed",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/styles/motion/easing-and-duration/applying-easing-and-duration",
+      "canonical_source_url_count": 6
+    },
+    {
+      "id": "material_shapes",
+      "title": "Shape and shape morph",
+      "taxonomy_id": "material_shapes",
+      "canonical_source_urls": [
+        "https://m3.material.io/styles/shape/corner-radius-scale",
+        "https://m3.material.io/styles/shape/overview-principles",
+        "https://m3.material.io/styles/shape/shape-morph"
+      ],
+      "classification": "material_io_design_specification",
+      "source_registry_ids": [
+        "material3_site",
+        "material_shape_principles"
+      ],
+      "related_tasks": [
+        "material_shapes",
+        "shape_system"
+      ],
+      "androidx_compose_apis": {
+        "symbols_or_areas": [
+          "MaterialShapes",
+          "RoundedPolygon",
+          "Morph"
+        ],
+        "source_ids": [
+          "material_shapes_api"
+        ]
+      },
+      "knowledge_references": [
+        "knowledge/material3/shapes.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "retrieval_limitations": "Shape overview page previously returned a JavaScript shell; sitemap links were discovered, not individually retrieved. AndroidX API is separate and version-sensitive.",
+      "freshness_requirements": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "policy_ids": [
+        "accessibility_review",
+        "api_compatibility",
+        "design_compliance",
+        "experimental_api",
+        "testing_evidence"
+      ],
+      "skill_ids": [
+        "material3-expressive"
+      ],
+      "source_access_status": "partial_js_shell_confirmed",
+      "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
+      "canonical_source_url": "https://m3.material.io/styles/shape/corner-radius-scale",
+      "canonical_source_url_count": 3
+    }
+  ]
+}

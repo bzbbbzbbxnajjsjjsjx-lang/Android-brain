@@ -1,0 +1,41 @@
+name: Context harness
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install manifest schema validator
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Validate registry and routing references
+        run: python3 scripts/validate_registry.py
+      - name: Validate Codex skill files
+        run: python3 scripts/validate_skills.py
+      - name: Validate Material retrieval evidence and coverage distinctions
+        run: python3 scripts/validate_material_evidence.py
+      - name: Evaluate routing behavior
+        run: python3 evals/run_context_router_evals.py
+      - name: Evaluate skill and context integration
+        run: python3 evals/run_skill_integration_evals.py
+      - name: Evaluate policy and evidence quality gates
+        run: python3 evals/run_quality_gate_evals.py
+      - name: Evaluate independent P5 routing dataset
+        run: python3 evals/run_harness_evals.py --output /tmp/android-harness-p5-routing-report.json
+      - name: Run P5 adversarial checks
+        run: python3 evals/run_adversarial_evals.py
+      - name: Run isolated P5 mutation checks
+        run: python3 evals/run_mutation_evals.py
+      - name: Run P6 integration and readiness evaluations
+        run: python3 evals/run_p6_evals.py
+      - name: Run P7 Git, CI, and knowledge readiness evaluations
+        run: python3 evals/run_p7_readiness_evals.py

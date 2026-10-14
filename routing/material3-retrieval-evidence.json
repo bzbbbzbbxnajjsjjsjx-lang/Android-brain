@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "collection_date": "2026-10-14",
+  "retrieval_method": "Unauthenticated public HTTP GET using scripts/audit_material_page.py; no access control was bypassed.",
+  "body_retention": "Response bodies are not stored in the repository. SHA-256 identifies the transient response used for this observation.",
+  "browser_attempts": [
+    {
+      "canonical_url": "https://m3.material.io/components/all-buttons",
+      "attempted_on": "2026-10-14",
+      "access_method": "Playwright 1.62.0 with system Chromium 154.0.8037.57 through the managed HTTP proxy",
+      "tls_verification": "enabled",
+      "result": "blocked_tls_validation",
+      "error_code": "ERR_CERT_AUTHORITY_INVALID",
+      "http_status": null,
+      "page_content_obtained": false,
+      "verified": false,
+      "network_policy_observation": "m3.material.io was absent from the effective allowed-host list; reported network-policy state was unknown. No allowlist change or TLS bypass was attempted."
+    }
+  ],
+  "records": [
+    {
+      "topic_id": "material3_components",
+      "canonical_url": "https://m3.material.io/components/all-buttons",
+      "retrieved_at": "2026-10-14T15:11:40Z",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "response_bytes": 61768,
+      "response_sha256": "e94aa959ee9828539c4f1e84037c6ddbb6432cd3ba7a2dd228885ca2c1796269",
+      "page_title": "All buttons – Material Design 3",
+      "meta_description": "Buttons let people take action and make choices with one tap. Explore button types: elevated, filled, filled tonal, outlined, text, icon, segmented & more.",
+      "visible_non_script_text_chars": 31,
+      "state": "retrieved_shell",
+      "page_content_obtained": false,
+      "verified": false,
+      "limitation": "HTML response visibly states that JavaScript is required; only title/metadata were available to this retrieval. The button guidance itself was not reviewed."
+    },
+    {
+      "topic_id": "material3_color",
+      "canonical_url": "https://m3.material.io/styles/color/roles",
+      "retrieved_at": "2026-10-14T15:11:49Z",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "response_bytes": 61737,
+      "response_sha256": "1d3333f618c3d0d2a5bc4c882657e0f7b339924eaee3ff4229c5eec5bc4456bc",
+      "page_title": "Color roles - Material Design 3",
+      "meta_description": "Color roles are like the 'numbers' in a paint-by-number canvas. They're the connective tissue between elements of the UI and what color goes where.",
+      "visible_non_script_text_chars": 31,
+      "state": "retrieved_shell",
+      "page_content_obtained": false,
+      "verified": false,
+      "limitation": "HTML response visibly states that JavaScript is required; only title/metadata were available to this retrieval. Color-role guidance itself was not reviewed."
+    }
+  ]
+}

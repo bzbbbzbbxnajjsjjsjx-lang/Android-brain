@@ -1,0 +1,779 @@
+{
+  "schema_version": 1,
+  "policies": [
+    {
+      "id": "provenance",
+      "summary": "Keep canonical source, retrieval status, date, and limitations with derived knowledge.",
+      "category": "provenance",
+      "description": "Keep canonical source, retrieval status, date, and limitations with derived knowledge.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "context_manifest_digest",
+        "known_source_ids",
+        "traceable_knowledge_paths"
+      ],
+      "evaluation": {
+        "rule_id": "source_provenance",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "critical",
+      "remediation_guidance": "Restore canonical source IDs and local provenance references before continuing.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "codex_workflows",
+          "google_android_skills"
+        ],
+        "repository_references": [
+          "AGENTS.md"
+        ],
+        "knowledge_references": [
+          "knowledge/codex/iterative-workflows.md",
+          "knowledge/android-skills/codex-integration.md"
+        ]
+      }
+    },
+    {
+      "id": "source_access",
+      "summary": "Mark blocked, partial, or metadata-only access; never infer inaccessible content.",
+      "category": "source_access",
+      "description": "Mark blocked, partial, or metadata-only access; never infer inaccessible content.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [
+          "source_content",
+          "design_token_extraction",
+          "page_specific_design_claim"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "claim_source_ids",
+        "source_access_status",
+        "authorized_export_when_blocked"
+      ],
+      "evaluation": {
+        "rule_id": "source_access_claims",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Remove or qualify unsupported claims; provide an authorized export or observed retrieval evidence.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "material3_site",
+          "figma_theme_builder",
+          "figma_m3_kit",
+          "figma_nia_case_study",
+          "nia_screenshots"
+        ],
+        "repository_references": [
+          "docs/SOURCE_AUDIT.md"
+        ],
+        "knowledge_references": [
+          "knowledge/material3/principles.md",
+          "knowledge/integrations/figma-workflow.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ]
+      }
+    },
+    {
+      "id": "api_compatibility",
+      "summary": "Verify exact symbol, artifact, version constraints, and platform support before use.",
+      "category": "api_compatibility",
+      "description": "Verify exact symbol, artifact, version constraints, and platform support before use.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [
+          "api_signature",
+          "api_usage",
+          "androidx_implementation"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "target_artifact",
+        "resolved_version",
+        "official_source_ids",
+        "compatibility_result"
+      ],
+      "evaluation": {
+        "rule_id": "api_compatibility",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Check the target project resolved artifacts and current official API/POM/source evidence.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_motion_scheme",
+          "androidx_color_scheme",
+          "androidx_typography",
+          "material_shapes_api"
+        ],
+        "repository_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ],
+        "knowledge_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ]
+      }
+    },
+    {
+      "id": "experimental_api",
+      "summary": "Verify and narrowly contain experimental opt-ins; record migration risk.",
+      "category": "api_compatibility",
+      "description": "Verify and narrowly contain experimental opt-ins; record migration risk.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [
+          "experimental_api"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "api_name",
+        "target_artifact",
+        "resolved_version",
+        "opt_in_annotation",
+        "opt_in_reviewed"
+      ],
+      "evaluation": {
+        "rule_id": "experimental_api",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Verify exact target artifact and opt-in annotation; scope the opt-in narrowly.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "material_shapes_api",
+          "androidx_material3_package",
+          "androidx_motion_scheme"
+        ],
+        "repository_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ],
+        "knowledge_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ]
+      }
+    },
+    {
+      "id": "design_compliance",
+      "summary": "Use semantic design decisions and test accessible states; avoid unsupported design claims.",
+      "category": "design",
+      "description": "Use semantic design decisions and test accessible states; avoid unsupported design claims.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "manual_review",
+      "required_evidence": [
+        "approved_design_reference",
+        "reviewer",
+        "review_result"
+      ],
+      "evaluation": {
+        "rule_id": "manual_design_review",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "medium",
+      "remediation_guidance": "Request a design review against an accessible approved Material reference; do not infer inaccessible page content.",
+      "exception_handling": {
+        "allowed": true,
+        "requirement": "Requires a recorded reason and an observed human-review approval; global mandatory policies cannot be waived."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "material3_site",
+          "material_motion",
+          "material_shape_principles"
+        ],
+        "repository_references": [
+          "knowledge/material3/principles.md"
+        ],
+        "knowledge_references": [
+          "knowledge/material3/principles.md",
+          "knowledge/material3/motion.md",
+          "knowledge/material3/shapes.md"
+        ]
+      }
+    },
+    {
+      "id": "architecture_boundaries",
+      "summary": "Add DI/modules only for evidenced ownership, lifecycle, reuse, or testability benefit.",
+      "category": "architecture",
+      "description": "Add DI/modules only for evidenced ownership, lifecycle, reuse, or testability benefit.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "manual_review",
+      "required_evidence": [
+        "architecture_decision",
+        "benefit_and_cost_review"
+      ],
+      "evaluation": {
+        "rule_id": "manual_architecture_review",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "medium",
+      "remediation_guidance": "Record concrete ownership, lifecycle, testability, reuse, or build benefit before adding complexity.",
+      "exception_handling": {
+        "allowed": true,
+        "requirement": "Requires a recorded reason and an observed human-review approval; global mandatory policies cannot be waived."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "nia_modularization",
+          "hilt_android"
+        ],
+        "repository_references": [
+          "knowledge/architecture/modularization.md",
+          "knowledge/architecture/hilt-and-flavors.md"
+        ],
+        "knowledge_references": [
+          "knowledge/architecture/modularization.md",
+          "knowledge/architecture/hilt-and-flavors.md"
+        ]
+      }
+    },
+    {
+      "id": "dependency_selection",
+      "summary": "Verify maintenance, compatibility, licensing, and actual need before adding a dependency.",
+      "category": "dependencies",
+      "description": "Verify maintenance, compatibility, licensing, and actual need before adding a dependency.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [
+          "dependency_change"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "dependency_coordinates",
+        "version",
+        "compatibility",
+        "license",
+        "maintenance_and_need"
+      ],
+      "evaluation": {
+        "rule_id": "dependency_selection",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Verify the exact dependency, compatibility, license, maintenance, and task-specific need.",
+      "exception_handling": {
+        "allowed": true,
+        "requirement": "Requires a recorded reason and an observed human-review approval; global mandatory policies cannot be waived."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "hilt_android",
+          "product_flavors",
+          "roborazzi"
+        ],
+        "repository_references": [
+          "knowledge/architecture/hilt-and-flavors.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ],
+        "knowledge_references": [
+          "knowledge/architecture/hilt-and-flavors.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ]
+      }
+    },
+    {
+      "id": "scope_isolation",
+      "summary": "Harness-only work changes context infrastructure; do not create unrelated Android app/artifacts.",
+      "category": "scope",
+      "description": "Harness-only work changes context infrastructure; do not create unrelated Android app/artifacts.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [],
+        "task_kinds": [
+          "harness_only"
+        ]
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "workspace_root",
+        "workspace_artifact_scan"
+      ],
+      "evaluation": {
+        "rule_id": "scope_isolation",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "critical",
+      "remediation_guidance": "Remove prohibited Android project artifacts and keep changes within the harness repository.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "codex_workflows"
+        ],
+        "repository_references": [
+          "AGENTS.md"
+        ],
+        "knowledge_references": [
+          "knowledge/codex/iterative-workflows.md"
+        ]
+      }
+    },
+    {
+      "id": "visual_baseline_approval",
+      "summary": "Keep approved references separate; baseline updates require explicit human review.",
+      "category": "visual_validation",
+      "description": "Keep approved references separate; baseline updates require explicit human review.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [
+          "screenshot_baseline_update"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "manual_review",
+      "required_evidence": [
+        "baseline_diff",
+        "reviewer",
+        "explicit_approval"
+      ],
+      "evaluation": {
+        "rule_id": "visual_baseline_approval",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Restore approved baselines and require explicit review of a candidate before updating.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "nia_screenshots",
+          "roborazzi"
+        ],
+        "repository_references": [
+          "knowledge/testing/screenshot-strategy.md"
+        ],
+        "knowledge_references": [
+          "knowledge/testing/screenshot-strategy.md"
+        ]
+      }
+    },
+    {
+      "id": "measurement_first",
+      "summary": "Profile and benchmark a repeatable journey before performance optimization claims.",
+      "category": "performance",
+      "description": "Profile and benchmark a repeatable journey before performance optimization claims.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "benchmark_tool",
+        "workload",
+        "device_and_build",
+        "baseline_measurement"
+      ],
+      "evaluation": {
+        "rule_id": "measurement_first",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Establish a repeatable baseline using comparable build, device, and workload conditions.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "macrobenchmark",
+          "baseline_profiles"
+        ],
+        "repository_references": [
+          "knowledge/performance/measurement.md"
+        ],
+        "knowledge_references": [
+          "knowledge/performance/measurement.md"
+        ]
+      }
+    },
+    {
+      "id": "performance_claims",
+      "summary": "Report workload, device/build, runs, and comparison; otherwise mark unverified or blocked.",
+      "category": "performance",
+      "description": "Report workload, device/build, runs, and comparison; otherwise mark unverified or blocked.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [
+          "performance_improvement"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "baseline",
+        "comparison",
+        "metric",
+        "device",
+        "build_variant",
+        "workload",
+        "run_counts"
+      ],
+      "evaluation": {
+        "rule_id": "performance_claims",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Withdraw or qualify the claim until comparable measurements are available.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "macrobenchmark",
+          "baseline_profiles"
+        ],
+        "repository_references": [
+          "knowledge/performance/measurement.md"
+        ],
+        "knowledge_references": [
+          "knowledge/performance/measurement.md"
+        ]
+      }
+    },
+    {
+      "id": "reporting",
+      "summary": "Report only executed checks and actual output; classify missing evidence NOT VERIFIED or BLOCKED.",
+      "category": "evidence_integrity",
+      "description": "Report only executed checks and actual output; classify missing evidence NOT VERIFIED or BLOCKED.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "claim_evidence_links",
+        "observed_result_states"
+      ],
+      "evaluation": {
+        "rule_id": "reporting_integrity",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "critical",
+      "remediation_guidance": "Separate observed tool output from assertions and report unverified items explicitly.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "codex_workflows"
+        ],
+        "repository_references": [
+          "AGENTS.md",
+          "docs/QUALITY_GATES.md"
+        ],
+        "knowledge_references": [
+          "knowledge/codex/iterative-workflows.md"
+        ]
+      }
+    },
+    {
+      "id": "api_verification",
+      "summary": "Verify exact current API surface and accessibility from official sources before implementation.",
+      "category": "api_compatibility",
+      "description": "Verify exact current API surface and accessibility from official sources before implementation.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [
+          "api_signature",
+          "api_usage",
+          "experimental_api"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "current_official_source",
+        "symbol_or_signature",
+        "target_version"
+      ],
+      "evaluation": {
+        "rule_id": "api_verification",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Verify symbol and signature in current official documentation and the target artifact.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "androidx_material3_package",
+          "material_shapes_api",
+          "androidx_motion_scheme"
+        ],
+        "repository_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ],
+        "knowledge_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ]
+      }
+    },
+    {
+      "id": "security",
+      "summary": "Never commit credentials, signing keys, private exports, or sensitive user data; verify licenses before vendoring.",
+      "category": "security",
+      "description": "Never commit credentials, signing keys, private exports, or sensitive user data; verify licenses before vendoring.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "workspace_security_scan",
+        "signing_change_review"
+      ],
+      "evaluation": {
+        "rule_id": "security_artifacts",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "critical",
+      "remediation_guidance": "Remove credential/signing artifacts; obtain explicit review for release-signing changes. The filename scan is not a secret-content scanner.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "codex_workflows",
+          "google_android_skills"
+        ],
+        "repository_references": [
+          "AGENTS.md",
+          ".gitignore"
+        ],
+        "knowledge_references": [
+          "knowledge/codex/iterative-workflows.md",
+          "knowledge/android-skills/codex-integration.md"
+        ]
+      }
+    },
+    {
+      "id": "freshness",
+      "summary": "Recheck version-sensitive or stale guidance against its current authoritative source before use.",
+      "category": "source_freshness",
+      "description": "Recheck version-sensitive or stale guidance against its current authoritative source before use.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "runtime_tool_dependent",
+      "required_evidence": [
+        "live_verification_for_required_sources"
+      ],
+      "evaluation": {
+        "rule_id": "source_freshness",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Recheck required canonical sources and record actual access outcome; cached notes are not live verification.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "material3_site",
+          "google_android_skills",
+          "androidx_material3_package",
+          "hilt_android",
+          "roborazzi",
+          "macrobenchmark"
+        ],
+        "repository_references": [
+          "docs/SOURCE_AUDIT.md"
+        ],
+        "knowledge_references": [
+          "knowledge/material3/principles.md",
+          "knowledge/android-skills/codex-integration.md",
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/architecture/hilt-and-flavors.md",
+          "knowledge/testing/screenshot-strategy.md",
+          "knowledge/performance/measurement.md"
+        ]
+      }
+    },
+    {
+      "id": "no_hallucinated_api",
+      "summary": "Do not invent API names, signatures, opt-ins, or compatibility; verify official docs and published artifact sources.",
+      "category": "api_integrity",
+      "description": "Do not invent API names, signatures, opt-ins, or compatibility; verify official docs and published artifact sources.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [
+          "api_signature",
+          "api_usage",
+          "experimental_api"
+        ],
+        "task_kinds": []
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "api_claim_source_ids",
+        "current_target_compatibility_evidence"
+      ],
+      "evaluation": {
+        "rule_id": "api_claim_provenance",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "critical",
+      "remediation_guidance": "Remove unsupported signatures or provide current official source and target-version evidence.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "androidx_material3_package",
+          "material_shapes_api",
+          "androidx_motion_scheme"
+        ],
+        "repository_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ],
+        "knowledge_references": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ]
+      }
+    },
+    {
+      "id": "testing_evidence",
+      "summary": "Report only executed checks with actual runner results; explicitly classify skipped or unsupported validation.",
+      "category": "testing",
+      "description": "Report only executed checks with actual runner results; explicitly classify skipped or unsupported validation.",
+      "applicability": {
+        "basis": "global_mandatory",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "deterministic_automated",
+      "required_evidence": [
+        "check_id",
+        "command_or_tool",
+        "exit_code",
+        "observed_at",
+        "artifact_or_log_reference"
+      ],
+      "evaluation": {
+        "rule_id": "testing_execution",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Execute the relevant check and retain its actual output; missing results remain NOT VERIFIED.",
+      "exception_handling": {
+        "allowed": false,
+        "requirement": "Not waivable through task evidence or router input."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "codex_workflows",
+          "google_android_skills"
+        ],
+        "repository_references": [
+          "docs/QUALITY_GATES.md"
+        ],
+        "knowledge_references": [
+          "knowledge/codex/iterative-workflows.md",
+          "knowledge/android-skills/codex-integration.md"
+        ]
+      }
+    },
+    {
+      "id": "accessibility_review",
+      "summary": "Verify semantics, input alternatives, font scaling, contrast, focus/state announcements, and manual accessibility behavior as relevant.",
+      "category": "accessibility",
+      "description": "Verify semantics, input alternatives, font scaling, contrast, focus/state announcements, and manual accessibility behavior as relevant.",
+      "applicability": {
+        "basis": "router_selected",
+        "claim_types": [],
+        "task_kinds": []
+      },
+      "enforcement_mode": "manual_review",
+      "required_evidence": [
+        "accessibility_review_scope",
+        "reviewer",
+        "observed_result"
+      ],
+      "evaluation": {
+        "rule_id": "manual_accessibility_review",
+        "procedure": "scripts/evaluate_quality_gate.py applies this fixed, allowlisted rule; no registry text is executed."
+      },
+      "failure_severity": "high",
+      "remediation_guidance": "Perform relevant semantic, scaling, contrast, focus, and assistive-technology review; automated checks alone are insufficient.",
+      "exception_handling": {
+        "allowed": true,
+        "requirement": "Requires a recorded reason and an observed human-review approval; global mandatory policies cannot be waived."
+      },
+      "source_provenance": {
+        "source_ids": [
+          "androidx_compose_accessibility",
+          "material3_site"
+        ],
+        "repository_references": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/material3/accessibility-interaction.md"
+        ],
+        "knowledge_references": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/material3/principles.md"
+        ]
+      }
+    }
+  ],
+  "enforcement_schema_version": 1,
+  "supported_enforcement_modes": [
+    "deterministic_automated",
+    "runtime_tool_dependent",
+    "manual_review",
+    "advisory_guidance"
+  ]
+}

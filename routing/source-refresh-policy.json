@@ -1,0 +1,468 @@
+{
+  "policy": "Refresh only relevant sources; cached summaries retain provenance and are not evidence of current external content. HTTP shells are not content.",
+  "records": [
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Retain attributed cached summary as potentially stale and surface live recheck requirement.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On upstream revision/document change and at least annually; recheck before relying on version-sensitive instructions.",
+      "related_policies": [
+        "provenance",
+        "reporting",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "android-engineering"
+      ],
+      "source_id": "codex_workflows",
+      "supported_retrieval_method": "GitHub raw Markdown retrieved",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved_selected",
+      "failure_behavior": "Keep current pinned local copy with its license; do not claim newer skill content or install all upstream skills.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On upstream skill repository revision change and before importing/updating selected skills.",
+      "related_policies": [
+        "provenance",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "android-engineering",
+        "android-testing",
+        "android-performance",
+        "kotlin-compose"
+      ],
+      "source_id": "google_android_skills",
+      "supported_retrieval_method": "Git clone and upstream README/SKILL.md retrieved at 5bda39f154fb859a08d45e2392f3568e049f83fb",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "partial_js_shell",
+      "failure_behavior": "Keep shell/discovered status; expose limitation and avoid page-specific claims until content is reviewed.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before making a page-specific design claim if a page is relevant; otherwise review on official navigation/content change and at least quarterly.",
+      "related_policies": [
+        "design_compliance",
+        "source_access",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_id": "material3_site",
+      "supported_retrieval_method": "Homepage returned JavaScript shell; official sitemap fetched 2026-10-14 (HTTP 200, 3,567 entries); 249 active foundations/styles/components URLs retained as URL-discovery evidence",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "partial_js_shell",
+      "failure_behavior": "Keep shell/discovered status; expose limitation and avoid page-specific claims until content is reviewed.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before making a page-specific design claim if a page is relevant; otherwise review on official navigation/content change and at least quarterly.",
+      "related_policies": [
+        "design_compliance",
+        "api_verification",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_id": "material_motion",
+      "supported_retrieval_method": "HTTPS fetch returned JavaScript application shell",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "partial_js_shell",
+      "failure_behavior": "Keep shell/discovered status; expose limitation and avoid page-specific claims until content is reviewed.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before making a page-specific design claim if a page is relevant; otherwise review on official navigation/content change and at least quarterly.",
+      "related_policies": [
+        "design_compliance",
+        "api_verification",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive"
+      ],
+      "source_id": "material_shape_principles",
+      "supported_retrieval_method": "HTTPS fetch returned JavaScript application shell",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep shell/discovered status; expose limitation and avoid page-specific claims until content is reviewed.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before making a page-specific design claim if a page is relevant; otherwise review on official navigation/content change and at least quarterly.",
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "related_skills": [
+        "material3-expressive"
+      ],
+      "source_id": "material_shapes_api",
+      "supported_retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "blocked_403",
+      "failure_behavior": "Keep status blocked; request authorized export; never infer layers, tokens, or design content.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "When an authorized export/view is supplied, or when the community asset URL changes; no periodic extraction without access.",
+      "related_policies": [
+        "source_access",
+        "provenance",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "source_id": "figma_theme_builder",
+      "supported_retrieval_method": "HTTPS fetch blocked by proxy with 403",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "blocked_403",
+      "failure_behavior": "Keep status blocked; request authorized export; never infer layers, tokens, or design content.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "When an authorized export/view is supplied, or when the community asset URL changes; no periodic extraction without access.",
+      "related_policies": [
+        "source_access",
+        "provenance",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "visual-design-validation",
+        "material3-expressive"
+      ],
+      "source_id": "figma_m3_kit",
+      "supported_retrieval_method": "HTTPS fetch blocked by proxy with 403",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "blocked_403",
+      "failure_behavior": "Keep status blocked; request authorized export; never infer layers, tokens, or design content.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "When an authorized export/view is supplied, or when the community asset URL changes; no periodic extraction without access.",
+      "related_policies": [
+        "source_access",
+        "provenance",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "visual-design-validation",
+        "android-engineering"
+      ],
+      "source_id": "figma_nia_case_study",
+      "supported_retrieval_method": "HTTPS fetch blocked by proxy with 403",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Retain attributed cached summary as potentially stale and surface live recheck requirement.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On upstream revision/document change and at least annually; recheck before relying on version-sensitive instructions.",
+      "related_policies": [
+        "architecture_boundaries",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "kotlin-compose",
+        "compose-architecture"
+      ],
+      "source_id": "nia_modularization",
+      "supported_retrieval_method": "GitHub raw Markdown retrieved",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "dependency_selection",
+        "architecture_boundaries",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "compose-architecture"
+      ],
+      "source_id": "hilt_android",
+      "supported_retrieval_method": "Official Android developer page retrieved",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "dependency_selection",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "compose-architecture"
+      ],
+      "source_id": "product_flavors",
+      "supported_retrieval_method": "Official Android developer page retrieved",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "metadata_only",
+      "failure_behavior": "Retain attributed cached summary as potentially stale and surface live recheck requirement.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On upstream revision/document change and at least annually; recheck before relying on version-sensitive instructions.",
+      "related_policies": [
+        "visual_baseline_approval",
+        "source_access",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "source_id": "nia_screenshots",
+      "supported_retrieval_method": "GitHub contents API retrieved directory listing",
+      "version_sensitivity": "medium"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "visual_baseline_approval",
+        "dependency_selection",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "source_id": "roborazzi",
+      "supported_retrieval_method": "GitHub README and Maven POM retrieved",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "measurement_first",
+        "performance_claims",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "android-performance"
+      ],
+      "source_id": "baseline_profiles",
+      "supported_retrieval_method": "Official Android developer page retrieved",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "measurement_first",
+        "performance_claims",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "android-performance"
+      ],
+      "source_id": "macrobenchmark",
+      "supported_retrieval_method": "Official Android developer page retrieved",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Retain attributed cached summary as potentially stale and surface live recheck requirement.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On upstream revision/document change and at least annually; recheck before relying on version-sensitive instructions.",
+      "related_policies": [
+        "api_compatibility",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering"
+      ],
+      "source_id": "legacy_view_motion",
+      "supported_retrieval_method": "GitHub raw Markdown retrieved",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_id": "androidx_material3_package",
+      "supported_retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_id": "androidx_material_theme",
+      "supported_retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_id": "androidx_motion_scheme",
+      "supported_retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_id": "androidx_color_scheme",
+      "supported_retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "source_id": "androidx_typography",
+      "supported_retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "accessibility_review",
+        "freshness",
+        "no_hallucinated_api",
+        "security"
+      ],
+      "related_skills": [
+        "kotlin-compose",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "androidx_compose_adaptive",
+      "supported_retrieval_method": "Official page body fetched over HTTPS on 2026-10-14; targeted guide reference captured",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Mark current compatibility NOT VERIFIED; require exact resolved target versions; do not invent signatures or upgrade versions.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before implementation against a target project, on target dependency/version change, and when official API/release notes change.",
+      "related_policies": [
+        "api_compatibility",
+        "accessibility_review",
+        "freshness",
+        "no_hallucinated_api",
+        "security"
+      ],
+      "related_skills": [
+        "kotlin-compose",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "androidx_compose_accessibility",
+      "supported_retrieval_method": "Official page body fetched over HTTPS on 2026-10-14; targeted guide reference captured",
+      "version_sensitivity": "high"
+    }
+  ],
+  "schema_version": 1,
+  "source_registry_schema_version": 1
+}

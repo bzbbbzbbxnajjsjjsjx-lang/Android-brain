@@ -1,0 +1,1782 @@
+{
+  "schema_version": 2,
+  "status": "deterministic_keyword_router_v1",
+  "selection_guidance": [
+    {
+      "signals": [
+        "general Android engineering",
+        "project setup"
+      ],
+      "knowledge": [
+        "knowledge/android-skills/codex-integration.md"
+      ],
+      "skills": [
+        "android-engineering"
+      ],
+      "policies": [
+        "provenance",
+        "api_compatibility",
+        "dependency_selection",
+        "scope_isolation",
+        "reporting",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "check current Android Gradle/Kotlin/AndroidX documentation"
+      ],
+      "evidence": [
+        "relevant build/test outputs and inspected diff",
+        "verify dependency coordinates, project compatibility, license and maintenance need"
+      ],
+      "exclude": [
+        "Figma notes",
+        "motion/shape guidance unless UI requires it"
+      ],
+      "id": "android_general",
+      "keywords": [
+        "android engineering",
+        "android project setup",
+        "android app architecture",
+        "android dependency",
+        "dependency license",
+        "dependency maintenance",
+        "third-party library"
+      ],
+      "source_ids": [
+        "google_android_skills"
+      ],
+      "context_priority": 60,
+      "ambiguity_if_only": [
+        "android"
+      ],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "api_compatibility",
+      "signals": [
+        "newest experimental API",
+        "experimental Expressive API",
+        "latest Expressive API",
+        "AndroidX API",
+        "unverified API"
+      ],
+      "keywords": [
+        "newest experimental API",
+        "experimental Expressive API",
+        "latest Expressive API",
+        "AndroidX API",
+        "unverified API"
+      ],
+      "source_ids": [
+        "androidx_material3_package",
+        "material_shapes_api",
+        "androidx_motion_scheme"
+      ],
+      "knowledge": [
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "skills": [
+        "material3-expressive"
+      ],
+      "policies": [
+        "api_compatibility",
+        "experimental_api",
+        "no_hallucinated_api",
+        "freshness"
+      ],
+      "freshness": [
+        "Recheck the selected official source and target artifact; no live check is performed by the router."
+      ],
+      "evidence": [
+        "Record the exact version/source check and unresolved limitations.",
+        "verify target artifact, resolved dependency version, exact symbol and opt-in"
+      ],
+      "exclude": [
+        "Unrelated Android app domains unless independently requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "module graph",
+        "architecture review",
+        "dependency boundaries"
+      ],
+      "knowledge": [
+        "knowledge/architecture/modularization.md"
+      ],
+      "skills": [
+        "compose-architecture"
+      ],
+      "policies": [
+        "architecture_boundaries",
+        "scope_isolation",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify current repository architecture and official guidance"
+      ],
+      "evidence": [
+        "dependency direction and concrete benefit/risk rationale",
+        "record ownership, dependency direction, testability benefit and maintenance cost"
+      ],
+      "exclude": [
+        "Material motion/Figma"
+      ],
+      "id": "architecture",
+      "keywords": [
+        "module graph",
+        "modularization",
+        "architecture review",
+        "dependency boundaries",
+        "compose state architecture",
+        "state ownership"
+      ],
+      "source_ids": [
+        "nia_modularization"
+      ],
+      "context_priority": 60,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "product flavors",
+        "build variants"
+      ],
+      "knowledge": [
+        "knowledge/architecture/hilt-and-flavors.md"
+      ],
+      "skills": [
+        "compose-architecture"
+      ],
+      "policies": [
+        "dependency_selection",
+        "scope_isolation",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence",
+        "architecture_boundaries"
+      ],
+      "freshness": [
+        "verify current AGP DSL and resulting variant matrix"
+      ],
+      "evidence": [
+        "requested variant tasks and configuration validation"
+      ],
+      "exclude": [
+        "Material/Figma notes"
+      ],
+      "id": "build_variants",
+      "keywords": [
+        "product flavors",
+        "build variants",
+        "product flavor"
+      ],
+      "source_ids": [
+        "product_flavors"
+      ],
+      "context_priority": 60,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "Compose screen",
+        "state",
+        "adaptive layout"
+      ],
+      "knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "skills": [
+        "kotlin-compose"
+      ],
+      "policies": [
+        "api_compatibility",
+        "design_compliance",
+        "reporting",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify Compose APIs against project resolved versions"
+      ],
+      "evidence": [
+        "behavior/accessibility checks and rendered output where available"
+      ],
+      "exclude": [
+        "Hilt/flavor/performance notes unless task needs them"
+      ],
+      "id": "compose_ui",
+      "keywords": [
+        "compose",
+        "compose screen",
+        "compose state",
+        "compose ui",
+        "jetpack compose",
+        "materialshapes in compose"
+      ],
+      "source_ids": [
+        "google_android_skills",
+        "androidx_material3_package"
+      ],
+      "context_priority": 60,
+      "ambiguity_if_only": [
+        "compose",
+        "jetpack compose"
+      ],
+      "requires_live_verification": true,
+      "exclude_categories": [],
+      "knowledge_rules": [
+        {
+          "when_any": [
+            "materialshapes",
+            "motion scheme",
+            "motionscheme",
+            "colorscheme",
+            "materialtheme",
+            "typography api",
+            "api compatibility",
+            "experimental api",
+            "shape morphing"
+          ],
+          "exclude": [
+            "knowledge/material3/principles.md"
+          ]
+        }
+      ]
+    },
+    {
+      "signals": [
+        "Hilt",
+        "dependency injection"
+      ],
+      "knowledge": [
+        "knowledge/architecture/hilt-and-flavors.md"
+      ],
+      "skills": [
+        "compose-architecture"
+      ],
+      "policies": [
+        "architecture_boundaries",
+        "dependency_selection",
+        "api_compatibility",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify Hilt/AGP/Kotlin/KSP integration versions"
+      ],
+      "evidence": [
+        "graph boundaries, scopes, build and tests",
+        "record ownership, scope, graph boundaries, build and testability benefit/cost"
+      ],
+      "exclude": [
+        "Figma, motion, screenshot references"
+      ],
+      "id": "dependency_injection",
+      "keywords": [
+        "hilt",
+        "dependency injection",
+        "inject dependencies"
+      ],
+      "source_ids": [
+        "hilt_android",
+        "nia_modularization"
+      ],
+      "context_priority": 60,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "figma_material3_kit",
+      "signals": [
+        "Material 3 Figma Design Kit",
+        "Material 3 Design Kit",
+        "M3 Design Kit"
+      ],
+      "keywords": [
+        "Material 3 Figma Design Kit",
+        "Material 3 Design Kit",
+        "M3 Design Kit"
+      ],
+      "source_ids": [
+        "figma_m3_kit"
+      ],
+      "knowledge": [
+        "knowledge/integrations/figma-workflow.md"
+      ],
+      "skills": [
+        "visual-design-validation",
+        "material3-expressive"
+      ],
+      "policies": [
+        "source_access",
+        "provenance",
+        "design_compliance"
+      ],
+      "freshness": [
+        "Recheck the selected official source and target artifact; no live check is performed by the router."
+      ],
+      "evidence": [
+        "Record the exact version/source check and unresolved limitations."
+      ],
+      "exclude": [
+        "Unrelated Android app domains unless independently requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [
+        "figma_reference"
+      ]
+    },
+    {
+      "id": "figma_nia_case_study",
+      "signals": [
+        "Now in Android Figma case study",
+        "Figma Now in Android case study"
+      ],
+      "keywords": [
+        "Now in Android Figma case study",
+        "Figma Now in Android case study"
+      ],
+      "source_ids": [
+        "figma_nia_case_study"
+      ],
+      "knowledge": [
+        "knowledge/integrations/figma-workflow.md"
+      ],
+      "skills": [
+        "visual-design-validation"
+      ],
+      "policies": [
+        "source_access",
+        "provenance"
+      ],
+      "freshness": [
+        "Recheck the selected official source and target artifact; no live check is performed by the router."
+      ],
+      "evidence": [
+        "Record the exact version/source check and unresolved limitations."
+      ],
+      "exclude": [
+        "Unrelated Android app domains unless independently requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [
+        "figma_reference"
+      ]
+    },
+    {
+      "id": "figma_reference",
+      "signals": [
+        "Figma"
+      ],
+      "keywords": [
+        "Figma"
+      ],
+      "source_ids": [
+        "figma_theme_builder",
+        "figma_m3_kit",
+        "figma_nia_case_study"
+      ],
+      "knowledge": [
+        "knowledge/integrations/figma-workflow.md"
+      ],
+      "skills": [
+        "visual-design-validation"
+      ],
+      "policies": [
+        "source_access",
+        "provenance"
+      ],
+      "freshness": [
+        "Recheck the selected official source and target artifact; no live check is performed by the router."
+      ],
+      "evidence": [
+        "Record the exact version/source check and unresolved limitations."
+      ],
+      "exclude": [
+        "Unrelated Android app domains unless independently requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [
+        "figma"
+      ],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "figma_theme_builder",
+      "signals": [
+        "Material Theme Builder",
+        "Figma Theme Builder"
+      ],
+      "keywords": [
+        "Material Theme Builder",
+        "Figma Theme Builder"
+      ],
+      "source_ids": [
+        "figma_theme_builder"
+      ],
+      "knowledge": [
+        "knowledge/integrations/figma-workflow.md",
+        "knowledge/material3/tokens-navigation.md"
+      ],
+      "skills": [
+        "visual-design-validation",
+        "material3-expressive"
+      ],
+      "policies": [
+        "source_access",
+        "provenance",
+        "design_compliance"
+      ],
+      "freshness": [
+        "Recheck the selected official source and target artifact; no live check is performed by the router."
+      ],
+      "evidence": [
+        "Record the exact version/source check and unresolved limitations."
+      ],
+      "exclude": [
+        "Unrelated Android app domains unless independently requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [
+        "figma_reference"
+      ]
+    },
+    {
+      "signals": [
+        "Android context routing",
+        "improve harness",
+        "skill registry",
+        "context router",
+        "skill selection"
+      ],
+      "knowledge": [
+        "docs/CONTEXT_ROUTER.md"
+      ],
+      "skills": [
+        "android-engineering"
+      ],
+      "policies": [
+        "scope_isolation",
+        "provenance",
+        "reporting",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify Codex-native discovery and validator behavior"
+      ],
+      "evidence": [
+        "registry validator and harness-specific tests; no Android build",
+        "validate registry schema and source provenance; report observed tests"
+      ],
+      "exclude": [
+        "Android app, APK, unrelated product implementation"
+      ],
+      "id": "harness_only",
+      "keywords": [
+        "android context routing",
+        "context routing",
+        "improve harness",
+        "skill registry",
+        "context harness",
+        "router evaluation",
+        "context router",
+        "skill selection",
+        "router skill selection",
+        "source provenance",
+        "evidence schema",
+        "policy evaluation",
+        "policy evaluator",
+        "registry maintenance"
+      ],
+      "source_ids": [
+        "codex_workflows",
+        "google_android_skills"
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [
+        "compose_ui",
+        "material3_expressive",
+        "material_motion",
+        "material_shapes",
+        "architecture",
+        "dependency_injection",
+        "build_variants",
+        "screenshot_testing",
+        "performance"
+      ],
+      "knowledge_rules": [
+        {
+          "when_any": [
+            "skill selection",
+            "skill and knowledge selection"
+          ],
+          "include": [
+            "docs/ARCHITECTURE.md"
+          ]
+        },
+        {
+          "when_any": [
+            "policy evaluation",
+            "policy evaluator",
+            "evidence schema",
+            "source provenance"
+          ],
+          "include": [
+            "docs/QUALITY_GATES.md",
+            "knowledge/README.md"
+          ],
+          "exclude": [
+            "docs/ARCHITECTURE.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "material3_accessibility",
+      "signals": [
+        "Accessibility, assistive technology, and text adaptation",
+        "Material accessibility",
+        "accessibility",
+        "assistive technology",
+        "contrast requirements",
+        "text resizing",
+        "text truncation"
+      ],
+      "keywords": [
+        "Material accessibility",
+        "accessibility",
+        "assistive technology",
+        "contrast requirements",
+        "text resizing",
+        "text truncation",
+        "accessible"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_compose_accessibility",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "accessibility_review",
+        "design_compliance",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "semantics, text scaling, contrast, focus and assistive-technology review"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_adaptive",
+      "signals": [
+        "Adaptive design and breakpoints",
+        "adaptive design",
+        "adaptive layout",
+        "window size",
+        "breakpoints",
+        "list detail layout",
+        "supporting pane"
+      ],
+      "keywords": [
+        "adaptive",
+        "adaptive design",
+        "adaptive layout",
+        "breakpoints",
+        "list detail layout",
+        "supporting pane",
+        "window size"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_compose_adaptive",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/layout-adaptive.md",
+        "knowledge/androidx/compose-adaptive.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "edge-to-edge"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "window size classes and list-detail behavior"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_co_design",
+      "signals": [
+        "Co-design and user needs",
+        "co-design",
+        "inclusive design"
+      ],
+      "keywords": [
+        "co-design",
+        "co design",
+        "user needs",
+        "building for all",
+        "inclusive design"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_compose_accessibility"
+      ],
+      "knowledge": [
+        "knowledge/material3/foundations.md",
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "skills": [
+        "visual-design-validation",
+        "kotlin-compose"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "source_access",
+        "provenance"
+      ],
+      "freshness": [
+        "Read current Material co-design/user-needs guidance; it was only sitemap-discovered."
+      ],
+      "evidence": [
+        "Record design references actually read and accessibility review evidence.",
+        "accessible source review and user-needs evidence"
+      ],
+      "exclude": [
+        "Do not infer stakeholder needs from a case-study title or inaccessible Figma file."
+      ],
+      "context_priority": 70,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_color",
+      "signals": [
+        "Color systems and roles",
+        "Material color",
+        "color scheme",
+        "color roles",
+        "dynamic color",
+        "tonal palette",
+        "brand colors"
+      ],
+      "keywords": [
+        "Material color",
+        "brand colors",
+        "color",
+        "color roles",
+        "color scheme",
+        "dynamic color",
+        "tonal palette"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_color_scheme",
+        "androidx_material_theme"
+      ],
+      "knowledge": [
+        "knowledge/material3/color-typography.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation."
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_component_states",
+      "signals": [
+        "Component states and state layers",
+        "component states",
+        "pressed state",
+        "selected state",
+        "disabled state",
+        "state layers",
+        "interaction state"
+      ],
+      "keywords": [
+        "complete material 3 expressive design system",
+        "component states",
+        "disabled state",
+        "interaction state",
+        "pressed state",
+        "selected state",
+        "state layers"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package",
+        "androidx_compose_accessibility"
+      ],
+      "knowledge": [
+        "knowledge/material3/components-states.md",
+        "knowledge/material3/accessibility-interaction.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "material3-expressive",
+        "android-testing"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "selected, pressed, disabled and error state evidence"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_components",
+      "signals": [
+        "Material components and anatomy",
+        "Material component",
+        "component anatomy",
+        "component guidelines",
+        "component specs",
+        "Material buttons",
+        "Material cards",
+        "component library"
+      ],
+      "keywords": [
+        "Material buttons",
+        "Material cards",
+        "Material component",
+        "component",
+        "component anatomy",
+        "component guidelines",
+        "component library",
+        "component specs",
+        "component states",
+        "components",
+        "material 3 components",
+        "material 3 expressive components",
+        "material3 components",
+        "material3 expressive components"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/components-states.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "component anatomy, interaction behavior and relevant states"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [],
+      "knowledge_rules": [
+        {
+          "when_any": [
+            "compose component",
+            "materialshapes",
+            "material shapes",
+            "shape morph"
+          ],
+          "exclude": [
+            "knowledge/material3/components-states.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "material3_content_design",
+      "signals": [
+        "Content design and writing",
+        "Material content design",
+        "UX writing",
+        "alt text",
+        "notification copy",
+        "content design"
+      ],
+      "keywords": [
+        "Material content design",
+        "UX writing",
+        "alt text",
+        "notification copy",
+        "content design"
+      ],
+      "source_ids": [
+        "material3_site"
+      ],
+      "knowledge": [],
+      "skills": [
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "source_access"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "content hierarchy, labels and page-specific source review"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_elevation",
+      "signals": [
+        "Elevation and elevation tokens",
+        "Material elevation",
+        "elevation tokens",
+        "surface elevation"
+      ],
+      "keywords": [
+        "Material elevation",
+        "elevation tokens",
+        "surface elevation"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package",
+        "androidx_material_theme"
+      ],
+      "knowledge": [
+        "knowledge/material3/principles.md"
+      ],
+      "skills": [
+        "material3-expressive"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "elevation level and surface hierarchy review"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "Material 3 Expressive",
+        "expressive components",
+        "Material3 theme"
+      ],
+      "knowledge": [
+        "knowledge/material3/principles.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "skills": [
+        "material3-expressive"
+      ],
+      "policies": [
+        "accessibility_review",
+        "api_compatibility",
+        "design_compliance",
+        "experimental_api",
+        "freshness",
+        "no_hallucinated_api",
+        "security",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify current artifact, API visibility, opt-in, Compose constraints"
+      ],
+      "evidence": [
+        "build, semantics/state tests, visual review when available"
+      ],
+      "exclude": [
+        "architecture and performance docs unless requested"
+      ],
+      "id": "material3_expressive",
+      "keywords": [
+        "complete material 3 expressive design system",
+        "expressive components",
+        "expressive design system",
+        "m3 expressive",
+        "material 3 expressive",
+        "material design system",
+        "material3 theme"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package",
+        "androidx_material_theme"
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [
+        "material 3",
+        "material design 3",
+        "material3"
+      ],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_foundations",
+      "signals": [
+        "Foundations and design principles",
+        "Material design foundations",
+        "Material 3 principles",
+        "design principles",
+        "Material usability"
+      ],
+      "keywords": [
+        "Material 3 principles",
+        "Material design foundations",
+        "Material usability",
+        "complete material 3 expressive design system",
+        "design principles",
+        "material design foundations"
+      ],
+      "source_ids": [
+        "material3_site"
+      ],
+      "knowledge": [
+        "knowledge/material3/foundations.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "source_access"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation."
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_icons",
+      "signals": [
+        "Iconography",
+        "Material icons",
+        "iconography",
+        "design icons",
+        "app icons"
+      ],
+      "keywords": [
+        "Material icons",
+        "iconography",
+        "design icons",
+        "app icons"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/components-states.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "icon meaning, affordance and accessible labels"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_interaction",
+      "signals": [
+        "Input, gestures, selection, and interaction",
+        "Material interaction",
+        "input behavior",
+        "gestures",
+        "selection behavior",
+        "touch interaction"
+      ],
+      "keywords": [
+        "Material interaction",
+        "complete material 3 expressive design system",
+        "gestures",
+        "input behavior",
+        "selection behavior",
+        "touch interaction"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_compose_accessibility",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/material3/components-states.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "android-testing"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "input behavior, focus and state feedback"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_layout",
+      "signals": [
+        "Layout, grids, spacing, and scaffold",
+        "Material layout",
+        "layout structure",
+        "grid spacing",
+        "density",
+        "scaffold layout"
+      ],
+      "keywords": [
+        "Material layout",
+        "density",
+        "grid spacing",
+        "layout",
+        "layout structure",
+        "scaffold layout"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "material3-expressive"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "layout structure and density review"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_navigation",
+      "signals": [
+        "Navigation components and patterns",
+        "Material navigation",
+        "navigation bar",
+        "navigation drawer",
+        "navigation rail",
+        "navigation patterns",
+        "app bar navigation"
+      ],
+      "keywords": [
+        "Material navigation",
+        "app bar navigation",
+        "navigation",
+        "navigation bar",
+        "navigation drawer",
+        "navigation patterns",
+        "navigation rail"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/tokens-navigation.md",
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "material3-expressive",
+        "edge-to-edge"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation."
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_spacing_density",
+      "signals": [
+        "Spacing, density, and layout grids",
+        "Material spacing",
+        "spacing tokens",
+        "layout grid",
+        "density settings",
+        "spacing system"
+      ],
+      "keywords": [
+        "Material spacing",
+        "complete material 3 expressive design system",
+        "density settings",
+        "layout grid",
+        "spacing system",
+        "spacing tokens"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material3_package"
+      ],
+      "knowledge": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "material3-expressive"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "spacing and density review"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_tokens",
+      "signals": [
+        "Design tokens and customization",
+        "Material design tokens",
+        "Material tokens",
+        "semantic tokens",
+        "theme tokens",
+        "theme customization"
+      ],
+      "keywords": [
+        "Material design tokens",
+        "Material tokens",
+        "complete material 3 expressive design system",
+        "design tokens",
+        "semantic tokens",
+        "theme customization",
+        "theme tokens",
+        "token mapping",
+        "token system"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_material_theme",
+        "androidx_color_scheme",
+        "androidx_typography"
+      ],
+      "knowledge": [
+        "knowledge/material3/tokens-navigation.md",
+        "knowledge/integrations/figma-workflow.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "provenance",
+        "source_access",
+        "api_compatibility"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "token source, mapping and provenance"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_typography",
+      "signals": [
+        "Typography",
+        "Material typography",
+        "type scale",
+        "font scale",
+        "text styles",
+        "typography system"
+      ],
+      "keywords": [
+        "Material typography",
+        "font scale",
+        "text styles",
+        "type scale",
+        "typography",
+        "typography system"
+      ],
+      "source_ids": [
+        "material3_site",
+        "androidx_typography",
+        "androidx_material_theme"
+      ],
+      "knowledge": [
+        "knowledge/material3/color-typography.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review",
+        "api_compatibility"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation."
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_watches",
+      "signals": [
+        "Watch design foundations",
+        "Material watch design",
+        "Wear OS Material layout",
+        "watch foundation"
+      ],
+      "keywords": [
+        "Material watch design",
+        "Wear OS Material layout",
+        "watch foundation"
+      ],
+      "source_ids": [
+        "material3_site"
+      ],
+      "knowledge": [
+        "knowledge/material3/layout-adaptive.md"
+      ],
+      "skills": [
+        "kotlin-compose"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "verify form-factor guidance and target APIs"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "id": "material3_xr",
+      "signals": [
+        "XR design and components",
+        "Material XR",
+        "XR design",
+        "spatial Android UI"
+      ],
+      "keywords": [
+        "Material XR",
+        "XR design",
+        "spatial Android UI"
+      ],
+      "source_ids": [
+        "material3_site"
+      ],
+      "knowledge": [],
+      "skills": [
+        "kotlin-compose"
+      ],
+      "policies": [
+        "design_compliance",
+        "api_compatibility",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Before design decisions, fetch the current linked Material.io page and record the exact page/revision reviewed.",
+        "Recheck AndroidX implementation APIs against the target project artifact; this manifest does not fetch external content."
+      ],
+      "evidence": [
+        "Verify the linked design guidance when accessible; verify current AndroidX APIs for implementation.",
+        "verify spatial guidance and target APIs"
+      ],
+      "exclude": [
+        "Unrelated architecture, DI, or performance context unless separately requested."
+      ],
+      "context_priority": 50,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "Material motion",
+        "MotionScheme",
+        "expressive motion"
+      ],
+      "knowledge": [
+        "knowledge/material3/motion.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "policies": [
+        "api_compatibility",
+        "experimental_api",
+        "design_compliance",
+        "visual_baseline_approval",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify transition/MotionScheme API and reduced-motion behavior"
+      ],
+      "evidence": [
+        "state/interruption/accessibility behavior and rendered endpoints"
+      ],
+      "exclude": [
+        "legacy View guidance as implementation instruction"
+      ],
+      "id": "material_motion",
+      "keywords": [
+        "expressive motion",
+        "material motion",
+        "motion",
+        "motion scheme",
+        "motion tokens",
+        "motion transitions",
+        "motionscheme"
+      ],
+      "source_ids": [
+        "material_motion",
+        "androidx_motion_scheme",
+        "androidx_material_theme",
+        "androidx_material3_package"
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "MaterialShapes",
+        "shape morph",
+        "expressive shape"
+      ],
+      "knowledge": [
+        "knowledge/material3/shapes.md",
+        "knowledge/androidx/material3-api-compatibility.md"
+      ],
+      "skills": [
+        "material3-expressive"
+      ],
+      "policies": [
+        "accessibility_review",
+        "api_compatibility",
+        "design_compliance",
+        "experimental_api",
+        "freshness",
+        "no_hallucinated_api",
+        "security",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify API and annotation in target AndroidX artifact"
+      ],
+      "evidence": [
+        "selected state behavior and visible endpoints",
+        "verify exact MaterialShapes symbol, dependency artifact/version, and opt-in annotation"
+      ],
+      "exclude": [
+        "Figma and Hilt unless explicitly needed"
+      ],
+      "id": "material_shapes",
+      "keywords": [
+        "expressive shape",
+        "material shapes",
+        "materialshapes",
+        "shape",
+        "shape morph",
+        "shape principles",
+        "shapes"
+      ],
+      "source_ids": [
+        "material_shape_principles",
+        "material_shapes_api"
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "startup optimization",
+        "Macrobenchmark",
+        "Baseline Profile"
+      ],
+      "knowledge": [
+        "knowledge/performance/measurement.md"
+      ],
+      "skills": [
+        "android-performance",
+        "jetpack-compose-performance"
+      ],
+      "policies": [
+        "measurement_first",
+        "performance_claims",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify benchmark/profile plugin and target/device requirements"
+      ],
+      "evidence": [
+        "repeatable comparable measurements or explicit BLOCKED"
+      ],
+      "exclude": [
+        "Figma and motion unless measured journey concerns them"
+      ],
+      "id": "performance",
+      "keywords": [
+        "macrobenchmark",
+        "baseline profiles",
+        "baseline profile",
+        "startup performance",
+        "startup optimization",
+        "android startup",
+        "performance benchmark"
+      ],
+      "source_ids": [
+        "macrobenchmark",
+        "baseline_profiles"
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": []
+    },
+    {
+      "signals": [
+        "Roborazzi",
+        "screenshot regression",
+        "visual baseline",
+        "screenshot validation"
+      ],
+      "knowledge": [
+        "knowledge/testing/screenshot-strategy.md"
+      ],
+      "skills": [
+        "android-testing",
+        "visual-design-validation",
+        "testing-setup"
+      ],
+      "policies": [
+        "visual_baseline_approval",
+        "source_access",
+        "reporting",
+        "security",
+        "freshness",
+        "no_hallucinated_api",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "verify tool/AGP/Compose compatibility"
+      ],
+      "evidence": [
+        "positive and deliberate-negative comparison; approved reference provenance",
+        "approved baseline provenance and comparison; do not regenerate baselines to silence failures"
+      ],
+      "exclude": [
+        "architecture/DI guidance"
+      ],
+      "id": "screenshot_testing",
+      "keywords": [
+        "roborazzi",
+        "screenshot testing",
+        "screenshot regression",
+        "visual regression",
+        "screenshot baseline",
+        "screenshot validation",
+        "screenshot visual validation"
+      ],
+      "source_ids": [
+        "roborazzi",
+        "nia_screenshots"
+      ],
+      "context_priority": 80,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [],
+      "exclude_source_ids": [
+        "figma_theme_builder",
+        "figma_m3_kit",
+        "figma_nia_case_study"
+      ]
+    }
+  ],
+  "normalization": "Unicode NFKC + casefold + punctuation-to-space; technical identifiers additionally matched by compact alphanumeric form.",
+  "default_context_budget_chars": 24000,
+  "freshness_windows_days": {
+    "high": 90,
+    "medium": 180,
+    "low": 365
+  },
+  "global_policy_ids": [
+    "freshness",
+    "no_hallucinated_api",
+    "provenance",
+    "reporting",
+    "scope_isolation",
+    "security",
+    "source_access",
+    "testing_evidence"
+  ],
+  "ambiguous_terms": [
+    "android",
+    "compose",
+    "figma",
+    "material 3",
+    "material design",
+    "material design 3"
+  ]
+}

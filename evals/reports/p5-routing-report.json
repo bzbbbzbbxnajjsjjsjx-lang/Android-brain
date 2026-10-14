@@ -1,0 +1,5993 @@
+{
+  "aggregate": {
+    "budget_estimated_chars": {
+      "max": 18387,
+      "mean": 4515.68,
+      "unit": "characters"
+    },
+    "classification_exact_accuracy": 1.0,
+    "deterministic_cases": 40,
+    "forbidden_source_selections": 0,
+    "knowledge_precision": 0.8125,
+    "knowledge_recall": 1.0,
+    "policy_coverage": 1.0,
+    "required_skill_recall": 1.0,
+    "required_source_recall": 1.0,
+    "skill_precision": 0.9338,
+    "source_precision": 0.9767,
+    "task_count": 40,
+    "task_pass_count": 40
+  },
+  "budget_estimator_limitations": "The router measures estimated selected knowledge/policy characters, not model tokens. Native skill instruction sizes are separate estimates and are not activated by the router.",
+  "dataset_id": "android-context-routing-independent-v1",
+  "evaluation_date": "2026-10-14",
+  "material_coverage": {
+    "categorized_urls": 249,
+    "content_not_verified_topics": [
+      "material3_accessibility",
+      "material3_adaptive",
+      "material3_co_design",
+      "material3_color",
+      "material3_component_states",
+      "material3_components",
+      "material3_content_design",
+      "material3_elevation",
+      "material3_expressive",
+      "material3_foundations",
+      "material3_icons",
+      "material3_interaction",
+      "material3_layout",
+      "material3_navigation",
+      "material3_spacing_density",
+      "material3_tokens",
+      "material3_typography",
+      "material3_watches",
+      "material3_xr",
+      "material_motion",
+      "material_shapes"
+    ],
+    "expected_known_urls": 249,
+    "expected_topic_groups": 21,
+    "known_urls": 249,
+    "sitemap_is_not_page_content_evidence": true,
+    "topic_groups": 21,
+    "uncategorized_urls": 0,
+    "verified_page_content_topic_ids": [],
+    "verified_page_content_topics": 0
+  },
+  "methodology": "Human-authored task intents and expected context, independent of the router's rule configuration. Required/allowed/forbidden context is curated per task. It is not generated from routing/task-taxonomy.json.",
+  "overall_status": "PASS",
+  "per_domain": {
+    "adversarial": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "androidx_api": {
+      "cases": 4,
+      "cases_failed": [],
+      "cases_passed": 4,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.625,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 0.6667,
+      "source_precision": 0.85
+    },
+    "api_compatibility": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "architecture": {
+      "cases": 4,
+      "cases_failed": [],
+      "cases_passed": 4,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "figma_access": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "harness": {
+      "cases": 2,
+      "cases_failed": [],
+      "cases_passed": 2,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.625,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_accessibility": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_adaptive": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.75,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_co_design": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.5,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_color": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.6667,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_component_states": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.6667,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 0.75,
+      "source_precision": 1.0
+    },
+    "material3_components": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_content_design": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_elevation": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_expressive": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_foundations": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_icons": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.75,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 0.6667,
+      "source_precision": 1.0
+    },
+    "material3_interaction": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.5,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 0.6667,
+      "source_precision": 1.0
+    },
+    "material3_layout": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_navigation": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_spacing_density": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_tokens": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.5,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 0.8333
+    },
+    "material3_typography": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_watches": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material3_xr": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material_motion": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "material_shapes": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.75,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "multi_domain": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 0.6667,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 0.8,
+      "source_precision": 0.8333
+    },
+    "performance": {
+      "cases": 1,
+      "cases_failed": [],
+      "cases_passed": 1,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    },
+    "testing": {
+      "cases": 2,
+      "cases_failed": [],
+      "cases_passed": 2,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 0.9,
+      "source_precision": 1.0
+    },
+    "unknown": {
+      "cases": 2,
+      "cases_failed": [],
+      "cases_passed": 2,
+      "classification_exact_accuracy": 1.0,
+      "forbidden_source_selections": 0,
+      "knowledge_precision": 1.0,
+      "knowledge_recall": 1.0,
+      "policy_coverage": 1.0,
+      "required_skill_recall": 1.0,
+      "required_source_recall": 1.0,
+      "skill_precision": 1.0,
+      "source_precision": 1.0
+    }
+  },
+  "schema_version": 1,
+  "tasks": [
+    {
+      "budget": {
+        "estimated_chars": 1815,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3412,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_foundations"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_foundations"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_foundations",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material3_site"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-foundations",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/foundations.md"
+        ],
+        "selected": [
+          "knowledge/material3/foundations.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3_site"
+        ],
+        "selected": [
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5372,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1896,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_expressive"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_expressive"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_expressive",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-expressive",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/principles.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/foundations.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5319,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_color"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_color"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_color",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_color_scheme",
+          "androidx_material_theme"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_color_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-color",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/color-typography.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/color-typography.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_color_scheme",
+          "androidx_material_theme",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_color_scheme",
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "google_android_skills",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5570,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 6377,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_accessibility",
+          "material3_typography"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_accessibility",
+          "material3_typography"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_typography",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_typography",
+          "androidx_material_theme"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_typography"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-typography",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/color-typography.md"
+        ],
+        "selected": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/color-typography.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "android-testing",
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "androidx_material_theme",
+          "androidx_typography",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_typography",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 4265,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_components"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_components"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_components",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-components",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/components-states.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/components-states.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5083,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 6377,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_component_states",
+          "material3_components"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_component_states",
+          "material3_components"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_component_states",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-component-states",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/components-states.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/components-states.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.75,
+        "recall": 1.0,
+        "required": [
+          "android-testing",
+          "material3-expressive"
+        ],
+        "selected": [
+          "android-testing",
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 6196,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_components",
+          "material_shapes"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_components",
+          "material_shapes"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material_shapes",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material_shapes_api"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "material_shapes_api"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material_shape_principles"
+            }
+          ]
+        }
+      },
+      "id": "mat-shape",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.75,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/shapes.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/components-states.md",
+          "knowledge/material3/principles.md",
+          "knowledge/material3/shapes.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material_shape_principles",
+          "material_shapes_api"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "google_android_skills",
+          "material3_site",
+          "material_shape_principles",
+          "material_shapes_api"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5537,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material_motion"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material_motion"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material_motion",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_motion_scheme",
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_motion_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material_motion"
+            }
+          ]
+        }
+      },
+      "id": "mat-motion",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/motion.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/motion.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_motion_scheme",
+          "material_motion"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_motion_scheme",
+          "google_android_skills",
+          "material3_site",
+          "material_motion"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1848,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3355,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_layout",
+          "material3_spacing_density"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_layout",
+          "material3_spacing_density"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_layout",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-layout",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/layout-adaptive.md"
+        ],
+        "selected": [
+          "knowledge/material3/layout-adaptive.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5682,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 17788,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_adaptive",
+          "material3_layout"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_adaptive",
+          "material3_layout"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_adaptive",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_compose_adaptive"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_adaptive"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-adaptive",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.75,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/compose-adaptive.md",
+          "knowledge/material3/layout-adaptive.md"
+        ],
+        "selected": [
+          "knowledge/androidx/compose-adaptive.md",
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/layout-adaptive.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "kotlin-compose",
+          "material3-expressive"
+        ],
+        "selected": [
+          "edge-to-edge",
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_adaptive",
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_compose_adaptive",
+          "androidx_material3_package",
+          "google_android_skills",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5015,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 17788,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_navigation"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_navigation"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_navigation",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-navigation",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/tokens-navigation.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/layout-adaptive.md",
+          "knowledge/material3/tokens-navigation.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "edge-to-edge",
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2337,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 6377,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_accessibility"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_accessibility"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_accessibility",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_compose_accessibility"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-accessibility",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/material3/accessibility-interaction.md"
+        ],
+        "selected": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/material3/accessibility-interaction.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "android-testing",
+          "visual-design-validation"
+        ],
+        "selected": [
+          "android-testing",
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 6373,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_tokens"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_tokens"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_tokens",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material_theme",
+          "androidx_color_scheme"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_color_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_typography"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-tokens",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.5,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/tokens-navigation.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/integrations/figma-workflow.md",
+          "knowledge/material3/principles.md",
+          "knowledge/material3/tokens-navigation.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 0.8333,
+        "recall": 1.0,
+        "required": [
+          "androidx_color_scheme",
+          "androidx_material_theme",
+          "androidx_typography",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_color_scheme",
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_typography",
+          "google_android_skills",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1848,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3355,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_layout",
+          "material3_spacing_density"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_layout",
+          "material3_spacing_density"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_spacing_density",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-spacing-density",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/layout-adaptive.md"
+        ],
+        "selected": [
+          "knowledge/material3/layout-adaptive.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 4236,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1896,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_elevation"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_elevation"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_elevation",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-elevation",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/principles.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5974,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 17788,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_icons",
+          "material3_navigation"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_icons",
+          "material3_navigation"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_icons",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-icons",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.75,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/components-states.md",
+          "knowledge/material3/tokens-navigation.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/components-states.md",
+          "knowledge/material3/layout-adaptive.md",
+          "knowledge/material3/tokens-navigation.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "kotlin-compose",
+          "material3-expressive"
+        ],
+        "selected": [
+          "edge-to-edge",
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1839,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3412,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_content_design"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_content_design"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_content_design",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material3_site"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-content",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.0,
+        "recall": 1.0,
+        "required": [],
+        "selected": [
+          "knowledge/material3/accessibility-interaction.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "visual-design-validation"
+        ],
+        "selected": [
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3_site"
+        ],
+        "selected": [
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1848,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3355,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_layout",
+          "material3_watches"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_layout",
+          "material3_watches"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_watches",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material3_site"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-watch",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/layout-adaptive.md"
+        ],
+        "selected": [
+          "knowledge/material3/layout-adaptive.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "kotlin-compose"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2807,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3355,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_xr"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_xr"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_xr",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material3_site"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-xr",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.0,
+        "recall": 1.0,
+        "required": [],
+        "selected": [
+          "knowledge/material3/components-states.md",
+          "knowledge/material3/layout-adaptive.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "kotlin-compose"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3_site"
+        ],
+        "selected": [
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2768,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_co_design"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_co_design"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_co_design",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material3_site"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "mat-codesign",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.5,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/accessibility-interaction.md"
+        ],
+        "selected": [
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/foundations.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "visual-design-validation"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 6196,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_components",
+          "material_shapes"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_components",
+          "material_shapes"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "androidx_api",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material_shapes_api"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "material_shapes_api"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material_shape_principles"
+            }
+          ]
+        }
+      },
+      "id": "api-material-shapes",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.5,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/shapes.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/components-states.md",
+          "knowledge/material3/principles.md",
+          "knowledge/material3/shapes.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 0.8,
+        "recall": 1.0,
+        "required": [
+          "material_shape_principles",
+          "material_shapes_api"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "google_android_skills",
+          "material3_site",
+          "material_shape_principles",
+          "material_shapes_api"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5537,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material_motion"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material_motion"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "androidx_api",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_motion_scheme"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_motion_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material_motion"
+            }
+          ]
+        }
+      },
+      "id": "api-motion-scheme",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/motion.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/motion.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "androidx_motion_scheme",
+          "material_motion"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_motion_scheme",
+          "google_android_skills",
+          "material3_site",
+          "material_motion"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5319,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_color"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_color"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "androidx_api",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_color_scheme",
+          "androidx_material_theme"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_color_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "api-theme-color",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/color-typography.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/color-typography.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 0.8,
+        "recall": 1.0,
+        "required": [
+          "androidx_color_scheme",
+          "androidx_material_theme",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_color_scheme",
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "google_android_skills",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5319,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4871,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui",
+          "material3_typography"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui",
+          "material3_typography"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "androidx_api",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_typography"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_typography"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "api-typography",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/color-typography.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/color-typography.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "kotlin-compose",
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 0.8,
+        "recall": 1.0,
+        "required": [
+          "androidx_material_theme",
+          "androidx_typography",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "androidx_typography",
+          "google_android_skills",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 3153,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1896,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "api_compatibility"
+        ],
+        "exact_match": true,
+        "expected": [
+          "api_compatibility"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "api_compatibility",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_motion_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "material_shapes_api"
+            }
+          ]
+        }
+      },
+      "id": "api-unverified-latest",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive"
+        ],
+        "selected": [
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "androidx_motion_scheme",
+          "material_shapes_api"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1863,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1571,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "dependency_injection"
+        ],
+        "exact_match": true,
+        "expected": [
+          "dependency_injection"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "architecture",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "hilt_android"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "hilt_android"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": false,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "nia_modularization"
+            }
+          ]
+        }
+      },
+      "id": "arch-hilt",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/architecture/hilt-and-flavors.md"
+        ],
+        "selected": [
+          "knowledge/architecture/hilt-and-flavors.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "architecture_boundaries",
+          "dependency_selection",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "architecture_boundaries",
+          "dependency_selection",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "compose-architecture"
+        ],
+        "selected": [
+          "compose-architecture"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "hilt_android",
+          "nia_modularization"
+        ],
+        "selected": [
+          "hilt_android",
+          "nia_modularization"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1501,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1571,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "architecture"
+        ],
+        "exact_match": true,
+        "expected": [
+          "architecture"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "architecture",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": false,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "nia_modularization"
+            }
+          ]
+        }
+      },
+      "id": "arch-modules",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/architecture/modularization.md"
+        ],
+        "selected": [
+          "knowledge/architecture/modularization.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "architecture_boundaries",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "architecture_boundaries",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed",
+        "expected": "routed"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "compose-architecture"
+        ],
+        "selected": [
+          "compose-architecture"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "nia_modularization"
+        ],
+        "selected": [
+          "nia_modularization"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1779,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1571,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "build_variants"
+        ],
+        "exact_match": true,
+        "expected": [
+          "build_variants"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "architecture",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "product_flavors"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "product_flavors"
+            }
+          ]
+        }
+      },
+      "id": "arch-build-variants",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/architecture/hilt-and-flavors.md"
+        ],
+        "selected": [
+          "knowledge/architecture/hilt-and-flavors.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "architecture_boundaries",
+          "dependency_selection",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "architecture_boundaries",
+          "dependency_selection",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "compose-architecture"
+        ],
+        "selected": [
+          "compose-architecture"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "product_flavors"
+        ],
+        "selected": [
+          "product_flavors"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2428,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1961,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "android_general"
+        ],
+        "exact_match": true,
+        "expected": [
+          "android_general"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "architecture",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "google_android_skills"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            }
+          ]
+        }
+      },
+      "id": "arch-dependency",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/android-skills/codex-integration.md"
+        ],
+        "selected": [
+          "knowledge/android-skills/codex-integration.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "dependency_selection",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "dependency_selection",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "android-engineering"
+        ],
+        "selected": [
+          "android-engineering"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "google_android_skills"
+        ],
+        "selected": [
+          "google_android_skills"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1943,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 13256,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "screenshot_testing"
+        ],
+        "exact_match": true,
+        "expected": [
+          "screenshot_testing"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "testing",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "roborazzi"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "nia_screenshots"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "roborazzi"
+            }
+          ]
+        }
+      },
+      "id": "test-roborazzi",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/testing/screenshot-strategy.md"
+        ],
+        "selected": [
+          "knowledge/testing/screenshot-strategy.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ],
+        "selected": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "android-testing",
+          "visual-design-validation"
+        ],
+        "selected": [
+          "android-testing",
+          "testing-setup",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "nia_screenshots",
+          "roborazzi"
+        ],
+        "selected": [
+          "nia_screenshots",
+          "roborazzi"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 3484,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 16611,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_accessibility",
+          "screenshot_testing"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_accessibility",
+          "screenshot_testing"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "testing",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "roborazzi",
+          "androidx_compose_accessibility"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "nia_screenshots"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "roborazzi"
+            }
+          ]
+        }
+      },
+      "id": "test-visual-accessibility",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ],
+        "selected": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ],
+        "selected": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.8,
+        "recall": 1.0,
+        "required": [
+          "android-testing",
+          "visual-design-validation"
+        ],
+        "selected": [
+          "android-testing",
+          "kotlin-compose",
+          "material3-expressive",
+          "testing-setup",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "material3_site",
+          "nia_screenshots",
+          "roborazzi"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site",
+          "nia_screenshots",
+          "roborazzi"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 1886,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 22199,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "performance"
+        ],
+        "exact_match": true,
+        "expected": [
+          "performance"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "performance",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "macrobenchmark",
+          "baseline_profiles"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "baseline_profiles"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "macrobenchmark"
+            }
+          ]
+        }
+      },
+      "id": "perf-startup",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/performance/measurement.md"
+        ],
+        "selected": [
+          "knowledge/performance/measurement.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "freshness",
+          "measurement_first",
+          "no_hallucinated_api",
+          "performance_claims",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "freshness",
+          "measurement_first",
+          "no_hallucinated_api",
+          "performance_claims",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "android-performance"
+        ],
+        "selected": [
+          "android-performance",
+          "jetpack-compose-performance"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "baseline_profiles",
+          "macrobenchmark"
+        ],
+        "selected": [
+          "baseline_profiles",
+          "macrobenchmark"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 18387,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1961,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "harness_only"
+        ],
+        "exact_match": true,
+        "expected": [
+          "harness_only"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "harness",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "google_android_skills"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": false,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "codex_workflows"
+            }
+          ]
+        }
+      },
+      "id": "harness-routing",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.5,
+        "recall": 1.0,
+        "required": [
+          "docs/ARCHITECTURE.md",
+          "docs/CONTEXT_ROUTER.md"
+        ],
+        "selected": [
+          "docs/ARCHITECTURE.md",
+          "docs/CONTEXT_ROUTER.md",
+          "docs/QUALITY_GATES.md",
+          "knowledge/README.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "android-engineering"
+        ],
+        "selected": [
+          "android-engineering"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "codex_workflows",
+          "google_android_skills"
+        ],
+        "selected": [
+          "codex_workflows",
+          "google_android_skills"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 18387,
+        "knowledge_refs": 4,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1961,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "harness_only"
+        ],
+        "exact_match": true,
+        "expected": [
+          "harness_only"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "harness",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": false,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "codex_workflows"
+            }
+          ]
+        }
+      },
+      "id": "harness-policy",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.75,
+        "recall": 1.0,
+        "required": [
+          "docs/CONTEXT_ROUTER.md",
+          "docs/QUALITY_GATES.md",
+          "knowledge/README.md"
+        ],
+        "selected": [
+          "docs/ARCHITECTURE.md",
+          "docs/CONTEXT_ROUTER.md",
+          "docs/QUALITY_GATES.md",
+          "knowledge/README.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "android-engineering"
+        ],
+        "selected": [
+          "android-engineering"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "codex_workflows"
+        ],
+        "selected": [
+          "codex_workflows",
+          "google_android_skills"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2740,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3030,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "architecture",
+          "compose_ui"
+        ],
+        "exact_match": true,
+        "expected": [
+          "architecture",
+          "compose_ui"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "adversarial",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_material3_package"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": false,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "nia_modularization"
+            }
+          ]
+        }
+      },
+      "id": "negative-hilt",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/architecture/modularization.md"
+        ],
+        "selected": [
+          "knowledge/architecture/modularization.md",
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "architecture_boundaries",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "compose-architecture",
+          "kotlin-compose"
+        ],
+        "selected": [
+          "compose-architecture",
+          "kotlin-compose"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "google_android_skills",
+          "nia_modularization"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "google_android_skills",
+          "nia_modularization"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 7835,
+        "knowledge_refs": 6,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 16611,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_accessibility",
+          "material3_expressive",
+          "screenshot_testing"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_accessibility",
+          "material3_expressive",
+          "screenshot_testing"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "multi_domain",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_compose_accessibility",
+          "roborazzi"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "nia_screenshots"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "roborazzi"
+            }
+          ]
+        }
+      },
+      "id": "mixed-material-visual",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ],
+        "selected": [
+          "knowledge/androidx/compose-accessibility.md",
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/foundations.md",
+          "knowledge/material3/principles.md",
+          "knowledge/testing/screenshot-strategy.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "experimental_api",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence",
+          "visual_baseline_approval"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.8,
+        "recall": 1.0,
+        "required": [
+          "android-testing",
+          "material3-expressive",
+          "visual-design-validation"
+        ],
+        "selected": [
+          "android-testing",
+          "kotlin-compose",
+          "material3-expressive",
+          "testing-setup",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 0.8333,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "material3_site",
+          "nia_screenshots",
+          "roborazzi"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "androidx_material_theme",
+          "material3_site",
+          "nia_screenshots",
+          "roborazzi"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 796,
+        "knowledge_refs": 0,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 0,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [],
+        "exact_match": true,
+        "expected": []
+      },
+      "deterministic": true,
+      "domain_group": "unknown",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": []
+        }
+      },
+      "id": "unknown-task",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [],
+        "selected": []
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "uncertain_no_domain_match",
+        "expected": "uncertain_no_domain_match"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [],
+        "selected": []
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [],
+        "selected": []
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2035,
+        "knowledge_refs": 1,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 1459,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "compose_ui"
+        ],
+        "exact_match": true,
+        "expected": [
+          "compose_ui"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "unknown",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "google_android_skills"
+            }
+          ]
+        }
+      },
+      "id": "ambiguous-compose",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/principles.md"
+        ],
+        "selected": [
+          "knowledge/material3/principles.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "api_compatibility",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "ambiguous_clarification_recommended",
+        "expected": "ambiguous_clarification_recommended"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "kotlin-compose"
+        ],
+        "selected": [
+          "kotlin-compose"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_material3_package",
+          "google_android_skills"
+        ],
+        "selected": [
+          "androidx_material3_package",
+          "google_android_skills"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 5425,
+        "knowledge_refs": 3,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 3412,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "figma_material3_kit",
+          "material3_color"
+        ],
+        "exact_match": true,
+        "expected": [
+          "figma_material3_kit",
+          "material3_color"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "figma_access",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "material3_site"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_color_scheme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material_theme"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "figma_m3_kit"
+            }
+          ]
+        }
+      },
+      "id": "figma-tokens",
+      "knowledge": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "knowledge/integrations/figma-workflow.md",
+          "knowledge/material3/color-typography.md"
+        ],
+        "selected": [
+          "knowledge/androidx/material3-api-compatibility.md",
+          "knowledge/integrations/figma-workflow.md",
+          "knowledge/material3/color-typography.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "material3-expressive",
+          "visual-design-validation"
+        ],
+        "selected": [
+          "material3-expressive",
+          "visual-design-validation"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_color_scheme",
+          "androidx_material_theme",
+          "figma_m3_kit",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_color_scheme",
+          "androidx_material_theme",
+          "figma_m3_kit",
+          "material3_site"
+        ]
+      }
+    },
+    {
+      "budget": {
+        "estimated_chars": 2882,
+        "knowledge_refs": 2,
+        "limit_chars": 24000,
+        "skill_instruction_chars_estimate": 4861,
+        "status": "within_budget",
+        "unit": "characters"
+      },
+      "classification": {
+        "actual": [
+          "material3_interaction"
+        ],
+        "exact_match": true,
+        "expected": [
+          "material3_interaction"
+        ]
+      },
+      "deterministic": true,
+      "domain_group": "material3_interaction",
+      "failures": [],
+      "freshness": {
+        "live_verification_claimed": false,
+        "required_source_ids": [
+          "androidx_compose_accessibility"
+        ],
+        "status": {
+          "live_checks_performed": false,
+          "source_records": [
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_material3_package"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 90,
+              "source_id": "androidx_compose_accessibility"
+            },
+            {
+              "age_days": 0,
+              "last_verified": "2026-10-14",
+              "live_verification_performed": false,
+              "live_verification_required": true,
+              "registry_age_status": "within_review_window_not_live_verified",
+              "review_window_days": 180,
+              "source_id": "material3_site"
+            }
+          ]
+        }
+      },
+      "id": "material-interaction",
+      "knowledge": {
+        "missing": [],
+        "precision": 0.5,
+        "recall": 1.0,
+        "required": [
+          "knowledge/material3/accessibility-interaction.md"
+        ],
+        "selected": [
+          "knowledge/material3/accessibility-interaction.md",
+          "knowledge/material3/components-states.md"
+        ]
+      },
+      "passed": true,
+      "policies": {
+        "coverage": 1.0,
+        "duplicate_ids": 0,
+        "missing": [],
+        "required": [
+          "accessibility_review",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ],
+        "selected": [
+          "accessibility_review",
+          "api_compatibility",
+          "design_compliance",
+          "freshness",
+          "no_hallucinated_api",
+          "provenance",
+          "reporting",
+          "scope_isolation",
+          "security",
+          "source_access",
+          "testing_evidence"
+        ]
+      },
+      "routing_status": {
+        "actual": "routed_with_limitations",
+        "expected": "routed_with_limitations"
+      },
+      "skills": {
+        "missing": [],
+        "precision": 0.6667,
+        "recall": 1.0,
+        "required": [
+          "android-testing",
+          "kotlin-compose"
+        ],
+        "selected": [
+          "android-testing",
+          "kotlin-compose",
+          "material3-expressive"
+        ]
+      },
+      "sources": {
+        "forbidden_selected": [],
+        "missing": [],
+        "precision": 1.0,
+        "recall": 1.0,
+        "required": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site"
+        ],
+        "selected": [
+          "androidx_compose_accessibility",
+          "androidx_material3_package",
+          "material3_site"
+        ]
+      }
+    }
+  ],
+  "threshold_failures": [],
+  "thresholds_fixed_before_run": {
+    "classification_exact_accuracy": 0.9,
+    "deterministic_cases": 40,
+    "forbidden_source_selections": 0,
+    "knowledge_precision": 0.75,
+    "knowledge_recall": 0.9,
+    "policy_coverage": 1.0,
+    "required_skill_recall": 0.9,
+    "required_source_recall": 0.95,
+    "skill_precision": 0.8,
+    "source_precision": 0.8
+  }
+}

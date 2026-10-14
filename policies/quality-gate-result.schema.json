@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quality-gate-result.schema.json",
+  "title": "Android Context Harness Quality Gate Result",
+  "type": "object",
+  "required": ["schema_version", "task_id", "overall_status", "completion_approved", "policy_results", "validation_errors", "workspace_scan", "hosted_ci", "skill_states", "determinism_digest"],
+  "properties": {
+    "schema_version": {"const": 1}, "task_id": {"type": "string"},
+    "overall_status": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT VERIFIED"]}, "completion_approved": {"type": "boolean"},
+    "policy_results": {"type": "array", "items": {"type": "object", "required": ["policy_id", "status", "enforcement_mode", "findings"], "properties": {
+      "policy_id": {"type": "string"}, "status": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT VERIFIED", "ADVISORY"]},
+      "enforcement_mode": {"enum": ["deterministic_automated", "runtime_tool_dependent", "manual_review", "advisory_guidance"]},
+      "findings": {"type": "array", "items": {"type": "string"}}, "remediation": {"type": "string"}
+    }, "additionalProperties": false}},
+    "validation_errors": {"type": "array", "items": {"type": "string"}},
+    "workspace_scan": {"type": "object"}, "hosted_ci": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT VERIFIED", "NOT APPLICABLE"]},
+    "skill_states": {"type": "array", "items": {"type": "object"}}, "determinism_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }, "additionalProperties": false
+}

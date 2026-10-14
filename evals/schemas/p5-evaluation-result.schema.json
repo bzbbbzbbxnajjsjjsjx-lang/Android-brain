@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p5-evaluation-result.schema.json",
+  "title": "P5 Independent Harness Evaluation Result",
+  "type": "object",
+  "required": ["schema_version", "dataset_id", "evaluation_date", "thresholds_fixed_before_run", "aggregate", "per_domain", "material_coverage", "tasks", "threshold_failures", "overall_status", "budget_estimator_limitations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "dataset_id": {"type": "string"},
+    "evaluation_date": {"type": "string", "format": "date"},
+    "thresholds_fixed_before_run": {"type": "object"},
+    "aggregate": {"type": "object", "required": ["task_count", "task_pass_count", "classification_exact_accuracy", "required_source_recall", "source_precision", "required_skill_recall", "skill_precision", "knowledge_recall", "knowledge_precision", "policy_coverage", "forbidden_source_selections", "deterministic_cases", "budget_estimated_chars"]},
+    "per_domain": {"type": "object"},
+    "material_coverage": {"type": "object", "required": ["topic_groups", "expected_topic_groups", "known_urls", "expected_known_urls", "categorized_urls", "uncategorized_urls", "verified_page_content_topics", "content_not_verified_topics", "sitemap_is_not_page_content_evidence"]},
+    "tasks": {"type": "array", "minItems": 30},
+    "threshold_failures": {"type": "array"},
+    "overall_status": {"enum": ["PASS", "FAIL"]},
+    "budget_estimator_limitations": {"type": "string", "minLength": 30}
+  },
+  "additionalProperties": true
+}

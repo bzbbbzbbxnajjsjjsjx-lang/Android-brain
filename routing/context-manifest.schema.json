@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "context-manifest.schema.json",
+  "title": "Android Context Harness Route Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "router_version",
+    "input_task",
+    "normalized_task",
+    "as_of_date",
+    "classification",
+    "selected_sources",
+    "selected_knowledge_references",
+    "selected_skills",
+    "skill_execution_evidence",
+    "selected_policies",
+    "required_verification_actions",
+    "freshness",
+    "missing_or_inaccessible_context",
+    "context_budget",
+    "material3_topics",
+    "explicit_exclusions",
+    "routing_status",
+    "router_does_not",
+    "target_project_context"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "router_version": {
+      "type": "string"
+    },
+    "input_task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalized_task": {
+      "type": "string"
+    },
+    "as_of_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "status",
+        "matched_domains",
+        "match_evidence",
+        "ambiguity_reasons"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "matched",
+            "multi_domain",
+            "ambiguous",
+            "unknown"
+          ]
+        },
+        "matched_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "match_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "domain",
+              "term",
+              "match_method"
+            ]
+          }
+        },
+        "ambiguity_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "selected_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "canonical_url",
+          "authority_level",
+          "accessibility_status",
+          "selected_because_of",
+          "local_knowledge_reference"
+        ]
+      }
+    },
+    "selected_knowledge_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "source_ids",
+          "mandatory_for_this_route",
+          "content_read_by_router"
+        ]
+      }
+    },
+    "selected_skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "activation",
+          "discovery"
+        ]
+      }
+    },
+    "skill_execution_evidence": {
+      "type": "object",
+      "required": [
+        "repository_skill_files_present",
+        "codex_native_discovery",
+        "recommended_skill_ids",
+        "skill_invocation",
+        "skill_md_read_by_session",
+        "selected_knowledge_read_by_session",
+        "external_freshness_verified",
+        "evidence_contract"
+      ],
+      "properties": {
+        "repository_skill_files_present": {
+          "type": "boolean"
+        },
+        "codex_native_discovery": {
+          "enum": [
+            "not_observed_by_router"
+          ]
+        },
+        "recommended_skill_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skill_invocation": {
+          "enum": [
+            "not_observed"
+          ]
+        },
+        "skill_md_read_by_session": {
+          "enum": [
+            "not_observed"
+          ]
+        },
+        "selected_knowledge_read_by_session": {
+          "enum": [
+            "not_observed"
+          ]
+        },
+        "external_freshness_verified": {
+          "type": "boolean",
+          "const": false
+        },
+        "evidence_contract": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "selected_policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "summary",
+          "mandatory"
+        ]
+      }
+    },
+    "required_verification_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "required": [
+        "live_checks_performed",
+        "source_records"
+      ]
+    },
+    "missing_or_inaccessible_context": {
+      "type": "array"
+    },
+    "context_budget": {
+      "type": "object",
+      "required": [
+        "unit",
+        "limit_chars",
+        "estimated_selected_chars",
+        "status",
+        "strategy"
+      ]
+    },
+    "material3_topics": {
+      "type": "array"
+    },
+    "explicit_exclusions": {
+      "type": "object"
+    },
+    "routing_status": {
+      "enum": [
+        "routed",
+        "routed_with_limitations",
+        "ambiguous_clarification_recommended",
+        "uncertain_no_domain_match"
+      ]
+    },
+    "router_does_not": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_project_context": {
+      "type": "object",
+      "required": [
+        "status",
+        "project_id",
+        "androidx_dependencies",
+        "gradle_versions",
+        "architecture_constraints",
+        "module_constraints",
+        "source_files_observed",
+        "config_path"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "provided_declarations_not_independently_verified",
+            "not_provided"
+          ]
+        },
+        "project_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "androidx_dependencies": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "gradle_versions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "architecture_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "module_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_files_observed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "config_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

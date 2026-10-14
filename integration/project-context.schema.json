@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project-context.schema.json",
+  "title": "Target Android Project Context",
+  "type": "object",
+  "required": ["schema_version", "harness_version", "androidx_dependencies", "gradle_versions", "architecture_constraints", "module_constraints"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "harness_version": {"type": "string"},
+    "project_id": {"type": "string"},
+    "androidx_dependencies": {"type": "object", "additionalProperties": {"type": "string"}},
+    "gradle_versions": {"type": "object", "additionalProperties": {"type": "string"}},
+    "architecture_constraints": {"type": "array", "items": {"type": "string"}},
+    "module_constraints": {"type": "array", "items": {"type": "string"}},
+    "source_files_observed": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

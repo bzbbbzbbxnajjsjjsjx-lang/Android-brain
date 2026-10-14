@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "registry_verified": "2026-10-14",
+  "sources": [
+    {
+      "id": "codex_workflows",
+      "title": "Iterating development workflows with Codex",
+      "canonical_url": "https://github.com/openai/openai-cookbook/blob/main/examples/codex/iterating-development-workflows-with-codex.md",
+      "owner": "OpenAI",
+      "source_type": "workflow_example",
+      "authority_level": "first_party_guidance",
+      "engineering_domain": "codex_workflow",
+      "relevant_tasks": [
+        "harness",
+        "planning",
+        "implementation",
+        "verification"
+      ],
+      "retrieval_method": "GitHub raw Markdown retrieved",
+      "related_skills": [
+        "android-engineering"
+      ],
+      "related_policies": [
+        "provenance",
+        "reporting",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/codex/iterative-workflows.md",
+      "known_limitations": "Cookbook guidance is an example; AGENTS.md remains the repository instruction entry point."
+    },
+    {
+      "id": "google_android_skills",
+      "title": "Android Skills",
+      "canonical_url": "https://github.com/android/skills",
+      "owner": "Google Android",
+      "source_type": "skills_repository",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "android_skills",
+      "relevant_tasks": [
+        "android_general",
+        "compose",
+        "testing",
+        "performance",
+        "edge_to_edge"
+      ],
+      "retrieval_method": "Git clone and upstream README/SKILL.md retrieved at 5bda39f154fb859a08d45e2392f3568e049f83fb",
+      "related_skills": [
+        "android-engineering",
+        "android-testing",
+        "android-performance",
+        "kotlin-compose"
+      ],
+      "related_policies": [
+        "provenance",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved_selected",
+      "local_knowledge_reference": "knowledge/android-skills/codex-integration.md",
+      "known_limitations": "Selected skills only; upstream tree evolves and individual guidance must be checked against current project versions."
+    },
+    {
+      "id": "material3_site",
+      "title": "Material Design 3",
+      "canonical_url": "https://m3.material.io/",
+      "owner": "Google",
+      "source_type": "design_system_site",
+      "authority_level": "official_design_guidance",
+      "engineering_domain": "material3",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming"
+      ],
+      "retrieval_method": "Homepage returned JavaScript shell; official sitemap fetched 2026-10-14 (HTTP 200, 3,567 entries); 249 active foundations/styles/components URLs retained as URL-discovery evidence",
+      "related_skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "design_compliance",
+        "source_access",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "partial_js_shell",
+      "local_knowledge_reference": "knowledge/material3/principles.md",
+      "known_limitations": "Interactive article content was not retrieved; summaries are limited to accessible material and linked official API sources."
+    },
+    {
+      "id": "material_motion",
+      "title": "Material motion: How it works",
+      "canonical_url": "https://m3.material.io/styles/motion/overview/how-it-works",
+      "owner": "Google",
+      "source_type": "design_guidance",
+      "authority_level": "official_design_guidance",
+      "engineering_domain": "material_motion",
+      "relevant_tasks": [
+        "material_motion",
+        "compose_ui",
+        "accessibility"
+      ],
+      "retrieval_method": "HTTPS fetch returned JavaScript application shell",
+      "related_skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "design_compliance",
+        "api_verification",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "partial_js_shell",
+      "local_knowledge_reference": "knowledge/material3/motion.md",
+      "known_limitations": "No interactive page text inspected; Compose implementation must be verified independently."
+    },
+    {
+      "id": "material_shape_principles",
+      "title": "Material shape: Overview and principles",
+      "canonical_url": "https://m3.material.io/styles/shape/overview-principles",
+      "owner": "Google",
+      "source_type": "design_guidance",
+      "authority_level": "official_design_guidance",
+      "engineering_domain": "material_shapes",
+      "relevant_tasks": [
+        "material_shapes",
+        "compose_ui",
+        "visual_hierarchy"
+      ],
+      "retrieval_method": "HTTPS fetch returned JavaScript application shell",
+      "related_skills": [
+        "material3-expressive"
+      ],
+      "related_policies": [
+        "design_compliance",
+        "api_verification",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "partial_js_shell",
+      "local_knowledge_reference": "knowledge/material3/shapes.md",
+      "known_limitations": "No interactive page text inspected; concise principles are conservative and paired with official API checks."
+    },
+    {
+      "id": "material_shapes_api",
+      "title": "Compose Material3 MaterialShapes API",
+      "canonical_url": "https://developer.android.com/reference/kotlin/androidx/compose/material3/MaterialShapes",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "api_reference",
+      "authority_level": "official_api_contract",
+      "engineering_domain": "material_shapes",
+      "relevant_tasks": [
+        "material_shapes",
+        "compose_ui"
+      ],
+      "retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "related_skills": [
+        "material3-expressive"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/material3-api-compatibility.md",
+      "known_limitations": "API surface and annotations vary by artifact; re-check selected version and transitive Compose constraints."
+    },
+    {
+      "id": "figma_theme_builder",
+      "title": "Material Theme Builder plugin",
+      "canonical_url": "https://www.figma.com/community/plugin/1034969338659738588/material-theme-builder",
+      "owner": "Google / Figma Community",
+      "source_type": "design_tool",
+      "authority_level": "first_party_design_tool",
+      "engineering_domain": "figma_tokens",
+      "relevant_tasks": [
+        "design_tokens",
+        "theming"
+      ],
+      "retrieval_method": "HTTPS fetch blocked by proxy with 403",
+      "related_skills": [
+        "material3-expressive",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "source_access",
+        "provenance",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "blocked_403",
+      "local_knowledge_reference": "knowledge/integrations/figma-workflow.md",
+      "known_limitations": "Plugin UI, exports, and current functionality were not inspected; no tokens inferred."
+    },
+    {
+      "id": "figma_m3_kit",
+      "title": "Material 3 Design Kit",
+      "canonical_url": "https://www.figma.com/community/file/1035203688168086460/material-3-design-kit",
+      "owner": "Google / Figma Community",
+      "source_type": "design_reference",
+      "authority_level": "community_design_reference",
+      "engineering_domain": "figma_visual_reference",
+      "relevant_tasks": [
+        "design_review",
+        "component_specification"
+      ],
+      "retrieval_method": "HTTPS fetch blocked by proxy with 403",
+      "related_skills": [
+        "visual-design-validation",
+        "material3-expressive"
+      ],
+      "related_policies": [
+        "source_access",
+        "provenance",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "blocked_403",
+      "local_knowledge_reference": "knowledge/integrations/figma-workflow.md",
+      "known_limitations": "No layers, components, or assets inspected; request an authorized export or view link."
+    },
+    {
+      "id": "figma_nia_case_study",
+      "title": "Now in Android case study",
+      "canonical_url": "https://www.figma.com/community/file/1164313362327941158/now-in-android-case-study",
+      "owner": "Google / Figma Community",
+      "source_type": "design_reference",
+      "authority_level": "community_design_reference",
+      "engineering_domain": "figma_visual_reference",
+      "relevant_tasks": [
+        "screen_design_review",
+        "information_hierarchy"
+      ],
+      "retrieval_method": "HTTPS fetch blocked by proxy with 403",
+      "related_skills": [
+        "visual-design-validation",
+        "android-engineering"
+      ],
+      "related_policies": [
+        "source_access",
+        "provenance",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "blocked_403",
+      "local_knowledge_reference": "knowledge/integrations/figma-workflow.md",
+      "known_limitations": "No case study layers/assets inspected; repository implementation docs remain separately accessible."
+    },
+    {
+      "id": "nia_modularization",
+      "title": "Now in Android Modularization Learning Journey",
+      "canonical_url": "https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md",
+      "owner": "Google Android",
+      "source_type": "architecture_example",
+      "authority_level": "official_open_source_example",
+      "engineering_domain": "architecture",
+      "relevant_tasks": [
+        "module_boundaries",
+        "architecture_review"
+      ],
+      "retrieval_method": "GitHub raw Markdown retrieved",
+      "related_skills": [
+        "kotlin-compose",
+        "compose-architecture"
+      ],
+      "related_policies": [
+        "architecture_boundaries",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/architecture/modularization.md",
+      "known_limitations": "A sample application is not a universal template; adapt only justified boundaries."
+    },
+    {
+      "id": "hilt_android",
+      "title": "Dependency injection with Hilt",
+      "canonical_url": "https://developer.android.com/training/dependency-injection/hilt-android",
+      "owner": "Android Developers",
+      "source_type": "implementation_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "dependency_injection",
+      "relevant_tasks": [
+        "hilt",
+        "architecture_review"
+      ],
+      "retrieval_method": "Official Android developer page retrieved",
+      "related_skills": [
+        "compose-architecture"
+      ],
+      "related_policies": [
+        "dependency_selection",
+        "architecture_boundaries",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/architecture/hilt-and-flavors.md",
+      "known_limitations": "Verify current Gradle plugin/compiler integration and versions for each project."
+    },
+    {
+      "id": "product_flavors",
+      "title": "Configure build variants",
+      "canonical_url": "https://developer.android.com/build/build-variants#product-flavors",
+      "owner": "Android Developers",
+      "source_type": "implementation_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "build_variants",
+      "relevant_tasks": [
+        "flavors",
+        "build_configuration"
+      ],
+      "retrieval_method": "Official Android developer page retrieved",
+      "related_skills": [
+        "compose-architecture"
+      ],
+      "related_policies": [
+        "dependency_selection",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/architecture/hilt-and-flavors.md",
+      "known_limitations": "Flavor dimensions multiply variant count; use only for actual product/environment differences."
+    },
+    {
+      "id": "nia_screenshots",
+      "title": "Now in Android screenshot references",
+      "canonical_url": "https://github.com/android/nowinandroid/tree/main/app/src/testDemo/screenshots",
+      "owner": "Google Android",
+      "source_type": "test_fixture_catalog",
+      "authority_level": "official_open_source_example",
+      "engineering_domain": "visual_testing",
+      "relevant_tasks": [
+        "screenshot_testing",
+        "adaptive_layout_review"
+      ],
+      "retrieval_method": "GitHub contents API retrieved directory listing",
+      "related_skills": [
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "visual_baseline_approval",
+        "source_access",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "medium",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "metadata_only",
+      "local_knowledge_reference": "knowledge/testing/screenshot-strategy.md",
+      "known_limitations": "Directory metadata was inspected; no images were adopted as project baselines."
+    },
+    {
+      "id": "roborazzi",
+      "title": "Roborazzi",
+      "canonical_url": "https://github.com/takahirom/roborazzi",
+      "owner": "Takahirom",
+      "source_type": "testing_tool",
+      "authority_level": "community_tool",
+      "engineering_domain": "screenshot_testing",
+      "relevant_tasks": [
+        "screenshot_testing",
+        "visual_regression"
+      ],
+      "retrieval_method": "GitHub README and Maven POM retrieved",
+      "related_skills": [
+        "android-testing",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "visual_baseline_approval",
+        "dependency_selection",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/testing/screenshot-strategy.md",
+      "known_limitations": "Community tool, not Android platform authority; version/platform compatibility must be tested."
+    },
+    {
+      "id": "baseline_profiles",
+      "title": "Baseline Profiles overview",
+      "canonical_url": "https://developer.android.com/topic/performance/baselineprofiles/overview",
+      "owner": "Android Developers",
+      "source_type": "performance_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "performance",
+      "relevant_tasks": [
+        "startup_optimization",
+        "baseline_profiles"
+      ],
+      "retrieval_method": "Official Android developer page retrieved",
+      "related_skills": [
+        "android-performance"
+      ],
+      "related_policies": [
+        "measurement_first",
+        "performance_claims",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/performance/measurement.md",
+      "known_limitations": "Generation requires suitable benchmark target/device infrastructure; profile existence is not measured improvement."
+    },
+    {
+      "id": "macrobenchmark",
+      "title": "Macrobenchmark overview",
+      "canonical_url": "https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview",
+      "owner": "Android Developers",
+      "source_type": "performance_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "performance",
+      "relevant_tasks": [
+        "startup_optimization",
+        "interaction_benchmarking"
+      ],
+      "retrieval_method": "Official Android developer page retrieved",
+      "related_skills": [
+        "android-performance"
+      ],
+      "related_policies": [
+        "measurement_first",
+        "performance_claims",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/performance/measurement.md",
+      "known_limitations": "Benchmark configuration and device/emulator support vary; compare repeatable runs on suitable targets."
+    },
+    {
+      "id": "legacy_view_motion",
+      "title": "Material Components Android motion theming",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/master/docs/theming/Motion.md",
+      "owner": "Material Components for Android",
+      "source_type": "legacy_implementation_guide",
+      "authority_level": "legacy_view_system_reference",
+      "engineering_domain": "legacy_motion",
+      "relevant_tasks": [
+        "legacy_view_motion_review"
+      ],
+      "retrieval_method": "GitHub raw Markdown retrieved",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "scope_isolation",
+        "freshness",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/legacy/view-motion.md",
+      "known_limitations": "View/XML-specific reference only; do not transplant Animator or View implementation into Compose."
+    },
+    {
+      "id": "androidx_material3_package",
+      "title": "Material 3 Compose API package",
+      "canonical_url": "https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "api_reference",
+      "authority_level": "official_api_contract",
+      "engineering_domain": "androidx_compose_material3",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming"
+      ],
+      "retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/material3-api-compatibility.md",
+      "known_limitations": "Official component/API package index."
+    },
+    {
+      "id": "androidx_material_theme",
+      "title": "MaterialTheme composable",
+      "canonical_url": "https://developer.android.com/reference/kotlin/androidx/compose/material3/MaterialTheme",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "api_reference",
+      "authority_level": "official_api_contract",
+      "engineering_domain": "theming",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming"
+      ],
+      "retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/material3-api-compatibility.md",
+      "known_limitations": "Reference for Compose Material theme provision."
+    },
+    {
+      "id": "androidx_motion_scheme",
+      "title": "MotionScheme API",
+      "canonical_url": "https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "api_reference",
+      "authority_level": "official_api_contract",
+      "engineering_domain": "material_motion",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming"
+      ],
+      "retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/material3-api-compatibility.md",
+      "known_limitations": "Version-specific motion scheme surface; verify visibility/stability against dependency source."
+    },
+    {
+      "id": "androidx_color_scheme",
+      "title": "ColorScheme API",
+      "canonical_url": "https://developer.android.com/reference/kotlin/androidx/compose/material3/ColorScheme",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "api_reference",
+      "authority_level": "official_api_contract",
+      "engineering_domain": "theming",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming"
+      ],
+      "retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/material3-api-compatibility.md",
+      "known_limitations": "Semantic color role API; role availability can evolve."
+    },
+    {
+      "id": "androidx_typography",
+      "title": "Typography API",
+      "canonical_url": "https://developer.android.com/reference/kotlin/androidx/compose/material3/Typography",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "api_reference",
+      "authority_level": "official_api_contract",
+      "engineering_domain": "theming",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming"
+      ],
+      "retrieval_method": "Official Android API reference HTML body retrieved and inspected on 2026-10-14; relevant type/member excerpts reviewed",
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "experimental_api",
+        "freshness",
+        "security",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/material3-api-compatibility.md",
+      "known_limitations": "Text style roles API; verify the target artifact."
+    },
+    {
+      "id": "androidx_compose_adaptive",
+      "title": "Compose adaptive layouts",
+      "canonical_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "implementation_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "adaptive_layout",
+      "relevant_tasks": [
+        "compose_ui",
+        "adaptive_layout",
+        "material3"
+      ],
+      "retrieval_method": "Official page body fetched over HTTPS on 2026-10-14; targeted guide reference captured",
+      "related_skills": [
+        "kotlin-compose",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "accessibility_review",
+        "freshness",
+        "no_hallucinated_api",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/compose-adaptive.md",
+      "known_limitations": "Guide must be rechecked for current APIs; does not verify any consuming app implementation."
+    },
+    {
+      "id": "androidx_compose_accessibility",
+      "title": "Compose accessibility",
+      "canonical_url": "https://developer.android.com/develop/ui/compose/accessibility",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "implementation_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "accessibility",
+      "relevant_tasks": [
+        "compose_ui",
+        "accessibility",
+        "material3"
+      ],
+      "retrieval_method": "Official page body fetched over HTTPS on 2026-10-14; targeted guide reference captured",
+      "related_skills": [
+        "kotlin-compose",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "api_compatibility",
+        "accessibility_review",
+        "freshness",
+        "no_hallucinated_api",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/compose-accessibility.md",
+      "known_limitations": "Guide must be rechecked for current APIs; does not verify any consuming app implementation."
+    }
+  ]
+}

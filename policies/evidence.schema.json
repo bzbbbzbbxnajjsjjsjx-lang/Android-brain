@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence.schema.json",
+  "title": "Android Context Harness Evidence Record",
+  "type": "object",
+  "required": ["schema_version", "task", "context_manifest_digest", "applicable_policy_ids", "claims", "checks", "skill_evidence", "environment_limitations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "task": {
+      "type": "object", "required": ["id", "kind", "description", "completion_scope"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "kind": {"type": "string", "minLength": 1},
+        "description": {"type": "string"}, "completion_scope": {"enum": ["local", "merge", "release"]}
+      }, "additionalProperties": false
+    },
+    "context_manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "applicable_policy_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "claims": {"type": "array", "items": {"type": "object", "required": ["type", "value"], "properties": {
+      "type": {"type": "string"}, "value": {}, "source_ids": {"type": "array", "items": {"type": "string"}},
+      "evidence_check_ids": {"type": "array", "items": {"type": "string"}}, "details": {"type": "object"}
+    }, "additionalProperties": false}},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["id", "policy_id", "status", "evidence_origin", "verification_result"], "properties": {
+      "id": {"type": "string"}, "policy_id": {"type": "string"},
+      "status": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT VERIFIED"]},
+      "command_or_tool": {"type": "string"}, "exit_code": {"type": ["integer", "null"]},
+      "observed_at": {"type": "string", "format": "date-time"},
+      "artifact_ref": {"type": "string"}, "artifact_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "evidence_origin": {"enum": ["observed_tool_output", "observed_artifact", "human_review", "reported_assertion"]},
+      "environment_limitations": {"type": "array", "items": {"type": "string"}},
+      "verification_result": {"type": "string"}, "human_approval_required": {"type": "boolean"},
+      "details": {"type": "object"}
+    }, "additionalProperties": false}},
+    "skill_evidence": {"type": "object", "required": ["skill_id", "registered", "recommended", "metadata_discovered", "invoked", "skill_md_read", "knowledge_references_read", "external_source_verified"], "properties": {
+      "skill_id": {"type": "string"}, "registered": {"type": "boolean"}, "recommended": {"type": "boolean"},
+      "metadata_discovered": {"type": "boolean"}, "invoked": {"type": "boolean"}, "skill_md_read": {"type": "boolean"},
+      "knowledge_references_read": {"type": "array", "items": {"type": "string"}}, "knowledge_read_check_ids": {"type": "array", "items": {"type": "string"}}, "external_source_verified": {"type": "boolean"},
+      "discovery_check_id": {"type": "string"}, "invocation_check_id": {"type": "string"},
+      "skill_read_check_id": {"type": "string"}, "external_check_id": {"type": "string"}, "evidence_origin": {"enum": ["observed_tool_output", "observed_artifact", "reported_assertion"]}
+    }, "additionalProperties": false},
+    "environment_limitations": {"type": "array", "items": {"type": "string"}},
+    "workspace_root": {"type": "string"}, "hosted_ci": {"type": "object"}
+  },
+  "additionalProperties": false
+}

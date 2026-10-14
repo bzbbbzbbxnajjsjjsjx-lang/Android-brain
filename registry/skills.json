@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "id": "android-engineering",
+      "path": ".agents/skills/android-engineering/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "harness_only",
+        "context_engineering"
+      ],
+      "reason": "Task routing, source provenance, harness scope and evidence rules."
+    },
+    {
+      "id": "kotlin-compose",
+      "path": ".agents/skills/kotlin-compose/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "compose_ui"
+      ],
+      "reason": "Compose UI behavior and state implementation; architecture decisions route to compose-architecture."
+    },
+    {
+      "id": "material3-expressive",
+      "path": ".agents/skills/material3-expressive/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "material3_foundations",
+        "material3_expressive",
+        "material3_color",
+        "material3_typography",
+        "material_shapes",
+        "material_motion",
+        "material3_layout",
+        "material3_adaptive",
+        "material3_components",
+        "material3_component_states",
+        "material3_interaction",
+        "material3_accessibility",
+        "material3_tokens",
+        "material3_navigation",
+        "material3_spacing_density",
+        "material3_elevation",
+        "material3_icons",
+        "material3_content_design",
+        "material3_watches",
+        "material3_xr",
+        "material3_co_design",
+        "theming"
+      ],
+      "reason": "Unified entrypoint for the complete Material 3 domain; the router supplies only matching topic references."
+    },
+    {
+      "id": "android-testing",
+      "path": ".agents/skills/android-testing/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "screenshot_testing",
+        "android_testing"
+      ],
+      "reason": "Project policy overlay for test evidence and explicit visual-reference approval."
+    },
+    {
+      "id": "visual-design-validation",
+      "path": ".agents/skills/visual-design-validation/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "visual_validation",
+        "screenshot_testing"
+      ],
+      "reason": "Approved references, inspected render evidence, and inaccessible-design limits."
+    },
+    {
+      "id": "android-performance",
+      "path": ".agents/skills/android-performance/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "performance"
+      ],
+      "reason": "Measurement-first Android benchmark policy."
+    },
+    {
+      "id": "testing-setup",
+      "path": ".agents/skills/testing-setup/SKILL.md",
+      "origin": "google/android-skills",
+      "domains": [
+        "android_testing",
+        "screenshot_testing"
+      ],
+      "reason": "Official Android testing setup guidance; apply only after compatibility and project need review.",
+      "source_revision": "5bda39f154fb859a08d45e2392f3568e049f83fb",
+      "sha256": "56d85c76b6771c7b1fdabdf0090953f4e0b4d2b332a3690c59985fb2e7a1e2ed",
+      "license": "Apache-2.0",
+      "license_path": ".agents/skills/testing-setup/LICENSE.txt",
+      "license_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "id": "jetpack-compose-performance",
+      "path": ".agents/skills/jetpack-compose-performance/SKILL.md",
+      "origin": "google/android-skills",
+      "domains": [
+        "compose_performance"
+      ],
+      "reason": "Official optimization guidance; load relevant reference files only for measured Compose bottlenecks.",
+      "source_revision": "5bda39f154fb859a08d45e2392f3568e049f83fb",
+      "sha256": "78f3289a664022f3259d885ec1c67bfa972e746525dbcab575eb1bc621408969",
+      "license": "Apache-2.0",
+      "license_path": ".agents/skills/jetpack-compose-performance/LICENSE.txt",
+      "license_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "id": "edge-to-edge",
+      "path": ".agents/skills/edge-to-edge/SKILL.md",
+      "origin": "google/android-skills",
+      "domains": [
+        "compose_ui",
+        "edge_to_edge"
+      ],
+      "reason": "Official focused UI/window-insets guidance.",
+      "source_revision": "5bda39f154fb859a08d45e2392f3568e049f83fb",
+      "sha256": "4ca04cb6a5330b96e51410bc815f878b4ca642fba46fe5e1ad724c94e04d6eb8",
+      "license": "Apache-2.0",
+      "license_path": ".agents/skills/edge-to-edge/LICENSE.txt",
+      "license_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "id": "compose-architecture",
+      "path": ".agents/skills/compose-architecture/SKILL.md",
+      "origin": "local",
+      "domains": [
+        "architecture",
+        "dependency_injection",
+        "build_variants"
+      ],
+      "reason": "Compose architecture, state ownership, Hilt, modularization and build-variant decisions."
+    }
+  ]
+}

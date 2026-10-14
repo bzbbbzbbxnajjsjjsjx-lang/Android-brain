@@ -1,0 +1,265 @@
+{
+  "evaluations": [
+    {
+      "detail": "{\"androidx_api\": {\"cases\": 4, \"delta\": 0.375, \"failures\": [], \"p5\": 0.625, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"harness\": {\"cases\": 2, \"delta\": 0.375, \"failures\": [], \"p5\": 0.625, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"material3_content_design\": {\"cases\": 1, \"delta\": 1.0, \"failures\": [], \"p5\": 0.0, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"material3_xr\": {\"cases\": 1, \"delta\": 1.0, \"failures\": [], \"p5\": 0.0, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}}",
+      "id": "E_knowledge_precision",
+      "status": "PASS"
+    },
+    {
+      "detail": "Unreleased development channel is rejected unless an explicit isolated-test flag is supplied.",
+      "id": "A_development_channel_guard",
+      "status": "PASS"
+    },
+    {
+      "detail": "Separate harness checkout, native skill files, and project config installed; knowledge remains in harness checkout.",
+      "id": "A_clean_integration",
+      "status": "PASS"
+    },
+    {
+      "detail": "Existing AGENTS.md instructions and unrelated product data remained intact.",
+      "id": "B_project_isolation",
+      "status": "PASS"
+    },
+    {
+      "detail": "Missing versions are flagged; synthetic declarations are visible but remain unverified and still require resolved dependency evidence.",
+      "id": "C_project_versions",
+      "status": "PASS"
+    },
+    {
+      "detail": "Conflicting generic Hilt guidance is surfaced for an explicit owner decision; no project architecture was changed.",
+      "id": "D_project_conflict",
+      "status": "PASS"
+    },
+    {
+      "detail": "Unsupported schema set blocks upgrade before modifying target files.",
+      "id": "I_incompatible_schema",
+      "status": "PASS"
+    },
+    {
+      "detail": "0.6.1-dev synthetic update rolled back to the previous installed version and skill bytes.",
+      "id": "J_upgrade_rollback",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rollback refused to delete the user-edited project context and made no partial removal.",
+      "id": "J_rollback_preserves_user_edits",
+      "status": "PASS"
+    },
+    {
+      "detail": "install=0 rollback=0 state=False config=False agents='# Existing instructions\\n' rollback_output=",
+      "id": "J_clean_install_rollback",
+      "status": "PASS"
+    },
+    {
+      "detail": "Prohibited Android artifacts: []",
+      "id": "A_no_android_generation",
+      "status": "PASS"
+    },
+    {
+      "detail": "21 topic groups/249 URLs discovered; sampled shell retrievals are not page-content verification.",
+      "id": "F_discovered_not_verified",
+      "status": "PASS"
+    },
+    {
+      "detail": "VERIFIED requires retrieved page content, summary, review date, reviewer, and source section",
+      "id": "G_retrieval_requires_attribution",
+      "status": "PASS"
+    },
+    {
+      "detail": "Actual discovery check is consumed by the existing P4 evaluator; invocation and SKILL.md reading remain separate NOT VERIFIED states.",
+      "id": "H_skill_observability",
+      "status": "PASS"
+    },
+    {
+      "detail": "Release BLOCKED; version control BLOCKED; hosted CI NOT VERIFIED. The synthetic integration scenarios in this run are evaluated separately and must pass before their evidence is recorded.",
+      "id": "K_release_readiness_blocked",
+      "status": "PASS"
+    },
+    {
+      "detail": "_general: unknown source invented_source\nPASS conflicting_duplicate_source via registry_validator: FAIL: duplicate source id: codex_workflows\nPASS broken_local_reference via registry_validator: FAIL: android_general: missing knowledge note knowledge/missing.md\nPASS source_note_provenance_removed via registry_validator: FAIL: codex_workflows: provenance absent from knowledge/codex/iterative-workflows.md\nPASS androidx_api_misclassified via registry_validator: FAIL: material_shapes: API source is missing or misclassified: material_shapes_api\nPASS material_topic_removed via registry_validator: FAIL: Material 3 coverage missing ['material_shapes']\nPASS provenance_policy_weakened via registry_validator: FAIL: global mandatory policy cannot be advisory: provenance\nPASS material_skill_selection_weakened via registry_validator: FAIL: material3_color: missing unified Material 3 skill\nPASS inaccessible_figma_marked_verified via independent_task_expectations: source figma_m3_kit access expected=blocked_403 actual=retrieved; inaccessible source figma_m3_kit limitation not surfaced\nPASS unrelated_source_contamination via independent_task_expectations: forbidden sources selected=['hilt_android']\n",
+      "id": "L_p0_p5_regressions",
+      "status": "PASS"
+    }
+  ],
+  "git_head": null,
+  "harness_version": "0.6.0-dev",
+  "hosted_ci": "NOT VERIFIED",
+  "material_coverage": {
+    "discovered_urls": 249,
+    "page_evidence_record_counts": {
+      "content_retrieved": 0,
+      "discovered": 0,
+      "retrieved_shell": 2,
+      "verified": 0
+    },
+    "topic_groups_discovered": 21,
+    "verified_page_content_topics": 0
+  },
+  "native_codex_skill_discovery": "PASS",
+  "native_codex_skill_invocation": "NOT VERIFIED",
+  "precision_comparison": {
+    "aggregate": {
+      "p5": {
+        "budget_estimated_chars": {
+          "max": 18387,
+          "mean": 4515.68,
+          "unit": "characters"
+        },
+        "classification_exact_accuracy": 1.0,
+        "deterministic_cases": 40,
+        "forbidden_source_selections": 0,
+        "knowledge_precision": 0.8125,
+        "knowledge_recall": 1.0,
+        "policy_coverage": 1.0,
+        "required_skill_recall": 1.0,
+        "required_source_recall": 1.0,
+        "skill_precision": 0.9338,
+        "source_precision": 0.9767,
+        "task_count": 40,
+        "task_pass_count": 40
+      },
+      "p6": {
+        "budget_estimated_chars": {
+          "max": 13104,
+          "mean": 3936.38,
+          "unit": "characters"
+        },
+        "classification_exact_accuracy": 1.0,
+        "deterministic_cases": 40,
+        "forbidden_source_selections": 0,
+        "knowledge_precision": 0.925,
+        "knowledge_recall": 1.0,
+        "policy_coverage": 1.0,
+        "required_skill_recall": 1.0,
+        "required_source_recall": 1.0,
+        "skill_precision": 0.9338,
+        "source_precision": 0.9767,
+        "task_count": 40,
+        "task_pass_count": 40
+      }
+    },
+    "androidx_api": {
+      "cases": 4,
+      "delta": 0.375,
+      "failures": [],
+      "p5": 0.625,
+      "p6": 1.0,
+      "required_knowledge_recall": 1.0
+    },
+    "harness": {
+      "cases": 2,
+      "delta": 0.375,
+      "failures": [],
+      "p5": 0.625,
+      "p6": 1.0,
+      "required_knowledge_recall": 1.0
+    },
+    "material3_content_design": {
+      "cases": 1,
+      "delta": 1.0,
+      "failures": [],
+      "p5": 0.0,
+      "p6": 1.0,
+      "required_knowledge_recall": 1.0
+    },
+    "material3_xr": {
+      "cases": 1,
+      "delta": 1.0,
+      "failures": [],
+      "p5": 0.0,
+      "p6": 1.0,
+      "required_knowledge_recall": 1.0
+    }
+  },
+  "release_readiness": {
+    "blockers": [
+      "Git HEAD is unavailable",
+      "working tree is not clean against its tracked baseline",
+      "harness release channel is 'development', not stable",
+      "hosted CI for the current HEAD is NOT VERIFIED",
+      "version tag is absent",
+      "minimum verified Material.io topic-family coverage is not met"
+    ],
+    "candidate_license_files": [
+      "LICENSE"
+    ],
+    "head": null,
+    "hosted_ci": "NOT VERIFIED",
+    "integration_tested": "PASS",
+    "local_tested": "PASS",
+    "local_validation_exit_code": 0,
+    "local_validation_ready": "PASS",
+    "material3_registered_topics": 21,
+    "material3_verified_topics": 0,
+    "material_source_verification": "BLOCKED",
+    "release_candidate": "BLOCKED",
+    "release_channel": "development",
+    "release_ready": "BLOCKED",
+    "release_version": "0.6.0-dev",
+    "remote": "https://github.com/bzbbbzbbxnajjsjjsjx-lang/Android-brain.git",
+    "repository_license_review": "PASS",
+    "required_topic_families": {
+      "accessibility": "material3_accessibility",
+      "color": "material3_color",
+      "components": "material3_components",
+      "foundations": "material3_foundations",
+      "typography": "material3_typography"
+    },
+    "stable_release": "BLOCKED",
+    "tracked_file_count": 104,
+    "verified_topic_families": {
+      "accessibility": "BLOCKED",
+      "color": "BLOCKED",
+      "components": "BLOCKED",
+      "foundations": "BLOCKED",
+      "typography": "BLOCKED"
+    },
+    "version_control_ready": "BLOCKED",
+    "version_tag_present": false,
+    "working_tree_clean": false
+  },
+  "retrieval_records": [
+    {
+      "canonical_url": "https://m3.material.io/components/all-buttons",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "limitation": "HTML response visibly states that JavaScript is required; only title/metadata were available to this retrieval. The button guidance itself was not reviewed.",
+      "meta_description": "Buttons let people take action and make choices with one tap. Explore button types: elevated, filled, filled tonal, outlined, text, icon, segmented & more.",
+      "page_content_obtained": false,
+      "page_title": "All buttons – Material Design 3",
+      "response_bytes": 61768,
+      "response_sha256": "e94aa959ee9828539c4f1e84037c6ddbb6432cd3ba7a2dd228885ca2c1796269",
+      "retrieved_at": "2026-10-14T15:11:40Z",
+      "state": "retrieved_shell",
+      "topic_id": "material3_components",
+      "verified": false,
+      "visible_non_script_text_chars": 31
+    },
+    {
+      "canonical_url": "https://m3.material.io/styles/color/roles",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "limitation": "HTML response visibly states that JavaScript is required; only title/metadata were available to this retrieval. Color-role guidance itself was not reviewed.",
+      "meta_description": "Color roles are like the 'numbers' in a paint-by-number canvas. They're the connective tissue between elements of the UI and what color goes where.",
+      "page_content_obtained": false,
+      "page_title": "Color roles - Material Design 3",
+      "response_bytes": 61737,
+      "response_sha256": "1d3333f618c3d0d2a5bc4c882657e0f7b339924eaee3ff4229c5eec5bc4456bc",
+      "retrieved_at": "2026-10-14T15:11:49Z",
+      "state": "retrieved_shell",
+      "topic_id": "material3_color",
+      "verified": false,
+      "visible_non_script_text_chars": 31
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS",
+  "synthetic_integration": {
+    "harness_version": "0.6.0-dev",
+    "installed_native_skill_files": 26,
+    "shared_knowledge_copied": false,
+    "status": "PASS",
+    "target_root": "temporary fixture; removed after test"
+  },
+  "working_tree_sha256": "7a6b82315f893bc74c3f48d8ca70e75962865e4bcdb834a65c840ad1a98d236b"
+}
