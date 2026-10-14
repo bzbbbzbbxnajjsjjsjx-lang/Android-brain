@@ -17,7 +17,7 @@
     "retrieval_records": {"type": "array"},
     "native_codex_skill_discovery": {"enum": ["PASS", "NOT VERIFIED", "FAIL"]},
     "native_codex_skill_invocation": {"const": "NOT VERIFIED"},
-    "hosted_ci": {"const": "NOT VERIFIED"},
+    "hosted_ci": {"enum": ["PASS", "FAIL", "NOT VERIFIED"]},
     "release_readiness": {"type": "object", "required": ["release_ready", "version_control_ready", "hosted_ci", "blockers"]}
   },
   "additionalProperties": true

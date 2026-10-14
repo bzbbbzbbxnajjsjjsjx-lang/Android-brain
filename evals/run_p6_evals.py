@@ -122,12 +122,13 @@ def main()->int:
     native_probe=cmd([sys.executable,ROOT/"scripts/check_codex_skill_discovery.py"],ROOT)
     native_discovery="PASS" if native_probe.returncode==0 and "exposed the material3-expressive activation description" in native_probe.stdout else "NOT VERIFIED" if native_probe.returncode==2 else "FAIL"
     readiness=release_gate.readiness(ROOT)
-    record(results,"K_release_readiness_blocked",readiness["release_ready"]=="BLOCKED" and readiness["version_control_ready"]=="BLOCKED" and readiness["hosted_ci"]!="PASS",f"Release {readiness['release_ready']}; version control {readiness['version_control_ready']}; hosted CI {readiness['hosted_ci']}. The synthetic integration scenarios in this run are evaluated separately and must pass before their evidence is recorded.")
+    vc_expected=("PASS" if readiness["head"] and readiness["tracked_file_count"]>0 and readiness["working_tree_clean"] and readiness["remote"] else "BLOCKED")
+    record(results,"K_release_readiness_blocked",readiness["release_ready"]=="BLOCKED" and readiness["version_control_ready"]==vc_expected and readiness["hosted_ci"]!="PASS" and readiness["material_source_verification"]!="PASS",f"Release remains {readiness['release_ready']}; version control={readiness['version_control_ready']} (expected {vc_expected} from observed Git state); hosted CI={readiness['hosted_ci']}; Material source verification={readiness['material_source_verification']}. Release stays blocked until the actual CI and source gates pass.")
     # Full pre-P6 regression gate; bootstrap deliberately excludes this runner to avoid recursion.
     regress=cmd(["bash",ROOT/"scripts/bootstrap-cloud.sh"],ROOT)
     record(results,"L_p0_p5_regressions",regress.returncode==0,(regress.stdout+regress.stderr)[-1200:])
     head=cmd(["git","rev-parse","--verify","HEAD"],ROOT)
-    report={"schema_version":1,"harness_version":json.loads((ROOT/"release/harness-manifest.json").read_text())["harness_version"],"git_head":head.stdout.strip() if head.returncode==0 else None,"working_tree_sha256":worktree_digest(ROOT),"status":"PASS" if all(x["status"]=="PASS" for x in results) else "FAIL","evaluations":results,"precision_comparison":precision,"synthetic_integration":integration,"material_coverage":coverage,"retrieval_records":evidence["records"],"native_codex_skill_discovery":native_discovery,"native_codex_skill_invocation":"NOT VERIFIED","hosted_ci":"NOT VERIFIED","release_readiness":readiness}
+    report={"schema_version":1,"harness_version":json.loads((ROOT/"release/harness-manifest.json").read_text())["harness_version"],"git_head":head.stdout.strip() if head.returncode==0 else None,"working_tree_sha256":worktree_digest(ROOT),"status":"PASS" if all(x["status"]=="PASS" for x in results) else "FAIL","evaluations":results,"precision_comparison":precision,"synthetic_integration":integration,"material_coverage":coverage,"retrieval_records":evidence["records"],"native_codex_skill_discovery":native_discovery,"native_codex_skill_invocation":"NOT VERIFIED","hosted_ci":readiness["hosted_ci"],"release_readiness":readiness}
     try:
         from jsonschema import Draft202012Validator
         schema=json.loads((ROOT/"evals/schemas/p6-evaluation-report.schema.json").read_text())
@@ -138,6 +139,7 @@ def main()->int:
     # The report itself is excluded from the digest, so the final readiness snapshot
     # can independently confirm that these integration results still match this tree.
     report["release_readiness"]=release_gate.readiness(ROOT)
+    report["hosted_ci"]=report["release_readiness"]["hosted_ci"]
     report["working_tree_sha256"]=worktree_digest(ROOT)
     report["status"]="PASS" if all(x["status"]=="PASS" for x in results) else "FAIL"
     errors=sorted(Draft202012Validator(schema).iter_errors(report),key=lambda e:list(map(str,e.path)))

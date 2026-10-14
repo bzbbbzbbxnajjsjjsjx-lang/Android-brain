@@ -30,7 +30,7 @@
   "evaluation_dataset": "android-context-routing-independent-v1",
   "limitations": [
     "Development channel only; no stable release or version tag is authorized or present.",
-    "Hosted GitHub Actions execution is not verified.",
+    "Hosted GitHub Actions run 38601839707 for the initial commit failed at the P6 readiness evaluation; earlier workflow steps passed and P7 was skipped.",
     "Material.io page bodies remain unverified where only a JavaScript shell was retrieved.",
     "Native Codex skill invocation and SKILL.md body consumption are not established by router output."
   ]

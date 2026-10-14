@@ -3,6 +3,7 @@
 from __future__ import annotations
 import hashlib,json,subprocess,sys
 from pathlib import Path
+from urllib.parse import urlparse
 ROOT=Path(__file__).resolve().parents[1]
 def run(root:Path,*cmd):return subprocess.run(cmd,cwd=root,capture_output=True,text=True)
 def worktree_digest(root:Path)->str:
@@ -21,6 +22,19 @@ def classify_release_candidate(local:str,integration:str,version_control:str,ci:
     return "PASS" if all(x=="PASS" for x in (local,integration,version_control,ci,source,license_review)) else "BLOCKED"
 def classify_stable_release(candidate:str,channel:str,tag_present:bool)->str:
     return "PASS" if candidate=="PASS" and channel=="stable" and tag_present else "BLOCKED"
+def github_repo_slug(remote:str)->str|None:
+    """Extract owner/repository from supported GitHub HTTPS, SSH, or SCP remotes."""
+    value=remote.strip()
+    if value.startswith("git@github.com:"):
+        path=value.split(":",1)[1]
+    else:
+        parsed=urlparse(value)
+        if parsed.hostname!="github.com" or parsed.scheme not in {"https","ssh"}:
+            return None
+        path=parsed.path.lstrip("/")
+    path=path.removesuffix(".git").strip("/")
+    parts=path.split("/")
+    return "/".join(parts) if len(parts)==2 and all(parts) else None
 def readiness(root:Path)->dict:
     release=json.loads((root/"release/harness-manifest.json").read_text())
     topics=json.loads((root/"routing/material3-topics.json").read_text())["topics"]
@@ -44,11 +58,12 @@ def readiness(root:Path)->dict:
     ci_status="NOT VERIFIED"
     if remote.returncode==0 and remote.stdout.strip():
         try:
-            url=remote.stdout.strip().removesuffix(".git");slug=url.rsplit(":",1)[-1].replace("https://github.com/","").replace("ssh://git@github.com/","")
-            proc=subprocess.run(["gh","run","list","--repo",slug,"--limit","50","--json","status,conclusion,headSha,url,createdAt"],cwd=root,capture_output=True,text=True)
-            runs=json.loads(proc.stdout) if proc.returncode==0 else []
-            sha=head.stdout.strip() if head.returncode==0 else ""
-            ci_status=classify_hosted_ci(sha,runs)
+            slug=github_repo_slug(remote.stdout)
+            if slug:
+                proc=subprocess.run(["gh","run","list","--repo",slug,"--limit","50","--json","status,conclusion,headSha,url,createdAt"],cwd=root,capture_output=True,text=True)
+                runs=json.loads(proc.stdout) if proc.returncode==0 else []
+                sha=head.stdout.strip() if head.returncode==0 else ""
+                ci_status=classify_hosted_ci(sha,runs)
         except (FileNotFoundError,json.JSONDecodeError):ci_status="NOT VERIFIED"
     if ci_status!="PASS":blockers.append(f"hosted CI for the current HEAD is {ci_status}")
     local=run(root,"bash","scripts/bootstrap-cloud.sh")

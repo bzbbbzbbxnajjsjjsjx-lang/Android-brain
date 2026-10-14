@@ -71,7 +71,7 @@
       "status": "PASS"
     },
     {
-      "detail": "Release BLOCKED; version control BLOCKED; hosted CI NOT VERIFIED. The synthetic integration scenarios in this run are evaluated separately and must pass before their evidence is recorded.",
+      "detail": "Release remains BLOCKED; version control=BLOCKED (expected BLOCKED from observed Git state); hosted CI=FAIL; Material source verification=BLOCKED. Release stays blocked until the actual CI and source gates pass.",
       "id": "K_release_readiness_blocked",
       "status": "PASS"
     },
@@ -81,9 +81,9 @@
       "status": "PASS"
     }
   ],
-  "git_head": null,
+  "git_head": "fffbe6da879b1b1dc0b1e41130dedd7da9394b58",
   "harness_version": "0.6.0-dev",
-  "hosted_ci": "NOT VERIFIED",
+  "hosted_ci": "FAIL",
   "material_coverage": {
     "discovered_urls": 249,
     "page_evidence_record_counts": {
@@ -173,18 +173,17 @@
   },
   "release_readiness": {
     "blockers": [
-      "Git HEAD is unavailable",
       "working tree is not clean against its tracked baseline",
       "harness release channel is 'development', not stable",
-      "hosted CI for the current HEAD is NOT VERIFIED",
+      "hosted CI for the current HEAD is FAIL",
       "version tag is absent",
       "minimum verified Material.io topic-family coverage is not met"
     ],
     "candidate_license_files": [
       "LICENSE"
     ],
-    "head": null,
-    "hosted_ci": "NOT VERIFIED",
+    "head": "fffbe6da879b1b1dc0b1e41130dedd7da9394b58",
+    "hosted_ci": "FAIL",
     "integration_tested": "PASS",
     "local_tested": "PASS",
     "local_validation_exit_code": 0,
@@ -261,5 +260,5 @@
     "status": "PASS",
     "target_root": "temporary fixture; removed after test"
   },
-  "working_tree_sha256": "7a6b82315f893bc74c3f48d8ca70e75962865e4bcdb834a65c840ad1a98d236b"
+  "working_tree_sha256": "cf043c217eed53e226ed7b3d616c0deaf4349bfcc64efd15a30b8548ad57fe82"
 }

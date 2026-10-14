@@ -72,7 +72,9 @@ def main()->int:
         ({"headSha":"abc","status":"in_progress","conclusion":None,"createdAt":"2026-01-01"},"NOT VERIFIED"),
     ]
     classification=all(readiness.classify_hosted_ci("abc",([f] if f else []))==want for f,want in fixtures)
-    check(classification,results,"G_hosted_ci_evidence_classification","No-run/in-progress is NOT VERIFIED; latest completed success/failure maps to PASS/FAIL.")
+    remote_parsing={"https://github.com/acme/android-harness.git":"acme/android-harness","ssh://git@github.com/acme/android-harness.git":"acme/android-harness","git@github.com:acme/android-harness.git":"acme/android-harness","https://example.com/acme/android-harness.git":None}
+    classification=classification and all(readiness.github_repo_slug(url)==want for url,want in remote_parsing.items())
+    check(classification,results,"G_hosted_ci_evidence_classification","No-run/in-progress is NOT VERIFIED; completed outcomes map to PASS/FAIL and supported GitHub remotes parse to the correct repository slug.")
     topics=json.loads((ROOT/"routing/material3-topics.json").read_text())["topics"]
     sitemap=json.loads((ROOT/"routing/material3-sitemap-evidence.json").read_text())["urls"]
     evidence=json.loads((ROOT/"routing/material3-retrieval-evidence.json").read_text())
