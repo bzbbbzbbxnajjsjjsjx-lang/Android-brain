@@ -2,7 +2,7 @@
 
 ## Status
 
-Protocol prepared; the comparative engineering trials have **not** run. The installed Codex CLI was callable, but its first independent `codex exec` could not reach the Codex Responses/MCP endpoints through the environment proxy (`HTTP CONNECT 403`). No model response or code change resulted. No emulator is installed and `adb devices` reports no attached devices (ADB itself requires a writable `HOME` in this environment). Therefore runtime behavior and any harness quality effect remain **NOT VERIFIED**.
+Protocol prepared; the independent comparative engineering trials have **not** run. The installed Codex CLI was callable, but its first independent `codex exec` could not reach the Codex Responses/MCP endpoints through the environment proxy (`HTTP CONNECT 403`). No model response or code change resulted from that attempt. A separate, single-arm accessibility task was later executed successfully on a GitHub Actions API 34 emulator; see [the real Android validation case study](REAL_ANDROID_VALIDATION.md). That run verifies only its focused instrumentation result and does not establish any comparative harness quality effect. A/B quality improvement remains **NOT VERIFIED**.
 
 ## Fixed project and model
 
@@ -52,4 +52,4 @@ Save the immutable project SHA, harness SHA/worktree diff, task texts, model and
 
 ## Current environment observation
 
-Observed here: NIA source snapshot at the pinned commit is clean; Java 21 and Android SDK directories are present. No emulator executable/system image was found. `adb devices -l` listed no devices when run with a writable temporary `HOME`. The first CLI session failed before model output because the configured proxy returned HTTP CONNECT 403 for `chatgpt.com/backend-api/codex/responses` and `/ps/mcp`. Thus this environment could not run even one arm, and no A/B result is claimed.
+Historical observation for the A/B attempt: the NIA source snapshot at the pinned commit was clean; Java 21 and Android SDK directories were present, but no local emulator executable/system image was found and `adb devices -l` listed no devices with a writable temporary `HOME`. The first Codex CLI session failed before model output because the configured proxy returned HTTP CONNECT 403 for `chatgpt.com/backend-api/codex/responses` and `/ps/mcp`. A later hosted emulator run is documented separately; it did not run independent A/B arms. No A/B result is claimed.

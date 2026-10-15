@@ -22,3 +22,5 @@ python3 evals/run_skill_integration_evals.py
 ```
 
 `routing/task-taxonomy.json` contains deterministic routing rules; `routing/context-manifest.schema.json` documents the machine-readable output. `routing/material3-topics.json` records broad Material.io coverage, while `routing/material3-sitemap-evidence.json` preserves the official sitemap URLs used to establish those paths. Sitemap discovery is not a claim that each page's content was retrieved.
+
+See the [first verified real Android engineering run](docs/REAL_ANDROID_VALIDATION.md) for a pinned Now in Android accessibility test executed on an API 34 GitHub Actions emulator, including evidence and limitations.

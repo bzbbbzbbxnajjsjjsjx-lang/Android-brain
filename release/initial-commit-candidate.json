@@ -80,6 +80,7 @@
       "docs/MATERIAL_RETRIEVAL_AUDIT.md",
       "docs/P5_EVALUATION_METHODOLOGY.md",
       "docs/QUALITY_GATES.md",
+      "docs/REAL_ANDROID_VALIDATION.md",
       "docs/SOURCE_AUDIT.md",
       "docs/SOURCE_REFRESH_STRATEGY.md",
       "docs/ANDROID_KB_RETRIEVAL.md"
@@ -272,6 +273,7 @@
     "docs/MATERIAL_RETRIEVAL_AUDIT.md",
     "docs/P5_EVALUATION_METHODOLOGY.md",
     "docs/QUALITY_GATES.md",
+    "docs/REAL_ANDROID_VALIDATION.md",
     "docs/REAL_WORLD_AB_PROTOCOL.md",
     "docs/REAL_WORLD_AB_TASKS.md",
     "docs/SOURCE_AUDIT.md",
