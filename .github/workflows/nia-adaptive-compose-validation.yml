@@ -1,0 +1,110 @@
+name: Now in Android adaptive Compose validation
+
+on:
+  push:
+    branches:
+      - eval/nia-adaptive-compose-validation
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nia-adaptive-compose-validation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  adaptive-layout:
+    name: For You screenshots and API 34 instrumentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out pinned Now in Android source
+        uses: actions/checkout@v4
+        with:
+          repository: android/nowinandroid
+          ref: a49ed253d75e61a2b6ab80a8da677b57437b08eb
+          path: nowinandroid
+          persist-credentials: false
+
+      - name: Verify upstream source revision
+        working-directory: nowinandroid
+        run: test "$(git rev-parse HEAD)" = "a49ed253d75e61a2b6ab80a8da677b57437b08eb"
+
+      - name: Copy upstream Gradle CI configuration
+        working-directory: nowinandroid
+        run: mkdir -p ~/.gradle && cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: zulu
+          java-version: 21
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Verify existing phone, foldable, and tablet screenshot baselines
+        working-directory: nowinandroid
+        run: ./gradlew :feature:foryou:impl:verifyRoborazziDemoDebug --no-daemon --console=plain
+
+      - name: Enable KVM group permissions
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          ls /dev/kvm
+
+      - name: Run ForYou Compose instrumentation on API 34 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          disable-animations: true
+          disk-size: 6000M
+          heap-size: 600M
+          script: |
+            cd nowinandroid
+            mkdir -p feature/foryou/impl/build/outputs/logs
+            set -o pipefail
+            ./gradlew :feature:foryou:impl:connectedDemoDebugAndroidTest \
+              -Pandroid.testInstrumentationRunnerArguments.class=com.google.samples.apps.nowinandroid.feature.foryou.impl.ForYouScreenTest \
+              --no-daemon --console=plain 2>&1 | tee feature/foryou/impl/build/outputs/logs/for-you-api34-instrumentation.log
+
+      - name: Require every ForYou instrumentation test to execute and pass
+        if: ${{ always() }}
+        working-directory: nowinandroid
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+
+          expected_class = "com.google.samples.apps.nowinandroid.feature.foryou.impl.ForYouScreenTest"
+          reports = sorted(Path("feature/foryou/impl/build/outputs/androidTest-results/connected").rglob("TEST-*.xml"))
+          cases = []
+          for report in reports:
+              root = ElementTree.parse(report).getroot()
+              cases.extend((report, case) for case in root.iter("testcase") if case.attrib.get("classname", "").endswith(expected_class))
+          if len(cases) != 7:
+              raise SystemExit(f"Expected 7 executed ForYouScreenTest methods, found {len(cases)} across {len(reports)} reports")
+          failures = [(case.attrib.get("name"), [child.tag for child in case if child.tag in {"failure", "error", "skipped"}], report) for report, case in cases if any(child.tag in {"failure", "error", "skipped"} for child in case)]
+          if failures:
+              raise SystemExit(f"ForYou instrumentation methods did not all pass: {failures}")
+          methods = sorted(case.attrib["name"] for _, case in cases)
+          print("PASS: 7 ForYouScreenTest methods executed on the API 34 emulator:")
+          for method in methods:
+              print(f"  PASS {method}")
+          PY
+
+      - name: Upload screenshot and instrumentation evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: nia-adaptive-api34-${{ github.sha }}
+          if-no-files-found: warn
+          path: |
+            nowinandroid/feature/foryou/impl/build/test-results/testDemoDebugUnitTest/**
+            nowinandroid/feature/foryou/impl/build/reports/tests/testDemoDebugUnitTest/**
+            nowinandroid/feature/foryou/impl/build/outputs/androidTest-results/connected/**
+            nowinandroid/feature/foryou/impl/build/reports/androidTests/**
+            nowinandroid/feature/foryou/impl/build/outputs/logs/**
