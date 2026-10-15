@@ -76,6 +76,8 @@ jobs:
         working-directory: nowinandroid
         run: |
           python3 - <<'PY'
+          import os
+          import re
           from pathlib import Path
           from xml.etree import ElementTree
 
@@ -86,10 +88,25 @@ jobs:
               root = ElementTree.parse(report).getroot()
               cases.extend((report, case) for case in root.iter("testcase") if case.attrib.get("classname", "").endswith(expected_class))
           if len(cases) != 7:
-              raise SystemExit(f"Expected 7 executed ForYouScreenTest methods, found {len(cases)} across {len(reports)} reports")
+              problem = f"Expected 7 executed ForYouScreenTest methods, found {len(cases)} across {len(reports)} reports"
+          else:
+              problem = ""
           failures = [(case.attrib.get("name"), [child.tag for child in case if child.tag in {"failure", "error", "skipped"}], report) for report, case in cases if any(child.tag in {"failure", "error", "skipped"} for child in case)]
           if failures:
-              raise SystemExit(f"ForYou instrumentation methods did not all pass: {failures}")
+              problem = f"ForYou instrumentation methods did not all pass: {failures}"
+          if problem:
+              log_path = Path("feature/foryou/impl/build/outputs/logs/for-you-api34-instrumentation.log")
+              patterns = re.compile(r"failure|failed|exception|error:|unable|could not|not found|timed out|instrumentation", re.IGNORECASE)
+              excerpts = [line for line in log_path.read_text(errors="replace").splitlines() if patterns.search(line)] if log_path.exists() else ["Instrumentation log was not produced."]
+              details = "\n".join(excerpts[-25:]) or "No matching failure lines found in the instrumentation log."
+              print(problem)
+              print(details)
+              summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
+              summary.write_text(f"### ForYou instrumentation diagnostics\n\n{problem}\n\n```text\n{details}\n```\n", encoding="utf-8")
+              annotation = (problem + "\n" + details)[-3000:]
+              annotation = annotation.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+              print(f"::error title=ForYou instrumentation details::{annotation}")
+              raise SystemExit(problem)
           methods = sorted(case.attrib["name"] for _, case in cases)
           print("PASS: 7 ForYouScreenTest methods executed on the API 34 emulator:")
           for method in methods:
