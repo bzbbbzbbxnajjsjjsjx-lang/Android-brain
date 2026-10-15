@@ -1,0 +1,106 @@
+name: Now in Android emulator validation
+
+on:
+  push:
+    branches:
+      - eval/nia-emulator-validation
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nia-emulator-validation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  focused-accessibility-instrumentation:
+    name: API 34 focused Compose accessibility test
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout Android-brain harness
+        uses: actions/checkout@v4
+        with:
+          path: android-brain
+
+      - name: Checkout pinned Now in Android source
+        uses: actions/checkout@v4
+        with:
+          repository: android/nowinandroid
+          ref: a49ed253d75e61a2b6ab80a8da677b57437b08eb
+          path: nowinandroid
+          persist-credentials: false
+
+      - name: Verify pinned source and apply reviewable test patch
+        working-directory: nowinandroid
+        run: |
+          test "$(git rev-parse HEAD)" = "a49ed253d75e61a2b6ab80a8da677b57437b08eb"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          patch_file = Path("../android-brain/evals/fixtures/nia-emulator/NewsResourceCardTest.patch.json")
+          patch = json.loads(patch_file.read_text())
+          assert patch["base_commit"] == "a49ed253d75e61a2b6ab80a8da677b57437b08eb"
+          target = Path(patch["target"])
+          text = target.read_text()
+          for operation in patch["operations"]:
+              anchor = operation["anchor"]
+              assert text.count(anchor) == 1, f"patch anchor must occur exactly once: {anchor!r}"
+              inserted = "\n".join(operation["lines"])
+              if operation["kind"] == "insert_after":
+                  text = text.replace(anchor, anchor + "\n" + inserted, 1)
+              elif operation["kind"] == "insert_before":
+                  text = text.replace(anchor, inserted + "\n" + anchor, 1)
+              else:
+                  raise ValueError(f"unsupported patch operation: {operation['kind']}")
+          target.write_text(text)
+          PY
+          git diff --check
+          test "$(git diff --name-only)" = "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt"
+          git status --short
+
+      - name: Enable KVM group permissions
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          ls /dev/kvm
+
+      - name: Copy upstream Gradle CI configuration
+        working-directory: nowinandroid
+        run: mkdir -p ~/.gradle && cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: zulu
+          java-version: 21
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run focused instrumentation test on API 34 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          disable-animations: true
+          disk-size: 6000M
+          heap-size: 600M
+          script: >-
+            cd nowinandroid && ./gradlew :core:ui:connectedDemoDebugAndroidTest
+            -Pandroid.testInstrumentationRunnerArguments.class=com.google.samples.apps.nowinandroid.core.ui.NewsResourceCardTest#testTopicTagClick_exposesLocalizedDescriptionAndSendsTopicId
+            --no-daemon
+
+      - name: Upload instrumentation results and logs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: nia-api34-accessibility-instrumentation-${{ github.sha }}
+          if-no-files-found: warn
+          path: |
+            nowinandroid/core/ui/build/outputs/androidTest-results/connected/**
+            nowinandroid/core/ui/build/reports/androidTests/**
+            nowinandroid/core/ui/build/outputs/logs/**

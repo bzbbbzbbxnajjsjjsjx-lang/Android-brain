@@ -1,0 +1,65 @@
+{
+  "target": "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt",
+  "base_commit": "a49ed253d75e61a2b6ab80a8da677b57437b08eb",
+  "operations": [
+    {
+      "kind": "insert_after",
+      "anchor": "import androidx.compose.ui.test.onNodeWithContentDescription",
+      "lines": [
+        "import androidx.compose.ui.test.onNodeWithTag"
+      ]
+    },
+    {
+      "kind": "insert_after",
+      "anchor": "import androidx.compose.ui.test.onNodeWithText",
+      "lines": [
+        "import androidx.compose.ui.test.performClick"
+      ]
+    },
+    {
+      "kind": "insert_after",
+      "anchor": "import com.google.samples.apps.nowinandroid.core.testing.data.userNewsResourcesTestData",
+      "lines": [
+        "import org.junit.Assert.assertEquals"
+      ]
+    },
+    {
+      "kind": "insert_before",
+      "anchor": "    @Test\n    fun testUnreadDot_displayedWhenUnread()",
+      "lines": [
+        "    @Test",
+        "    fun testTopicTagClick_exposesLocalizedDescriptionAndSendsTopicId() {",
+        "        val clickedTopicIds = mutableListOf<String>()",
+        "",
+        "        composeTestRule.setContent {",
+        "            NewsResourceTopics(",
+        "                topics = followableTopicTestData,",
+        "                onTopicClick = clickedTopicIds::add,",
+        "            )",
+        "        }",
+        "",
+        "        for (followableTopic in followableTopicTestData) {",
+        "            val topic = followableTopic.topic",
+        "            val contentDescription = composeTestRule.activity.getString(",
+        "                if (followableTopic.isFollowed) {",
+        "                    R.string.core_ui_topic_chip_content_description_when_followed",
+        "                } else {",
+        "                    R.string.core_ui_topic_chip_content_description_when_not_followed",
+        "                },",
+        "                topic.name,",
+        "            )",
+        "",
+        "            composeTestRule",
+        "                .onNodeWithTag(\"topicTag:${topic.id}\")",
+        "                .assertContentDescriptionEquals(contentDescription)",
+        "                .performClick()",
+        "",
+        "            assertEquals(listOf(topic.id), clickedTopicIds)",
+        "            clickedTopicIds.clear()",
+        "        }",
+        "    }",
+        ""
+      ]
+    }
+  ]
+}
