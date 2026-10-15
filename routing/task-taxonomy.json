@@ -259,6 +259,19 @@
           "exclude": [
             "knowledge/material3/principles.md"
           ]
+        },
+        {
+          "when_any": [
+            "accessibility test",
+            "accessibility testing",
+            "screen reader test",
+            "semantics test",
+            "visual design review",
+            "visual design critique"
+          ],
+          "exclude": [
+            "knowledge/material3/principles.md"
+          ]
         }
       ]
     },
@@ -991,6 +1004,154 @@
       "ambiguity_if_only": [],
       "requires_live_verification": true,
       "exclude_categories": []
+    },
+    {
+      "signals": [
+        "Compose accessibility testing",
+        "Compose semantics testing",
+        "screen reader semantics testing",
+        "TalkBack accessibility testing"
+      ],
+      "knowledge": [
+        "knowledge/androidx/compose-accessibility.md"
+      ],
+      "skills": [
+        "kotlin-compose",
+        "android-testing"
+      ],
+      "policies": [
+        "accessibility_review",
+        "api_compatibility",
+        "testing_evidence"
+      ],
+      "freshness": [
+        "Verify Compose test and semantics APIs against the target project's resolved AndroidX dependencies."
+      ],
+      "evidence": [
+        "Run the focused Compose UI test and inspect actual accessibility semantics; report manual assistive-technology checks separately."
+      ],
+      "exclude": [
+        "Material 3 design guidance unless the task explicitly names Material design or Material components."
+      ],
+      "id": "compose_accessibility_testing",
+      "keywords": [
+        "Compose accessibility test",
+        "Compose accessibility testing",
+        "accessibility test in Compose",
+        "Compose semantics test",
+        "Compose semantics testing",
+        "screen reader semantics test",
+        "TalkBack accessibility test"
+      ],
+      "source_ids": [
+        "androidx_compose_accessibility",
+        "google_android_skills"
+      ],
+      "context_priority": 85,
+      "ambiguity_if_only": [],
+      "requires_live_verification": true,
+      "exclude_categories": [],
+      "context_exclusions": [
+        {
+          "unless_any": [
+            "Material 3",
+            "Material3",
+            "Material design",
+            "Material components",
+            "Material UI",
+            "Material expressive"
+          ],
+          "exclude_categories": [
+            "material3_accessibility"
+          ],
+          "exclude_sources": [
+            "material3_site",
+            "androidx_material3_package"
+          ],
+          "exclude_knowledge": [
+            "knowledge/material3/accessibility-interaction.md",
+            "knowledge/material3/principles.md"
+          ],
+          "exclude_skills": [
+            "material3-expressive",
+            "visual-design-validation"
+          ],
+          "exclude_policies": [
+            "design_compliance"
+          ],
+          "exclude_reasons": [
+            "compose_ui",
+            "material3_accessibility"
+          ]
+        }
+      ]
+    },
+    {
+      "signals": [
+        "visual design review",
+        "review visual hierarchy",
+        "visual design critique"
+      ],
+      "knowledge": [],
+      "skills": [
+        "visual-design-validation"
+      ],
+      "policies": [
+        "design_compliance",
+        "accessibility_review"
+      ],
+      "freshness": [
+        "Use an approved target design or specification and actual rendered output; identify unavailable visual evidence."
+      ],
+      "evidence": [
+        "Record inspected render/reference paths and measurable differences; a build alone is not visual verification."
+      ],
+      "exclude": [
+        "Do not load Material 3 design context unless Material design/components are explicitly requested."
+      ],
+      "id": "visual_design_review",
+      "keywords": [
+        "visual design review",
+        "review visual hierarchy",
+        "visual hierarchy review",
+        "visual design critique",
+        "review UI visuals",
+        "Compose screen visual review"
+      ],
+      "source_ids": [],
+      "context_priority": 65,
+      "ambiguity_if_only": [],
+      "requires_live_verification": false,
+      "exclude_categories": [],
+      "context_exclusions": [
+        {
+          "unless_any": [
+            "Material 3",
+            "Material3",
+            "Material design",
+            "Material components",
+            "Material UI",
+            "Material expressive"
+          ],
+          "exclude_sources": [
+            "material3_site",
+            "androidx_material3_package"
+          ],
+          "exclude_knowledge": [
+            "knowledge/material3/accessibility-interaction.md",
+            "knowledge/material3/principles.md"
+          ],
+          "exclude_skills": [
+            "material3-expressive"
+          ],
+          "exclude_policies": [
+            "design_compliance"
+          ],
+          "exclude_reasons": [
+            "compose_ui"
+          ]
+        }
+      ]
     },
     {
       "signals": [

@@ -31,6 +31,8 @@ jobs:
         run: python3 scripts/validate_google_material_components_evidence.py
       - name: Evaluate routing behavior
         run: python3 evals/run_context_router_evals.py
+      - name: Evaluate context package efficiency and mandatory-policy preservation
+        run: python3 evals/run_context_efficiency_evals.py
       - name: Evaluate skill and context integration
         run: python3 evals/run_skill_integration_evals.py
       - name: Evaluate policy and evidence quality gates

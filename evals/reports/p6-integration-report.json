@@ -81,7 +81,7 @@
       "status": "PASS"
     }
   ],
-  "git_head": "fec63e44a6a54dfcd5bb005d6247a9bd92b706bc",
+  "git_head": "f700ca6197dfad5da12546fc2767b44b534d041b",
   "harness_version": "0.6.0-dev",
   "hosted_ci": "PASS",
   "material_coverage": {
@@ -181,7 +181,7 @@
     "candidate_license_files": [
       "LICENSE"
     ],
-    "head": "fec63e44a6a54dfcd5bb005d6247a9bd92b706bc",
+    "head": "f700ca6197dfad5da12546fc2767b44b534d041b",
     "hosted_ci": "PASS",
     "integration_tested": "PASS",
     "local_tested": "PASS",
@@ -204,7 +204,7 @@
       "typography": "material3_typography"
     },
     "stable_release": "BLOCKED",
-    "tracked_file_count": 104,
+    "tracked_file_count": 133,
     "verified_topic_families": {
       "accessibility": "BLOCKED",
       "color": "BLOCKED",
@@ -259,5 +259,5 @@
     "status": "PASS",
     "target_root": "temporary fixture; removed after test"
   },
-  "working_tree_sha256": "087de4936cbecdf9af21704462e5a4e94d82be6bd457df73bbd362ef12c73f46"
+  "working_tree_sha256": "bef69d50be2bcdd28b4215ab02812d1c286ff701aa826bffd19dd1c22f08d381"
 }

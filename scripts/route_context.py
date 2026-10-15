@@ -130,6 +130,14 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
     suppressed: set[str] = set()
     for route in route_matches.values():
         suppressed.update(rid for rid in route.get("exclude_categories", []) if rid in route_matches)
+    active_context_exclusions: list[tuple[str, dict[str, Any]]] = []
+    for route_id, route in route_matches.items():
+        for rule in route.get("context_exclusions", []):
+            unless_any = rule.get("unless_any", [])
+            if any(match_term(task_norm, task_compact, term) and not term_is_negated(task_norm, term) for term in unless_any):
+                continue
+            active_context_exclusions.append((route_id, rule))
+            suppressed.update(rid for rid in rule.get("exclude_categories", []) if rid in route_matches)
     for rid in suppressed:
         route_matches.pop(rid, None)
     evidence = [row for row in evidence if row["domain"] in route_matches]
@@ -226,6 +234,33 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
                 if not reasons_for_note:
                     knowledge_reasons.pop(note, None)
 
+    # Task-scoped exclusions remove only the named domains' contributions. If
+    # another independently matched domain needs the same skill, policy, or note,
+    # its selection reason is retained. Global mandatory policies are never removed.
+    for route_id, rule in active_context_exclusions:
+        excluded_reasons = set(rule.get("exclude_reasons", []))
+        category_exclusions.add(f"{route_id}: context excluded because no explicit Material design intent matched")
+        for collection, identifiers in (
+            (source_reasons, rule.get("exclude_sources", [])),
+            (knowledge_reasons, rule.get("exclude_knowledge", [])),
+            (skill_reasons, rule.get("exclude_skills", [])),
+        ):
+            for identifier in identifiers:
+                reasons = collection.get(identifier, set())
+                reasons.difference_update(excluded_reasons)
+                if not reasons:
+                    collection.pop(identifier, None)
+        for policy_id in rule.get("exclude_policies", []):
+            selected_elsewhere = any(
+                rid not in excluded_reasons and policy_id in route.get("policies", [])
+                for rid, route in route_matches.items()
+            ) or any(
+                topic["taxonomy_id"] in material_route_ids and policy_id in topic["policy_ids"]
+                for topic in topics_doc["topics"]
+            )
+            if policy_id not in global_policy_ids and not selected_elsewhere:
+                selected_policy_ids.discard(policy_id)
+
     # Routes define a bounded eligible source set. Registry metadata enriches
     # provenance, authority, freshness, access, and task-relevance evidence; it
     # does not broaden selection to every source sharing a generic Compose tag.
@@ -306,7 +341,7 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
         page_records = [x for x in integrated_material_pages if x.get("topic_id") == topic_id]
         verified_urls = {x["canonical_url"] for x in page_records}
         remaining = sorted(set(topic["canonical_source_urls"]) - verified_urls)
-        missing_context.append({"kind": "material_page_content_unverified", "topic_id": topic_id, "status": "partially_verified" if verified_urls else topic["source_access_status"], "verified_page_urls": sorted(verified_urls), "selected_verified_page_urls": sorted(selected_urls_by_topic.get(topic_id, set())), "unverified_url_count": len(remaining), "canonical_urls": remaining if len(remaining) <= 25 else remaining[:25], "detail": "Only the listed page bodies have reviewed, integrated knowledge; other discovered pages remain unverified. " + topic["retrieval_limitations"], "required_action": "Retrieve and inspect the exact Material.io page before making page-specific claims not covered by an integrated note."})
+        missing_context.append({"kind": "material_page_content_unverified", "topic_id": topic_id, "status": "partially_verified" if verified_urls else topic["source_access_status"], "verified_page_urls": sorted(verified_urls), "selected_verified_page_urls": sorted(selected_urls_by_topic.get(topic_id, set())), "unverified_url_count": len(remaining), "discovered_url_registry": "routing/material3-topics.json", "detail": "Only the listed page bodies have reviewed, integrated knowledge; other discovered pages remain unverified. " + topic["retrieval_limitations"], "required_action": "Retrieve and inspect the exact Material.io page before making page-specific claims not covered by an integrated note."})
 
     selected_knowledge = []
     estimate = 0

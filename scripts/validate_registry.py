@@ -159,6 +159,22 @@ def main() -> int:
                 require(sid in sources, f"{route['id']}: unknown excluded source {sid}")
             for rid in route.get("exclude_categories", []):
                 require(rid in routes, f"{route['id']}: unknown excluded route {rid}")
+            for rule in route.get("context_exclusions", []):
+                require(isinstance(rule, dict) and isinstance(rule.get("unless_any"), list) and rule["unless_any"], f"{route['id']}: context exclusion requires non-empty unless_any terms")
+                for key in ("exclude_categories", "exclude_source_ids", "exclude_sources", "exclude_knowledge", "exclude_skills", "exclude_policies", "exclude_reasons"):
+                    require(isinstance(rule.get(key, []), list), f"{route['id']}: context exclusion {key} must be a list")
+                for ident in rule.get("exclude_categories", []):
+                    require(ident in routes, f"{route['id']}: unknown conditionally excluded route {ident}")
+                for ident in rule.get("exclude_source_ids", []) + rule.get("exclude_sources", []):
+                    require(ident in sources, f"{route['id']}: unknown conditionally excluded source {ident}")
+                for ident in rule.get("exclude_skills", []):
+                    require(ident in skills, f"{route['id']}: unknown conditionally excluded skill {ident}")
+                for ident in rule.get("exclude_policies", []):
+                    require(ident in policies, f"{route['id']}: unknown conditionally excluded policy {ident}")
+                for path in rule.get("exclude_knowledge", []):
+                    local_file(path, f"{route['id']}: missing conditionally excluded knowledge reference {path}")
+                for ident in rule.get("exclude_reasons", []):
+                    require(ident in routes, f"{route['id']}: unknown conditional exclusion reason/domain {ident}")
 
         topics = unique(topics_doc.get("topics", []), "Material topic")
         sitemap_path = topics_doc.get("sitemap_evidence_path")

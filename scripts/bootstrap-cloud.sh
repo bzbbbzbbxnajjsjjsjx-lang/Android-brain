@@ -9,6 +9,7 @@ python3 scripts/validate_google_android_evidence.py
 python3 scripts/validate_google_material_components_evidence.py
 python3 scripts/validate_material3_browser_evidence.py
 python3 evals/run_context_router_evals.py
+python3 evals/run_context_efficiency_evals.py
 python3 evals/run_skill_integration_evals.py
 python3 evals/run_quality_gate_evals.py
 python3 evals/run_harness_evals.py --output /tmp/android-harness-p5-routing-report.json
