@@ -1,9 +1,9 @@
 {
-  "target": "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt",
   "base_commit": "a49ed253d75e61a2b6ab80a8da677b57437b08eb",
   "operations": [
     {
       "kind": "insert_after",
+      "target": "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt",
       "anchor": "import androidx.compose.ui.test.onNodeWithContentDescription",
       "lines": [
         "import androidx.compose.ui.test.onNodeWithTag"
@@ -11,6 +11,7 @@
     },
     {
       "kind": "insert_after",
+      "target": "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt",
       "anchor": "import androidx.compose.ui.test.onNodeWithText",
       "lines": [
         "import androidx.compose.ui.test.performClick"
@@ -18,6 +19,7 @@
     },
     {
       "kind": "insert_after",
+      "target": "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt",
       "anchor": "import com.google.samples.apps.nowinandroid.core.testing.data.userNewsResourcesTestData",
       "lines": [
         "import org.junit.Assert.assertEquals"
@@ -25,6 +27,7 @@
     },
     {
       "kind": "insert_before",
+      "target": "core/ui/src/androidTest/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCardTest.kt",
       "anchor": "    @Test\n    fun testUnreadDot_displayedWhenUnread()",
       "lines": [
         "    @Test",
@@ -60,6 +63,32 @@
         "    }",
         ""
       ]
+    },
+    {
+      "kind": "replace_once",
+      "target": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/Tag.kt",
+      "anchor": "@Composable\nfun NiaTopicTag(\n    modifier: Modifier = Modifier,\n    followed: Boolean,\n    onClick: () -> Unit,\n    enabled: Boolean = true,\n    text: @Composable () -> Unit,\n) {\n    Box(modifier = modifier) {\n        val containerColor = if (followed) {\n            MaterialTheme.colorScheme.primaryContainer\n        } else {\n            MaterialTheme.colorScheme.surfaceVariant.copy(\n                alpha = NiaTagDefaults.UNFOLLOWED_TOPIC_TAG_CONTAINER_ALPHA,\n            )\n        }\n        TextButton(\n            onClick = onClick,\n            enabled = enabled,\n            colors = ButtonDefaults.textButtonColors(\n                containerColor = containerColor,\n                contentColor = contentColorFor(backgroundColor = containerColor),\n                disabledContainerColor = MaterialTheme.colorScheme.onSurface.copy(\n                    alpha = NiaTagDefaults.DISABLED_TOPIC_TAG_CONTAINER_ALPHA,\n                ),\n            ),\n        ) {\n            ProvideTextStyle(value = MaterialTheme.typography.labelSmall) {\n                text()\n            }\n        }\n    }\n}",
+      "replacement": "@Composable\nfun NiaTopicTag(\n    modifier: Modifier = Modifier,\n    followed: Boolean,\n    onClick: () -> Unit,\n    enabled: Boolean = true,\n    text: @Composable () -> Unit,\n) {\n    val containerColor = if (followed) {\n        MaterialTheme.colorScheme.primaryContainer\n    } else {\n        MaterialTheme.colorScheme.surfaceVariant.copy(\n            alpha = NiaTagDefaults.UNFOLLOWED_TOPIC_TAG_CONTAINER_ALPHA,\n        )\n    }\n    TextButton(\n        modifier = modifier,\n        onClick = onClick,\n        enabled = enabled,\n        colors = ButtonDefaults.textButtonColors(\n            containerColor = containerColor,\n            contentColor = contentColorFor(backgroundColor = containerColor),\n            disabledContainerColor = MaterialTheme.colorScheme.onSurface.copy(\n                alpha = NiaTagDefaults.DISABLED_TOPIC_TAG_CONTAINER_ALPHA,\n            ),\n        ),\n    ) {\n        ProvideTextStyle(value = MaterialTheme.typography.labelSmall) {\n            text()\n        }\n    }\n}"
+    },
+    {
+      "kind": "replace_once",
+      "target": "core/designsystem/src/main/kotlin/com/google/samples/apps/nowinandroid/core/designsystem/component/Tag.kt",
+      "anchor": "import androidx.compose.foundation.layout.Box\n",
+      "replacement": ""
+    },
+    {
+      "kind": "insert_after",
+      "target": "core/ui/src/main/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCard.kt",
+      "anchor": "            NiaTopicTag(",
+      "lines": [
+        "                modifier = Modifier.testTag(\"topicTag:${followableTopic.topic.id}\"),"
+      ]
+    },
+    {
+      "kind": "replace_once",
+      "target": "core/ui/src/main/kotlin/com/google/samples/apps/nowinandroid/core/ui/NewsResourceCard.kt",
+      "anchor": "                        modifier = Modifier\n                            .semantics {\n                                this.contentDescription = contentDescription\n                            }\n                            .testTag(\"topicTag:${followableTopic.topic.id}\"),",
+      "replacement": "                        modifier = Modifier.semantics {\n                            this.contentDescription = contentDescription\n                        },"
     }
   ]
 }

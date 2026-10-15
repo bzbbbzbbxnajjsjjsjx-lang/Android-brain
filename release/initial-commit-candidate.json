@@ -32,7 +32,8 @@
   ],
   "file_classes": {
     "ci_configuration": [
-      ".github/workflows/harness.yml"
+      ".github/workflows/harness.yml",
+      ".github/workflows/nia-emulator-validation.yml"
     ],
     "curated_knowledge": [
       "/workspace/Android-brain/knowledge/material3-view/button-groups.md",
@@ -85,7 +86,9 @@
       "docs/ANDROID_KB_RETRIEVAL.md"
     ],
     "evaluation_source_and_schemas": [
+      "evals/fixtures/nia-emulator/NewsResourceCardTest.patch.json",
       "evals/run_adversarial_evals.py",
+      "evals/run_android_kb_retrieval_evals.py",
       "evals/run_context_router_evals.py",
       "evals/run_harness_evals.py",
       "evals/run_mutation_evals.py",
@@ -98,8 +101,7 @@
       "evals/run_skill_integration_evals.py",
       "evals/schemas/context-task-dataset.schema.json",
       "evals/schemas/p5-evaluation-result.schema.json",
-      "evals/schemas/p6-evaluation-report.schema.json",
-      "evals/run_android_kb_retrieval_evals.py"
+      "evals/schemas/p6-evaluation-report.schema.json"
     ],
     "independent_evaluation_dataset": [
       "evals/datasets/context_tasks.v1.json"
@@ -256,6 +258,7 @@
     ".agents/skills/testing-setup/references/android/training/dependency-injection/hilt-testing.md",
     ".agents/skills/visual-design-validation/SKILL.md",
     ".github/workflows/harness.yml",
+    ".github/workflows/nia-emulator-validation.yml",
     ".gitignore",
     "AGENTS.md",
     "LICENSE",
@@ -277,6 +280,7 @@
     "docs/SOURCE_AUDIT.md",
     "docs/SOURCE_REFRESH_STRATEGY.md",
     "evals/datasets/context_tasks.v1.json",
+    "evals/fixtures/nia-emulator/NewsResourceCardTest.patch.json",
     "evals/reports/p5-routing-report.json",
     "evals/reports/p6-integration-report.json",
     "evals/run_adversarial_evals.py",
