@@ -63,13 +63,12 @@ jobs:
           disable-animations: true
           disk-size: 6000M
           heap-size: 600M
-          script: |
-            cd nowinandroid
-            mkdir -p feature/foryou/impl/build/outputs/logs
-            set -o pipefail
-            ./gradlew :feature:foryou:impl:connectedDemoDebugAndroidTest \
-              -Pandroid.testInstrumentationRunnerArguments.class=com.google.samples.apps.nowinandroid.feature.foryou.impl.ForYouScreenTest \
-              --no-daemon --console=plain 2>&1 | tee feature/foryou/impl/build/outputs/logs/for-you-api34-instrumentation.log
+          script: >-
+            bash -o pipefail -c 'cd nowinandroid &&
+            mkdir -p feature/foryou/impl/build/outputs/logs &&
+            ./gradlew :feature:foryou:impl:connectedDemoDebugAndroidTest
+            -Pandroid.testInstrumentationRunnerArguments.class=com.google.samples.apps.nowinandroid.feature.foryou.impl.ForYouScreenTest
+            --no-daemon --console=plain 2>&1 | tee feature/foryou/impl/build/outputs/logs/for-you-api34-instrumentation.log'
 
       - name: Require every ForYou instrumentation test to execute and pass
         if: ${{ always() }}
