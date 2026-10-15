@@ -1,7 +1,7 @@
 {
   "evaluations": [
     {
-      "detail": "{\"androidx_api\": {\"cases\": 4, \"delta\": 0.375, \"failures\": [], \"p5\": 0.625, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"harness\": {\"cases\": 2, \"delta\": 0.375, \"failures\": [], \"p5\": 0.625, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"material3_content_design\": {\"cases\": 1, \"delta\": 1.0, \"failures\": [], \"p5\": 0.0, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"material3_xr\": {\"cases\": 1, \"delta\": 1.0, \"failures\": [], \"p5\": 0.0, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}}",
+      "detail": "{\"androidx_api\": {\"cases\": 4, \"delta\": 0.125, \"failures\": [], \"p5\": 0.625, \"p6\": 0.75, \"required_knowledge_recall\": 1.0}, \"harness\": {\"cases\": 2, \"delta\": 0.375, \"failures\": [], \"p5\": 0.625, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"material3_content_design\": {\"cases\": 1, \"delta\": 1.0, \"failures\": [], \"p5\": 0.0, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}, \"material3_xr\": {\"cases\": 1, \"delta\": 1.0, \"failures\": [], \"p5\": 0.0, \"p6\": 1.0, \"required_knowledge_recall\": 1.0}}",
       "id": "E_knowledge_precision",
       "status": "PASS"
     },
@@ -71,19 +71,19 @@
       "status": "PASS"
     },
     {
-      "detail": "Release remains BLOCKED; version control=BLOCKED (expected BLOCKED from observed Git state); hosted CI=FAIL; Material source verification=BLOCKED. Release stays blocked until the actual CI and source gates pass.",
+      "detail": "Release remains BLOCKED; version control=BLOCKED (expected BLOCKED from observed Git state); hosted CI=PASS; Material source verification=BLOCKED. A real CI PASS does not bypass the still-blocked Material.io source gate.",
       "id": "K_release_readiness_blocked",
       "status": "PASS"
     },
     {
-      "detail": "_general: unknown source invented_source\nPASS conflicting_duplicate_source via registry_validator: FAIL: duplicate source id: codex_workflows\nPASS broken_local_reference via registry_validator: FAIL: android_general: missing knowledge note knowledge/missing.md\nPASS source_note_provenance_removed via registry_validator: FAIL: codex_workflows: provenance absent from knowledge/codex/iterative-workflows.md\nPASS androidx_api_misclassified via registry_validator: FAIL: material_shapes: API source is missing or misclassified: material_shapes_api\nPASS material_topic_removed via registry_validator: FAIL: Material 3 coverage missing ['material_shapes']\nPASS provenance_policy_weakened via registry_validator: FAIL: global mandatory policy cannot be advisory: provenance\nPASS material_skill_selection_weakened via registry_validator: FAIL: material3_color: missing unified Material 3 skill\nPASS inaccessible_figma_marked_verified via independent_task_expectations: source figma_m3_kit access expected=blocked_403 actual=retrieved; inaccessible source figma_m3_kit limitation not surfaced\nPASS unrelated_source_contamination via independent_task_expectations: forbidden sources selected=['hilt_android']\n",
+      "detail": "t missing-context state.\nPASS masquerading_source_rejected: Third-party/URL-shaped refs cannot masquerade as official KB identifiers.\nPASS budget_overflow_fails_closed: No mandatory context is silently truncated to fit a small budget.\nPASS fresh_cache_validated: Fresh content cache validates its ID and fingerprint.\nPASS stale_cache_is_miss: Stale cached source requires refetch and is never silently trusted.\nPASS tampered_cache_is_miss: Cached content fingerprint mismatch is rejected.\nPASS delivery_and_consumption_distinct: Package creation/delivery does not establish actual model consumption.\nPASS target_api_compatibility_required: Neither official-doc retrieval nor task text establishes the target project's resolved AndroidX version.\nPASS context_package_schema: Fixture context package conforms to the machine-readable record schema.\nPASS failed_fetch_preserves_command_exit: Controlled CLI fetch failure is recorded and never promoted to retrieval.\nPASS search_network_failure_preserved: A network failure is retained as a failed search and prevents fetches.\nPASS missing_mandatory_local_context_blocked: Missing local reference remains explicit and is not treated as available context.\n",
       "id": "L_p0_p5_regressions",
       "status": "PASS"
     }
   ],
-  "git_head": "fffbe6da879b1b1dc0b1e41130dedd7da9394b58",
+  "git_head": "fec63e44a6a54dfcd5bb005d6247a9bd92b706bc",
   "harness_version": "0.6.0-dev",
-  "hosted_ci": "FAIL",
+  "hosted_ci": "PASS",
   "material_coverage": {
     "discovered_urls": 249,
     "page_evidence_record_counts": {
@@ -120,30 +120,30 @@
       },
       "p6": {
         "budget_estimated_chars": {
-          "max": 13104,
-          "mean": 3936.38,
+          "max": 13572,
+          "mean": 5754.98,
           "unit": "characters"
         },
         "classification_exact_accuracy": 1.0,
         "deterministic_cases": 40,
         "forbidden_source_selections": 0,
-        "knowledge_precision": 0.925,
+        "knowledge_precision": 0.8368,
         "knowledge_recall": 1.0,
         "policy_coverage": 1.0,
         "required_skill_recall": 1.0,
         "required_source_recall": 1.0,
         "skill_precision": 0.9338,
-        "source_precision": 0.9767,
+        "source_precision": 0.9024,
         "task_count": 40,
         "task_pass_count": 40
       }
     },
     "androidx_api": {
       "cases": 4,
-      "delta": 0.375,
+      "delta": 0.125,
       "failures": [],
       "p5": 0.625,
-      "p6": 1.0,
+      "p6": 0.75,
       "required_knowledge_recall": 1.0
     },
     "harness": {
@@ -175,15 +175,14 @@
     "blockers": [
       "working tree is not clean against its tracked baseline",
       "harness release channel is 'development', not stable",
-      "hosted CI for the current HEAD is FAIL",
       "version tag is absent",
       "minimum verified Material.io topic-family coverage is not met"
     ],
     "candidate_license_files": [
       "LICENSE"
     ],
-    "head": "fffbe6da879b1b1dc0b1e41130dedd7da9394b58",
-    "hosted_ci": "FAIL",
+    "head": "fec63e44a6a54dfcd5bb005d6247a9bd92b706bc",
+    "hosted_ci": "PASS",
     "integration_tested": "PASS",
     "local_tested": "PASS",
     "local_validation_exit_code": 0,
@@ -260,5 +259,5 @@
     "status": "PASS",
     "target_root": "temporary fixture; removed after test"
   },
-  "working_tree_sha256": "cf043c217eed53e226ed7b3d616c0deaf4349bfcc64efd15a30b8548ad57fe82"
+  "working_tree_sha256": "087de4936cbecdf9af21704462e5a4e94d82be6bd457df73bbd362ef12c73f46"
 }

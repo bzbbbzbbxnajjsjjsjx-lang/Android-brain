@@ -1,1 +1,2 @@
 jsonschema>=4.20,<5
+playwright==1.62.0

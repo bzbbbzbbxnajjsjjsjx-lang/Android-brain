@@ -171,7 +171,7 @@ def main() -> int:
         require(len(sitemap_urls) == len(sitemap["urls"]), "duplicate URL in Material sitemap evidence")
         require(all(u.startswith("https://m3.material.io/foundations/") or u.startswith("https://m3.material.io/styles/") or u.startswith("https://m3.material.io/components/") for u in sitemap_urls), "sitemap evidence contains out-of-scope paths")
         for topic in topics.values():
-            for field in ("taxonomy_id", "canonical_source_url", "canonical_source_urls", "classification", "source_registry_ids", "related_tasks", "androidx_compose_apis", "knowledge_references", "source_access_status", "design_spec_accessibility_status", "retrieval_limitations", "freshness_requirements", "policy_ids", "skill_ids"):
+            for field in ("taxonomy_id", "canonical_source_url", "canonical_source_urls", "classification", "source_registry_ids", "related_tasks", "androidx_compose_apis", "knowledge_references", "legacy_view_context", "source_access_status", "design_spec_accessibility_status", "retrieval_limitations", "freshness_requirements", "policy_ids", "skill_ids"):
                 require(field in topic, f"{topic['id']}: missing Material topic field {field}")
             require(topic["taxonomy_id"] in routes, f"{topic['id']}: no matching route")
             require(topic["classification"] == "material_io_design_specification", f"{topic['id']}: Material.io must remain distinct from implementation APIs")
@@ -191,6 +191,15 @@ def main() -> int:
                 require(ident in policies, f"{topic['id']}: unknown policy {ident}")
             for ident in topic["skill_ids"]:
                 require(ident in skills, f"{topic['id']}: unknown skill {ident}")
+            legacy = topic["legacy_view_context"]
+            require(set(legacy) == {"activation_terms", "source_ids", "knowledge_references"}, f"{topic['id']}: legacy View context schema mismatch")
+            require(all(isinstance(legacy[k], list) for k in legacy), f"{topic['id']}: legacy View context values must be lists")
+            require((not legacy["source_ids"] and not legacy["knowledge_references"]) or legacy["activation_terms"], f"{topic['id']}: legacy View references require explicit activation terms")
+            for sid in legacy["source_ids"]:
+                require(sid in sources and sources[sid]["source_type"] in {"view_component_guide", "repository_maintenance_notice"}, f"{topic['id']}: legacy View source is missing or misclassified: {sid}")
+            for path in legacy["knowledge_references"]:
+                local_file(path, f"{topic['id']}: missing legacy View reference {path}")
+                require(any(s["source_type"] in {"view_component_guide", "repository_maintenance_notice"} and s["local_knowledge_reference"] == path for s in sources.values()), f"{topic['id']}: legacy View reference has no View source: {path}")
             require(topic["source_access_status"] in {"sitemap_listed_content_not_individually_retrieved", "partial_js_shell_confirmed"}, f"{topic['id']}: content accessibility is overstated")
 
         required_topics = {"material3_foundations", "material3_expressive", "material3_color", "material3_typography", "material_shapes", "material_motion", "material3_layout", "material3_adaptive", "material3_components", "material3_component_states", "material3_interaction", "material3_accessibility", "material3_tokens", "material3_navigation", "material3_spacing_density", "material3_elevation", "material3_icons", "material3_content_design", "material3_watches", "material3_xr", "material3_co_design"}

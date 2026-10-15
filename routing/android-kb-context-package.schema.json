@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "android-kb-context-package.schema.json",
+  "title": "On-demand official Android KB retrieval record",
+  "type": "object",
+  "required": ["schema_version", "input_task", "manifest_sha256", "created_at", "route_selection", "cli_preflight", "search", "fetches", "local_knowledge", "selected_policies", "selected_skills", "androidx_compatibility", "delivery", "missing_context", "budget", "material_io", "overall_status", "context_text"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "input_task": {"type": "string", "minLength": 1},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "route_selection": {"type": "object", "required": ["routing_status", "matched_domains", "match_evidence", "selected_sources", "required_verification_actions", "freshness", "excluded_categories", "material3_topics", "material3_coverage"], "properties": {"matched_domains": {"type": "array", "items": {"type": "string"}}, "selected_sources": {"type": "array", "items": {"type": "object", "required": ["id", "canonical_url", "accessibility_status"]}}, "required_verification_actions": {"type": "array", "items": {"type": "string"}}, "material3_coverage": {"type": "object", "required": ["registered_topic_groups", "discovered_urls", "verified_page_content_topics"], "properties": {"registered_topic_groups": {"type": "integer"}, "discovered_urls": {"type": "integer"}, "verified_page_content_topics": {"type": "integer"}}}}},
+    "cli_preflight": {"type": "object", "required": ["availability"], "properties": {"availability": {"enum": ["PRESENT", "ABSENT", "NOT_CHECKED"]}, "resolved_executable": {"type": ["string", "null"]}, "version": {"type": ["string", "null"]}}},
+    "search": {"type": "object", "required": ["status", "query", "results"], "properties": {"status": {"enum": ["NOT_RUN", "BLOCKED", "FAIL", "PASS", "FIXTURE_REPLAY"]}, "query": {"type": ["string", "null"]}, "results": {"type": "array", "items": {"type": "object", "required": ["kb_id"], "properties": {"kb_id": {"type": "string", "pattern": "^kb://android/"}}}}}},
+    "fetches": {"type": "array", "items": {"type": "object", "required": ["kb_id", "retrieval_status", "validation_reason"], "properties": {"kb_id": {"type": "string"}, "retrieval_status": {"enum": ["RETRIEVED", "RETRIEVED_FROM_CACHE", "FIXTURE_CONTENT_VALIDATED", "BLOCKED", "NOT_VERIFIED"]}, "content_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}}}},
+    "local_knowledge": {"type": "array"}, "selected_policies": {"type": "array"}, "selected_skills": {"type": "array"},
+    "androidx_compatibility": {"const": "REQUIRES_TARGET_PROJECT_DEPENDENCY_VERIFICATION"},
+    "delivery": {"type": "object", "required": ["status", "tool_output_emitted", "explicit_context_read", "model_consumption"], "properties": {"tool_output_emitted": {"const": true}, "explicit_context_read": {"const": false}, "model_consumption": {"const": "NOT_VERIFIED"}}},
+    "missing_context": {"type": "array", "items": {"type": "string"}},
+    "budget": {"type": "object", "required": ["unit", "limit", "status"], "properties": {"unit": {"const": "characters_not_tokens"}, "limit": {"type": "integer", "minimum": 1}, "status": {"enum": ["WITHIN_BUDGET", "OVERFLOW_BLOCKED"]}}},
+    "material_io": {"type": "object", "required": ["coverage", "knowledge_verified"], "properties": {"knowledge_verified": {"const": false}}},
+    "overall_status": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT_VERIFIED"]},
+    "context_text": {"type": "string"}
+  },
+  "additionalProperties": true
+}

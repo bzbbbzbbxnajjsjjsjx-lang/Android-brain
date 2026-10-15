@@ -23,3 +23,13 @@ python3 scripts/audit_material_page.py \
 ```
 
 The fetcher does not authenticate, bypass access controls, store page bodies, or mark content verified. If Material.io continues returning a JavaScript shell to supported retrieval methods, preserve the limitation and use an authorized design export only when one is provided.
+
+## P8 source-family update
+
+On 2026-10-14, the official Android Developers guide [Material Design 3 in Compose](https://developer.android.com/develop/ui/compose/designsystems/material3) and four related official Compose accessibility/AndroidX API reference pages returned substantive article text over HTTPS with TLS verification enabled. The guide's theming, color, typography, shape, elevation, components, navigation, customization, system UI, and accessibility sections were inspected; concise implementation notes are in `knowledge/androidx/compose-material3-system.md` and `knowledge/androidx/compose-accessibility.md`. Per-page hashes, extracted-text counts, access methods, and inspected sections are recorded in `routing/google-android-retrieval-evidence.json`.
+
+These Android Developers and AndroidX records are a separate implementation-source family. They **do not** alter Material.io coverage: **21/21 topic groups and 249 URLs DISCOVERED; 2 sampled JavaScript shells; 0 Material.io page bodies CONTENT RETRIEVED; 0/21 topics VERIFIED**. The P8 execution environment exposed no supported rendered-browser tool. A direct fetch of the known Color roles URL again returned a JavaScript-required shell; prior recorded Chromium navigation failed TLS validation with verification enabled. Retrieval was stopped without disabling TLS or changing network policy. Material.io content coverage remains BLOCKED.
+
+## P9 official Google repository references
+
+P9 separately retrieved and inspected 11 official Markdown files from the Google-maintained Material Components for Android repository at revision `60ff09436d5d477a4b9d02940f31eb01e1250620`. These provide pinned **View/XML library** implementation notes for components, states, navigation, theming, motion, and shapes. Per-file hashes, byte counts, selected sections, and upstream Apache-2.0 license evidence are recorded in `routing/material-components-android-evidence.json`; original summaries are in `knowledge/material3-view/`. These are neither Material.io page content nor Jetpack Compose API contracts. The router excludes them from Compose tasks and selects them only after explicit View/XML/MDC-Android intent. This acquisition does not change Material.io's 0/21 verified page-content count.

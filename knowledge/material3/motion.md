@@ -1,7 +1,7 @@
-# Material motion decisions
+# Material motion knowledge access status
 
-Select motion to communicate a state change, spatial relationship, or hierarchy. Match the transition to the content and input; keep duration and distance proportional, avoid motion that delays task completion, and respect reduced-motion/accessibility settings. Test state changes and interruption, not only a looping preview. Consider recomposition and frame cost, but require device measurements before performance claims.
+The registered Material.io motion URL returned a JavaScript shell; its article content and motion taxonomy were not retrieved or verified. This note therefore provides no Material-specific motion rules. Do not derive durations, easing, transition choices, or reduced-motion behavior from the URL or shell.
 
-The supplied Material motion page returned only its JavaScript shell, so no detailed motion taxonomy is attributed to it here. Before implementation, verify the Compose transition API and any Material `MotionScheme` availability, artifact version, stability/experimental annotation, and reduced-motion behavior from current AndroidX documentation/source. Never translate View animators directly into Compose APIs.
+For Compose implementation, verify the actual transition API, any `MotionScheme` availability and opt-in, and reduced-motion behavior against current official AndroidX documentation and the target artifact. Do not transplant View animation APIs into Compose. Measure device performance before making performance claims.
 
-**Provenance:** `material_motion` (partial page access); `material_shapes_api` (AndroidX API source); `legacy_view_motion` (legacy boundary).
+**Provenance:** `material_motion` (shell only); `androidx_motion_scheme` and `androidx_material3_package` (separate, version-sensitive implementation references); `legacy_view_motion` (View-system documentation, not a Compose recipe).

@@ -461,6 +461,304 @@
       "source_id": "androidx_compose_accessibility",
       "supported_retrieval_method": "Official page body fetched over HTTPS on 2026-10-14; targeted guide reference captured",
       "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the attributed local implementation summary as potentially stale; re-fetch the official guide and verify all APIs against the target project before implementation.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "Before relying on implementation details, when AndroidX API/dependency versions change, and on official guide changes; at least annually.",
+      "related_policies": [
+        "provenance",
+        "api_compatibility",
+        "experimental_api",
+        "design_compliance",
+        "accessibility_review",
+        "freshness",
+        "no_hallucinated_api",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "source_id": "androidx_compose_material3_guide",
+      "supported_retrieval_method": "Official Android Developers article body retrieved over verified HTTPS on 2026-10-14; article text extracted and relevant sections inspected; response digest recorded in routing/google-android-retrieval-evidence.json",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_status",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 d0232891135d34968e45484992acacb10c0d4981bf63789eaa19de2b65db25ff",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_button_groups",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 58a28aca673e2f0763cdce9de89da7f10ea1ccf30542ea34ccb8b552ace3e8e5",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_text_fields",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 6d15e624765ef5865c114582d1d2d6c6f8573d4076fb009e3bc44b64c13541aa",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_cards",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 8975446bd2b70dc983e12936a17fa1b635ed7520710ab8d9c45afbd7c04cd5f2",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_color_theming",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 686f5957fd9f896c2f1af1f170f5910e38f84181da8960f641cfdf6217a260c4",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_typography",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 4943ab9b3f1ef94b2d26fa34cd4e5706f166026464cdf95e06df6e3a856c0f0e",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_navigation_bar",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 7feee4110ef64c000ae5571f5c1798817c9369c21558c8305f2f238324dd6e1b",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_navigation_drawer",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 75ccedf6fc701b757e0c510c401007dc95590d5214a7cb44d3afe48ccbac70d3",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_navigation_rail",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 ad2ba6d90bc91e6eb5aab0df417bd0bcb3653843fbf89470fc0354b804211b96",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_motion",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 3d83de78e05e32abbc678692a9ad563c8a9cb7ba8355ca3374a699da6313b59f",
+      "version_sensitivity": "high"
+    },
+    {
+      "accessibility_status_from_registry": "retrieved",
+      "failure_behavior": "Keep the pinned summary explicitly legacy and potentially stale; do not use it as Compose API or Material.io page evidence. Refresh only for an explicit View/XML task using the official repository and record the revision.",
+      "last_verified_from_registry": "2026-10-14",
+      "refresh_trigger": "On the pinned repository revision changing, before version-sensitive View/XML migration decisions, or when an explicit maintenance task selects this reference.",
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "source_id": "material_components_android_shape_theming",
+      "supported_retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 b2f90b3b7ed7d39e0d42a2f216be0c0cb18e1cc013831c425a40467c0548b21d",
+      "version_sensitivity": "high"
+    },
+    {
+      "source_id": "android_cli_docs",
+      "last_verified_from_registry": "2026-10-14",
+      "version_sensitivity": "high",
+      "accessibility_status_from_registry": "blocked_by_environment_network_policy",
+      "supported_retrieval_method": "Canonical page and command references supplied by task; content not retrieved in current session because developer.android.com is outside the effective egress allowlist; see observed blocked status in knowledge reference.",
+      "refresh_trigger": "Recheck on any CLI upgrade and before live retrieval; require current official install docs, android --version, android docs --help, and successful KB search/fetch evidence.",
+      "failure_behavior": "Keep live retrieval BLOCKED when CLI, official docs, or KB access is unavailable; do not substitute mirrors or infer APIs.",
+      "related_skills": [
+        "android-engineering",
+        "compose-architecture"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "freshness",
+        "security",
+        "api_compatibility",
+        "no_hallucinated_api"
+      ]
     }
   ],
   "schema_version": 1,

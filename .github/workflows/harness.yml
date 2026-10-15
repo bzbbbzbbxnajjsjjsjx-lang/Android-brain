@@ -17,12 +17,18 @@ jobs:
           python-version: '3.12'
       - name: Install manifest schema validator
         run: python3 -m pip install -r requirements-dev.txt
+      - name: Install Chromium for isolated scraper fixture tests
+        run: python3 -m playwright install --with-deps chromium
       - name: Validate registry and routing references
         run: python3 scripts/validate_registry.py
       - name: Validate Codex skill files
         run: python3 scripts/validate_skills.py
       - name: Validate Material retrieval evidence and coverage distinctions
         run: python3 scripts/validate_material_evidence.py
+      - name: Validate official Android Developers retrieval evidence
+        run: python3 scripts/validate_google_android_evidence.py
+      - name: Validate pinned Material Components View documentation evidence
+        run: python3 scripts/validate_google_material_components_evidence.py
       - name: Evaluate routing behavior
         run: python3 evals/run_context_router_evals.py
       - name: Evaluate skill and context integration
@@ -39,3 +45,13 @@ jobs:
         run: python3 evals/run_p6_evals.py
       - name: Run P7 Git, CI, and knowledge readiness evaluations
         run: python3 evals/run_p7_readiness_evals.py
+      - name: Run P8 official Material and AndroidX knowledge evaluations
+        run: python3 evals/run_p8_material_knowledge_evals.py
+      - name: Run P9 official Material knowledge evaluations
+        run: python3 evals/run_p9_material_knowledge_evals.py
+      - name: Validate Material.io browser retrieval evidence
+        run: python3 scripts/validate_material3_browser_evidence.py
+      - name: Evaluate Material.io browser extraction and integration fixtures
+        run: python3 evals/run_p10_material_scraper_evals.py
+      - name: Evaluate official Android KB retrieval adapter fixtures
+        run: python3 evals/run_android_kb_retrieval_evals.py

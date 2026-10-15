@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bzbbbzbbxnajjsjjsjx-lang/Android-brain/blob/main/routing/material3-browser-retrieval-evidence.schema.json",
+  "title": "Material.io browser retrieval and knowledge evidence",
+  "type": "object",
+  "required": ["schema_version", "source_family", "acquisition_status", "network_policy_state", "attempted_http_requests", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "source_family": {"const": "official_material_io_browser_retrieval"},
+    "collection_started_at": {"type": "string", "format": "date-time"},
+    "acquisition_status": {"enum": ["BLOCKED", "NOT VERIFIED", "CONTENT_RETRIEVED"]},
+    "network_policy_state": {"enum": ["target_not_allowlisted", "enforcement_not_confirmed", "allowed", "enforced_by_operator_attestation"]},
+    "attempted_http_requests": {"type": "integer", "minimum": 0},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic_id", "canonical_url", "retrieved_at", "state", "page_content_obtained", "verified"],
+        "properties": {
+          "topic_id": {"type": "string"},
+          "canonical_url": {"type": "string", "pattern": "^https://m3\\.material\\.io/"},
+          "retrieved_at": {"type": "string", "format": "date-time"},
+          "state": {"enum": ["blocked", "retrieved_shell", "empty_or_non_document", "content_retrieved", "verified", "integrated"]},
+          "discovery_state": {"const": "DISCOVERED"},
+          "retrieval_state": {"enum": ["PENDING", "BLOCKED", "BLOCKED_BY_ROBOTS", "BLOCKED_SIZE_LIMIT", "BLOCKED_HTTP", "BLOCKED_ERROR", "SHELL_ONLY", "EMPTY_OR_NON_DOCUMENT", "CONTENT_RETRIEVED"]},
+          "verification_state": {"enum": ["NOT VERIFIED", "VERIFIED"]},
+          "integration_state": {"enum": ["NOT INTEGRATED", "INTEGRATED"]},
+          "page_content_obtained": {"type": "boolean"},
+          "verified": {"type": "boolean"},
+          "tls_verification": {"type": "string"},
+          "http_status": {"type": ["integer", "null"]},
+          "content_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "response_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "cache_reference": {"type": "string", "pattern": "^[^/]+/.+\\.json$"},
+          "knowledge_reference": {"type": "string", "pattern": "^knowledge/material3-verified/"},
+          "review_record": {"type": "string"},
+          "summary": {"type": "string"},
+          "design_rules": {"type": "array", "items": {"type": "string"}},
+          "reviewed_at": {"type": "string", "format": "date"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

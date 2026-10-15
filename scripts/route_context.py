@@ -73,6 +73,7 @@ def authority_rank(source: dict[str, Any]) -> tuple[int, str]:
         "community_tool": 6,
         "community_design_reference": 7,
         "legacy_view_system_reference": 8,
+        "official_legacy_view_implementation": 8,
     }
     return (ranks.get(level, 50), source["id"])
 
@@ -85,6 +86,18 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
     skills_doc = load_json(ROOT / "registry/skills.json")
     policies_doc = load_json(ROOT / "registry/policies.json")
     topics_doc = load_json(ROOT / "routing/material3-topics.json")
+    material_browser_evidence_path = ROOT / "routing/material3-browser-retrieval-evidence.json"
+    integrated_material_pages: list[dict[str, Any]] = []
+    if material_browser_evidence_path.is_file():
+        # Fail closed on malformed/overstated page evidence. The scraper's
+        # verified records remain distinct from the site's URL discovery data.
+        if str(ROOT / "scripts") not in sys.path:
+            sys.path.insert(0, str(ROOT / "scripts"))
+        from material3_knowledge_pipeline import validate_evidence
+        browser_evidence = load_json(material_browser_evidence_path)
+        sitemap_doc = load_json(ROOT / "routing/material3-sitemap-evidence.json")
+        validate_evidence(browser_evidence, topics_doc, sitemap_doc, root=ROOT)
+        integrated_material_pages = [x for x in browser_evidence.get("records", []) if x.get("state") == "integrated"]
     source_by_id = {item["id"]: item for item in sources_doc["sources"]}
     skill_by_id = {item["id"]: item for item in skills_doc["skills"]}
     policy_by_id = {item["id"]: item for item in policies_doc["policies"]}
@@ -146,6 +159,7 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
     required_verification: set[str] = set()
     category_exclusions: set[str] = set()
     negative_source_guards: set[str] = set()
+    legacy_view_sources_selected: set[str] = set()
 
     for rid, route in route_matches.items():
         selected_policy_ids.update(route.get("policies", []))
@@ -170,6 +184,31 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
                 skill_reasons.setdefault(skill_id, set()).add(rid)
             selected_policy_ids.update(topic["policy_ids"])
             required_verification.update(topic["freshness_requirements"])
+            legacy = topic.get("legacy_view_context", {})
+            matched_view_term = next((term for term in legacy.get("activation_terms", []) if match_term(task_norm, task_compact, term) and not term_is_negated(task_norm, term)), None)
+            if matched_view_term:
+                reason = f"{rid}:explicit_view_xml_request"
+                for source_id in legacy.get("source_ids", []):
+                    source_reasons.setdefault(source_id, set()).add(reason)
+                    legacy_view_sources_selected.add(source_id)
+                for note in legacy.get("knowledge_references", []):
+                    knowledge_reasons.setdefault(note, set()).add(reason)
+
+    selected_material_pages: list[dict[str, Any]] = []
+    for topic_id in sorted(material_route_ids):
+        candidates = [x for x in integrated_material_pages if x.get("topic_id") == topic_id]
+        if len(candidates) == 1:
+            selected = candidates
+        else:
+            selected = [x for x in candidates if any(
+                match_term(task_norm, task_compact, term) and not term_is_negated(task_norm, term)
+                for term in x.get("routing_terms", [])
+            )]
+        for row in selected:
+            relative = row["knowledge_reference"]
+            knowledge_reasons.setdefault(relative, set()).add(f"{topic_id}:verified_material_page")
+            source_reasons.setdefault("material3_site", set()).add(f"{topic_id}:verified_material_page")
+            selected_material_pages.append(row)
 
     # Narrow route knowledge can be conditioned on task intent without changing
     # policy/source selection. Rules are local, declarative, and validated against
@@ -259,9 +298,15 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
         if live_required:
             missing_context.append({"kind": "live_verification_not_performed", "source_id": source_id, "status": "not_performed_by_router", "detail": "Registry freshness is metadata only; no external request or target-project compatibility check was made.", "required_action": "Recheck this source and exact target dependency before implementation."})
 
+    selected_urls_by_topic: dict[str, set[str]] = {}
+    for row in selected_material_pages:
+        selected_urls_by_topic.setdefault(row["topic_id"], set()).add(row["canonical_url"])
     for topic_id in sorted(material_route_ids):
         topic = topic_by_route[topic_id]
-        missing_context.append({"kind": "material_page_content_unverified", "topic_id": topic_id, "status": topic["source_access_status"], "canonical_urls": topic["canonical_source_urls"], "detail": topic["retrieval_limitations"], "required_action": "Open the selected Material.io page and record what was actually reviewed before making page-specific design claims."})
+        page_records = [x for x in integrated_material_pages if x.get("topic_id") == topic_id]
+        verified_urls = {x["canonical_url"] for x in page_records}
+        remaining = sorted(set(topic["canonical_source_urls"]) - verified_urls)
+        missing_context.append({"kind": "material_page_content_unverified", "topic_id": topic_id, "status": "partially_verified" if verified_urls else topic["source_access_status"], "verified_page_urls": sorted(verified_urls), "selected_verified_page_urls": sorted(selected_urls_by_topic.get(topic_id, set())), "unverified_url_count": len(remaining), "canonical_urls": remaining if len(remaining) <= 25 else remaining[:25], "detail": "Only the listed page bodies have reviewed, integrated knowledge; other discovered pages remain unverified. " + topic["retrieval_limitations"], "required_action": "Retrieve and inspect the exact Material.io page before making page-specific claims not covered by an integrated note."})
 
     selected_knowledge = []
     estimate = 0
@@ -272,6 +317,8 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
         chars = len(path.read_text(encoding="utf-8"))
         estimate += chars
         source_ids_for_note = sorted(s["id"] for s in source_by_id.values() if s["local_knowledge_reference"] == relative)
+        if not source_ids_for_note and any(x.get("knowledge_reference") == relative for x in selected_material_pages):
+            source_ids_for_note = ["material3_site"]
         selected_knowledge.append({"path": relative, "character_count": chars, "source_ids": source_ids_for_note, "selected_because_of": sorted(knowledge_reasons[relative]), "mandatory_for_this_route": True, "content_read_by_router": False})
 
     selected_skills = []
@@ -299,6 +346,10 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
         "No external source was fetched by this router; perform any listed live check before relying on current APIs or page-specific guidance.",
         "Run relevant project checks and report their actual results; the router does not execute Android builds or tests.",
     ])
+    if material_route_ids and not legacy_view_sources_selected:
+        category_exclusions.add("Google Material Components Android references use the legacy View/XML toolkit; excluded unless the task explicitly requests View/XML or MDC-Android context.")
+    if legacy_view_sources_selected:
+        required_verification.add("Selected Material Components Android documentation describes View/XML APIs at a pinned library revision; do not port its classes, attributes, or behavior into Compose. Verify any existing legacy project's exact dependency and prefer AndroidX references for Compose.")
     if route_matches:
         if not project_context["androidx_dependencies"]:
             required_verification.add("Target project AndroidX dependency declarations are absent; inspect version catalogs/build files and resolved dependencies before making API or experimental-API compatibility claims.")
@@ -345,7 +396,8 @@ def build_manifest(task: str, *, as_of: date | None = None, budget_chars: int | 
         "freshness": {"live_checks_performed": False, "source_records": freshness_records},
         "missing_or_inaccessible_context": sorted(missing_context, key=lambda x: (x["kind"], x.get("source_id", x.get("topic_id", "")))),
         "context_budget": {"unit": "characters", "limit_chars": budget, "estimated_selected_chars": estimate, "status": budget_status, "strategy": "Budget estimates selected local knowledge notes and policy summaries. Skill bodies are separately reported because Codex activation is not controlled by this router. No arbitrary truncation; if knowledge exceeds the limit, raise the budget or explicitly defer whole references and record that choice.", "potential_native_skill_instruction_chars": sum(x["character_count"] for x in selected_skills)},
-        "material3_topics": [{"id": t["id"], "title": t["title"], "canonical_source_url": t["canonical_source_url"], "additional_urls_available_in_manifest": t["canonical_source_url_count"] - 1, "manifest_path": "routing/material3-topics.json", "source_access_status": t["source_access_status"], "retrieval_limitations": t["retrieval_limitations"]} for t in sorted(topics_doc["topics"], key=lambda x: x["id"]) if t["taxonomy_id"] in material_route_ids],
+        "material3_topics": [{"id": t["id"], "title": t["title"], "canonical_source_url": t["canonical_source_url"], "additional_urls_available_in_manifest": t["canonical_source_url_count"] - 1, "manifest_path": "routing/material3-topics.json", "source_access_status": t["source_access_status"], "selected_verified_page_urls": sorted(selected_urls_by_topic.get(t["taxonomy_id"], set())), "retrieval_limitations": t["retrieval_limitations"]} for t in sorted(topics_doc["topics"], key=lambda x: x["id"]) if t["taxonomy_id"] in material_route_ids],
+        "material3_page_evidence": [{"topic_id": x["topic_id"], "canonical_url": x["canonical_url"], "title": x.get("document_title"), "state": x["state"], "content_fingerprint": x["content_fingerprint"], "knowledge_reference": x["knowledge_reference"], "reviewed_at": x["reviewed_at"], "freshness_requirements": x["freshness_requirements"], "review_age_days": (today - date.fromisoformat(x["reviewed_at"])).days, "review_freshness_status": "stale_by_review_date" if (today - date.fromisoformat(x["reviewed_at"])).days > windows.get(source_by_id["material3_site"].get("version_sensitivity", "high"), windows["high"]) else "within_review_window", "live_verification_required": (today - date.fromisoformat(x["reviewed_at"])).days > windows.get(source_by_id["material3_site"].get("version_sensitivity", "high"), windows["high"]), "selected_for_task": x in selected_material_pages} for x in sorted((p for p in integrated_material_pages if p["topic_id"] in material_route_ids), key=lambda x: (x["topic_id"], x["canonical_url"]))],
         "target_project_context": project_context,
         "explicit_exclusions": {"category_rules": sorted(category_exclusions), "excluded_categories": sorted(suppressed), "negative_source_guards": sorted(negative_source_guards - set(source_reasons)), "negated_terms": [{"domain": x["domain"], "term": x["term"], "reason": x["reason"]} for x in sorted(negative_evidence, key=lambda x: (x["domain"], normalized(x["term"]))) ]},
         "routing_status": routing_status,

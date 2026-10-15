@@ -716,6 +716,447 @@
       "accessibility_status": "retrieved",
       "local_knowledge_reference": "knowledge/androidx/compose-accessibility.md",
       "known_limitations": "Guide must be rechecked for current APIs; does not verify any consuming app implementation."
+    },
+    {
+      "id": "androidx_compose_material3_guide",
+      "title": "Material Design 3 in Compose",
+      "canonical_url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+      "owner": "Android Developers / AndroidX",
+      "source_type": "implementation_guide",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "material3_compose_implementation",
+      "relevant_tasks": [
+        "compose_ui",
+        "material3_expressive",
+        "theming",
+        "components",
+        "navigation",
+        "accessibility"
+      ],
+      "retrieval_method": "Official Android Developers article body retrieved over verified HTTPS on 2026-10-14; article text extracted and relevant sections inspected; response digest recorded in routing/google-android-retrieval-evidence.json",
+      "related_skills": [
+        "material3-expressive",
+        "kotlin-compose",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "api_compatibility",
+        "experimental_api",
+        "design_compliance",
+        "accessibility_review",
+        "freshness",
+        "no_hallucinated_api",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/androidx/compose-material3-system.md",
+      "known_limitations": "Android Developers implementation guide, not Material.io design specification. Examples may evolve; target-project dependency and exact AndroidX API compatibility must be verified independently."
+    },
+    {
+      "id": "material_components_android_status",
+      "title": "Material Components for Android repository status",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/README.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "repository_maintenance_notice",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_legacy",
+      "relevant_tasks": [
+        "material3_components_view",
+        "legacy_android_views"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 d0232891135d34968e45484992acacb10c0d4981bf63789eaa19de2b65db25ff",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/library-status.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_button_groups",
+      "title": "Button groups (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/components/ButtonGroup.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_components",
+      "relevant_tasks": [
+        "material3_components_view",
+        "material3_component_states_view",
+        "material3_expressive_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 58a28aca673e2f0763cdce9de89da7f10ea1ccf30542ea34ccb8b552ace3e8e5",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/button-groups.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_text_fields",
+      "title": "Text fields (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/components/TextField.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_components",
+      "relevant_tasks": [
+        "material3_components_view",
+        "material3_component_states_view",
+        "material3_accessibility_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 6d15e624765ef5865c114582d1d2d6c6f8573d4076fb009e3bc44b64c13541aa",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/text-fields.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_cards",
+      "title": "Cards (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/components/Card.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_components",
+      "relevant_tasks": [
+        "material3_components_view",
+        "material3_component_states_view",
+        "material3_accessibility_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 8975446bd2b70dc983e12936a17fa1b635ed7520710ab8d9c45afbd7c04cd5f2",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/cards.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_color_theming",
+      "title": "Color theming (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/theming/Color.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_theming",
+      "relevant_tasks": [
+        "material3_color_view",
+        "material3_theming_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 686f5957fd9f896c2f1af1f170f5910e38f84181da8960f641cfdf6217a260c4",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/color-theming.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_typography",
+      "title": "Typography theming (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/theming/Typography.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_theming",
+      "relevant_tasks": [
+        "material3_typography_view",
+        "material3_theming_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 4943ab9b3f1ef94b2d26fa34cd4e5706f166026464cdf95e06df6e3a856c0f0e",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/typography.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_navigation_bar",
+      "title": "Bottom navigation / navigation bar (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/components/BottomNavigation.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_navigation",
+      "relevant_tasks": [
+        "material3_navigation_view",
+        "material3_adaptive_view",
+        "material3_expressive_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 7feee4110ef64c000ae5571f5c1798817c9369c21558c8305f2f238324dd6e1b",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/navigation-bar.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_navigation_drawer",
+      "title": "Navigation drawer (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/components/NavigationDrawer.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_navigation",
+      "relevant_tasks": [
+        "material3_navigation_view",
+        "material3_adaptive_view",
+        "material3_accessibility_view",
+        "material3_expressive_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 75ccedf6fc701b757e0c510c401007dc95590d5214a7cb44d3afe48ccbac70d3",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/navigation-drawer.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_navigation_rail",
+      "title": "Navigation rail (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/components/NavigationRail.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_navigation",
+      "relevant_tasks": [
+        "material3_navigation_view",
+        "material3_adaptive_view",
+        "material3_accessibility_view",
+        "material3_expressive_view"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 ad2ba6d90bc91e6eb5aab0df417bd0bcb3653843fbf89470fc0354b804211b96",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/navigation-rail.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "material_components_android_motion",
+      "title": "Motion theming (legacy View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/theming/Motion.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_motion_legacy",
+      "relevant_tasks": [
+        "material3_motion_view",
+        "legacy_android_motion"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 3d83de78e05e32abbc678692a9ad563c8a9cb7ba8355ca3374a699da6313b59f",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/motion.md",
+      "known_limitations": "Pinned legacy View/XML motion guide, marked updated January 2023. Not Jetpack Compose or MotionScheme guidance; verify legacy target dependency if maintenance work requires it."
+    },
+    {
+      "id": "material_components_android_shape_theming",
+      "title": "Shape theming (View library)",
+      "canonical_url": "https://github.com/material-components/material-components-android/blob/60ff09436d5d477a4b9d02940f31eb01e1250620/docs/theming/Shape.md",
+      "owner": "Google / Material Components for Android",
+      "source_type": "view_component_guide",
+      "authority_level": "official_legacy_view_implementation",
+      "engineering_domain": "material3_view_shapes_legacy",
+      "relevant_tasks": [
+        "material3_shapes_view",
+        "legacy_android_shapes"
+      ],
+      "retrieval_method": "HTTPS GET of raw.githubusercontent.com at pinned revision 60ff09436d5d477a4b9d02940f31eb01e1250620; TLS verification enabled; HTTP 200; body SHA-256 b2f90b3b7ed7d39e0d42a2f216be0c0cb18e1cc013831c425a40467c0548b21d",
+      "related_skills": [
+        "material3-expressive",
+        "android-engineering",
+        "visual-design-validation"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "api_compatibility",
+        "freshness",
+        "no_hallucinated_api",
+        "accessibility_review",
+        "security"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "retrieved",
+      "local_knowledge_reference": "knowledge/material3-view/shapes.md",
+      "known_limitations": "Pinned Google Android Views/XML library documentation. Not Material.io page content and not Jetpack Compose API guidance; verify the target library version and prefer official AndroidX sources for Compose."
+    },
+    {
+      "id": "android_cli_docs",
+      "title": "Android CLI documentation search and fetch",
+      "canonical_url": "https://developer.android.com/tools/agents/android-cli",
+      "owner": "Google Android",
+      "source_type": "official_cli_documentation",
+      "authority_level": "official_implementation_guidance",
+      "engineering_domain": "android_documentation_retrieval",
+      "relevant_tasks": [
+        "android_documentation_search",
+        "android_documentation_fetch",
+        "android_engineering_context"
+      ],
+      "retrieval_method": "Canonical page and command references supplied by task; content not retrieved in current session because developer.android.com is outside the effective egress allowlist; see observed blocked status in knowledge reference.",
+      "related_skills": [
+        "android-engineering",
+        "compose-architecture"
+      ],
+      "related_policies": [
+        "provenance",
+        "source_access",
+        "freshness",
+        "security",
+        "api_compatibility",
+        "no_hallucinated_api"
+      ],
+      "version_sensitivity": "high",
+      "last_verified": "2026-10-14",
+      "accessibility_status": "blocked_by_environment_network_policy",
+      "local_knowledge_reference": "knowledge/android-skills/android-cli-retrieval.md",
+      "known_limitations": "The date records the local access/tooling assessment only, not page-content verification. Android CLI installation instructions, exact CLI version, docs search/fetch help, authentication requirements, and live KB reachability remain unverified. User-supplied command examples have not been independently rechecked."
     }
   ]
 }

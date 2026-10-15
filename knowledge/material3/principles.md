@@ -1,7 +1,7 @@
-# Material 3 design knowledge
+# Material 3 design knowledge access status
 
-Use semantic color roles, a deliberate type hierarchy, meaningful component shapes, and consistent spacing as a coordinated design system. Prefer platform Material components and their established interaction/accessibility behavior over look-alike custom controls. Expressive treatment should reinforce hierarchy or state; visual novelty alone is not a design reason. Validate layouts at representative widths and larger text sizes.
+The official Material.io URLs for foundations and Expressive principles are present in the topic manifest, but their page bodies were not retrieved or verified in this environment. This note contains no page-specific design rules. Do not use sitemap titles or prior shell responses as support for Material 3 design decisions. Reopen and inspect the applicable official page, or use an approved product design specification, before making a page-specific claim.
 
-The supplied Material site responded with a JavaScript shell in this environment, so these notes do not claim to quote or exhaustively inspect its interactive guidance. Use the official site as the design reference when accessible and verify Compose implementation details against AndroidX API/source documentation. Figma resources are separate and currently inaccessible (see the handoff note).
+Material 3 Compose implementation information retrieved from Android Developers is recorded separately in [the Compose implementation note](../androidx/compose-material3-system.md). It is not a substitute for the inaccessible Material.io design specification. Figma remains optional and inaccessible without an authorized export.
 
-**Provenance:** `material3_site`; conservative synthesis, not an extract of inaccessible page content. API details: `material_shapes_api` and [compatibility](../androidx/material3-api-compatibility.md).
+**Provenance:** `material3_site` (URL discovery only); `androidx_compose_material3_guide` (separate official implementation guidance); `material_shapes_api` (version-sensitive API reference).

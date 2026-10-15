@@ -92,7 +92,31 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "listed_but_content_not_reviewed",
       "canonical_source_url": "https://m3.material.io/components/app-bars/accessibility",
-      "canonical_source_url_count": 40
+      "canonical_source_url_count": 40,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_text_fields",
+          "material_components_android_navigation_drawer",
+          "material_components_android_navigation_rail"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/text-fields.md",
+          "knowledge/material3-view/navigation-drawer.md",
+          "knowledge/material3-view/navigation-rail.md"
+        ]
+      }
     },
     {
       "id": "material3_adaptive",
@@ -152,7 +176,31 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/layout/breakpoints/compact",
-      "canonical_source_url_count": 12
+      "canonical_source_url_count": 12,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_navigation_bar",
+          "material_components_android_navigation_drawer",
+          "material_components_android_navigation_rail"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/navigation-bar.md",
+          "knowledge/material3-view/navigation-drawer.md",
+          "knowledge/material3-view/navigation-rail.md"
+        ]
+      }
     },
     {
       "id": "material3_co_design",
@@ -202,7 +250,21 @@
         "material3-expressive",
         "visual-design-validation",
         "kotlin-compose"
-      ]
+      ],
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_color",
@@ -236,16 +298,19 @@
       "androidx_compose_apis": {
         "symbols_or_areas": [
           "ColorScheme",
-          "MaterialTheme.colorScheme"
+          "MaterialTheme.colorScheme",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
           "androidx_color_scheme",
-          "androidx_material_theme"
+          "androidx_material_theme",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/androidx/material3-api-compatibility.md",
-        "knowledge/material3/color-typography.md"
+        "knowledge/material3/color-typography.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "https://m3.material.io/styles/color/roles returned HTTP 200 but only the title/meta description and a JavaScript-required shell were visible; see routing/material3-retrieval-evidence.json. Color-role guidance was not reviewed.",
       "freshness_requirements": [
@@ -264,7 +329,27 @@
       "source_access_status": "partial_js_shell_confirmed",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/styles/color/advanced/adjust-existing-colors",
-      "canonical_source_url_count": 14
+      "canonical_source_url_count": 14,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_color_theming"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/color-theming.md"
+        ]
+      }
     },
     {
       "id": "material3_component_states",
@@ -286,16 +371,19 @@
       ],
       "androidx_compose_apis": {
         "symbols_or_areas": [
-          "Material3 component package; Compose semantics (verify exact APIs)"
+          "Material3 component package; Compose semantics (verify exact APIs)",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
           "androidx_material3_package",
-          "androidx_compose_accessibility"
+          "androidx_compose_accessibility",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/material3/components-states.md",
-        "knowledge/material3/accessibility-interaction.md"
+        "knowledge/material3/accessibility-interaction.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "State overview/application/state-layer URLs are sitemap-listed; page contents not reviewed.",
       "freshness_requirements": [
@@ -316,7 +404,31 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/interaction/states/applying-states",
-      "canonical_source_url_count": 3
+      "canonical_source_url_count": 3,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_button_groups",
+          "material_components_android_text_fields",
+          "material_components_android_cards"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/button-groups.md",
+          "knowledge/material3-view/text-fields.md",
+          "knowledge/material3-view/cards.md"
+        ]
+      }
     },
     {
       "id": "material3_components",
@@ -480,15 +592,18 @@
       ],
       "androidx_compose_apis": {
         "symbols_or_areas": [
-          "Material3 component package surface (verify target artifact)"
+          "Material3 component package surface (verify target artifact)",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
-          "androidx_material3_package"
+          "androidx_material3_package",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/androidx/material3-api-compatibility.md",
-        "knowledge/material3/components-states.md"
+        "knowledge/material3/components-states.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "https://m3.material.io/components/all-buttons returned HTTP 200 but only the title/meta description and a JavaScript-required shell were visible; see routing/material3-retrieval-evidence.json. Button guidance was not reviewed.",
       "freshness_requirements": [
@@ -508,7 +623,31 @@
       "source_access_status": "partial_js_shell_confirmed",
       "design_spec_accessibility_status": "listed_but_content_not_reviewed",
       "canonical_source_url": "https://m3.material.io/components/all-buttons",
-      "canonical_source_url_count": 145
+      "canonical_source_url_count": 145,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_button_groups",
+          "material_components_android_text_fields",
+          "material_components_android_cards"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/button-groups.md",
+          "knowledge/material3-view/text-fields.md",
+          "knowledge/material3-view/cards.md"
+        ]
+      }
     },
     {
       "id": "material3_content_design",
@@ -558,7 +697,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/content-design/alt-text",
-      "canonical_source_url_count": 11
+      "canonical_source_url_count": 11,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_elevation",
@@ -580,16 +733,19 @@
       ],
       "androidx_compose_apis": {
         "symbols_or_areas": [
-          "MaterialTheme and component surface APIs (verify target artifact)"
+          "MaterialTheme and component surface APIs (verify target artifact)",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
           "androidx_material3_package",
-          "androidx_material_theme"
+          "androidx_material_theme",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/androidx/material3-api-compatibility.md",
-        "knowledge/material3/principles.md"
+        "knowledge/material3/principles.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "Elevation URLs listed; no token values or design rules extracted.",
       "freshness_requirements": [
@@ -606,7 +762,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/styles/elevation/applying-elevation",
-      "canonical_source_url_count": 3
+      "canonical_source_url_count": 3,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_expressive",
@@ -626,16 +796,19 @@
       ],
       "androidx_compose_apis": {
         "symbols_or_areas": [
-          "MaterialTheme"
+          "MaterialTheme",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
           "androidx_material3_package",
-          "androidx_material_theme"
+          "androidx_material_theme",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/material3/principles.md",
-        "knowledge/material3/foundations.md"
+        "knowledge/material3/foundations.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "Applying-M3-Expressive URL is sitemap-listed; page body not inspected in this run. Verify each API separately.",
       "freshness_requirements": [
@@ -655,7 +828,33 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/usability/applying-m3-expressive",
-      "canonical_source_url_count": 1
+      "canonical_source_url_count": 1,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_button_groups",
+          "material_components_android_navigation_bar",
+          "material_components_android_navigation_drawer",
+          "material_components_android_navigation_rail"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/button-groups.md",
+          "knowledge/material3-view/navigation-bar.md",
+          "knowledge/material3-view/navigation-drawer.md",
+          "knowledge/material3-view/navigation-rail.md"
+        ]
+      }
     },
     {
       "id": "material3_foundations",
@@ -706,7 +905,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "listed_but_content_not_reviewed",
       "canonical_source_url": "https://m3.material.io/foundations/customization",
-      "canonical_source_url_count": 11
+      "canonical_source_url_count": 11,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_icons",
@@ -755,7 +968,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/styles/icons/applying-icons",
-      "canonical_source_url_count": 3
+      "canonical_source_url_count": 3,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_interaction",
@@ -810,7 +1037,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/interaction/gestures",
-      "canonical_source_url_count": 6
+      "canonical_source_url_count": 6,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_layout",
@@ -876,7 +1117,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/layout/bidirectionality-rtl",
-      "canonical_source_url_count": 21
+      "canonical_source_url_count": 21,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_navigation",
@@ -915,16 +1170,19 @@
       ],
       "androidx_compose_apis": {
         "symbols_or_areas": [
-          "Material3 NavigationBar, NavigationDrawer, NavigationRail, app bars (verify target artifact)"
+          "Material3 NavigationBar, NavigationDrawer, NavigationRail, app bars (verify target artifact)",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
-          "androidx_material3_package"
+          "androidx_material3_package",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/androidx/material3-api-compatibility.md",
         "knowledge/material3/layout-adaptive.md",
-        "knowledge/material3/tokens-navigation.md"
+        "knowledge/material3/tokens-navigation.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "Navigation pages are sitemap-listed; component behavior/API must be checked against current official page and project artifact.",
       "freshness_requirements": [
@@ -945,7 +1203,31 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "listed_but_content_not_reviewed",
       "canonical_source_url": "https://m3.material.io/components/app-bars/accessibility",
-      "canonical_source_url_count": 20
+      "canonical_source_url_count": 20,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_navigation_bar",
+          "material_components_android_navigation_drawer",
+          "material_components_android_navigation_rail"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/navigation-bar.md",
+          "knowledge/material3-view/navigation-drawer.md",
+          "knowledge/material3-view/navigation-rail.md"
+        ]
+      }
     },
     {
       "id": "material3_spacing_density",
@@ -997,7 +1279,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/layout/grids-spacing/density",
-      "canonical_source_url_count": 7
+      "canonical_source_url_count": 7,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_tokens",
@@ -1052,7 +1348,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/customization",
-      "canonical_source_url_count": 3
+      "canonical_source_url_count": 3,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_typography",
@@ -1077,16 +1387,19 @@
       "androidx_compose_apis": {
         "symbols_or_areas": [
           "Typography",
-          "MaterialTheme.typography"
+          "MaterialTheme.typography",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
           "androidx_typography",
-          "androidx_material_theme"
+          "androidx_material_theme",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/androidx/material3-api-compatibility.md",
-        "knowledge/material3/color-typography.md"
+        "knowledge/material3/color-typography.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "Typography pages discovered in sitemap, content not inspected; target-project API/style availability must be checked.",
       "freshness_requirements": [
@@ -1106,7 +1419,27 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/styles/typography/applying-type",
-      "canonical_source_url_count": 5
+      "canonical_source_url_count": 5,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_typography"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/typography.md"
+        ]
+      }
     },
     {
       "id": "material3_watches",
@@ -1150,7 +1483,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/foundations/watches/foundations",
-      "canonical_source_url_count": 4
+      "canonical_source_url_count": 4,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material3_xr",
@@ -1199,7 +1546,21 @@
       "source_access_status": "sitemap_listed_content_not_individually_retrieved",
       "design_spec_accessibility_status": "listed_but_content_not_reviewed",
       "canonical_source_url": "https://m3.material.io/foundations/xr/components/app-bars",
-      "canonical_source_url_count": 10
+      "canonical_source_url_count": 10,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [],
+        "knowledge_references": []
+      }
     },
     {
       "id": "material_motion",
@@ -1254,7 +1615,27 @@
       "source_access_status": "partial_js_shell_confirmed",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/styles/motion/easing-and-duration/applying-easing-and-duration",
-      "canonical_source_url_count": 6
+      "canonical_source_url_count": 6,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_motion"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/motion.md"
+        ]
+      }
     },
     {
       "id": "material_shapes",
@@ -1278,15 +1659,18 @@
         "symbols_or_areas": [
           "MaterialShapes",
           "RoundedPolygon",
-          "Morph"
+          "Morph",
+          "Android Developers Compose Material 3 guide; verify exact APIs in target artifact"
         ],
         "source_ids": [
-          "material_shapes_api"
+          "material_shapes_api",
+          "androidx_compose_material3_guide"
         ]
       },
       "knowledge_references": [
         "knowledge/material3/shapes.md",
-        "knowledge/androidx/material3-api-compatibility.md"
+        "knowledge/androidx/material3-api-compatibility.md",
+        "knowledge/androidx/compose-material3-system.md"
       ],
       "retrieval_limitations": "Shape overview page previously returned a JavaScript shell; sitemap links were discovered, not individually retrieved. AndroidX API is separate and version-sensitive.",
       "freshness_requirements": [
@@ -1306,7 +1690,27 @@
       "source_access_status": "partial_js_shell_confirmed",
       "design_spec_accessibility_status": "not_a_dedicated_accessibility_topic",
       "canonical_source_url": "https://m3.material.io/styles/shape/corner-radius-scale",
-      "canonical_source_url_count": 3
+      "canonical_source_url_count": 3,
+      "legacy_view_context": {
+        "activation_terms": [
+          "View/XML",
+          "Views/XML",
+          "View-based",
+          "Views-based",
+          "Android Views",
+          "Material Components Android",
+          "Material Components for Android",
+          "MDC-Android"
+        ],
+        "source_ids": [
+          "material_components_android_status",
+          "material_components_android_shape_theming"
+        ],
+        "knowledge_references": [
+          "knowledge/material3-view/library-status.md",
+          "knowledge/material3-view/shapes.md"
+        ]
+      }
     }
   ]
 }

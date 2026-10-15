@@ -20,6 +20,7 @@
     "missing_or_inaccessible_context",
     "context_budget",
     "material3_topics",
+    "material3_page_evidence",
     "explicit_exclusions",
     "routing_status",
     "router_does_not",
@@ -215,6 +216,27 @@
     },
     "material3_topics": {
       "type": "array"
+    },
+    "material3_page_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic_id", "canonical_url", "state", "content_fingerprint", "knowledge_reference", "reviewed_at", "freshness_requirements", "review_age_days", "review_freshness_status", "live_verification_required", "selected_for_task"],
+        "properties": {
+          "topic_id": {"type": "string"},
+          "canonical_url": {"type": "string", "pattern": "^https://m3\\.material\\.io/"},
+          "state": {"const": "integrated"},
+          "content_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "knowledge_reference": {"type": "string"},
+          "reviewed_at": {"type": "string", "format": "date"},
+          "freshness_requirements": {"type": "array", "items": {"type": "string"}},
+          "review_age_days": {"type": "integer"},
+          "review_freshness_status": {"enum": ["within_review_window", "stale_by_review_date"]},
+          "live_verification_required": {"type": "boolean"},
+          "selected_for_task": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
     },
     "explicit_exclusions": {
       "type": "object"

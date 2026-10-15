@@ -19,3 +19,5 @@ local.properties
 *.pfx
 .venv/
 venv/
+.cache/material3-scraper/
+.cache/android-kb/

@@ -1,7 +1,7 @@
-# Material shape decisions
+# Material shape knowledge access status
 
-Use shape to support grouping, hierarchy, component identity, or a meaningful selected/changed state. Keep a coherent baseline shape system and reserve expressive variations for decisions that matter to the user. A morph should have clear endpoints, stable geometry, and an accessible non-animated state. Avoid decorating every surface with unrelated shapes.
+The registered Material.io shape-principles URL returned a JavaScript shell; its article content was not retrieved or verified. This note provides no page-specific Material shape rules. Do not infer shape semantics or selection criteria from a sitemap title or shell response.
 
-The supplied Material shape principles page returned only a JavaScript shell; this is a cautious design rule, not a claim to have extracted its full content. Confirm `MaterialShapes`/morph APIs and opt-in requirements from the exact AndroidX artifact selected by the target project.
+For Compose implementation, verify `MaterialShapes` and any morphing APIs, dependency compatibility, and experimental opt-in against the exact official AndroidX artifact used by the target project. API existence does not establish a design recommendation.
 
-**Provenance:** `material_shape_principles` (partial page access), `material_shapes_api` (official API reference/source).
+**Provenance:** `material_shape_principles` (shell only); `material_shapes_api` (separate, version-sensitive AndroidX API reference).
